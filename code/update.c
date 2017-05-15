@@ -1121,7 +1121,7 @@ void char_update( void )
 	if (ch->ghost > 0)
 		ghost = TRUE;
 	/* LOWBIE LEVELLING */
-	if (!IS_NPC(ch) && ch->level < 20 && (ch->in_room->vnum > 24599 || ch->in_room->vnum < 24500))
+/*	if (!IS_NPC(ch) && ch->level < 20 && (ch->in_room->vnum > 24599 || ch->in_room->vnum < 24500))
 	{
 		char buf1[MSL];
 		while(ch->level < 20)
@@ -1140,6 +1140,7 @@ void char_update( void )
 			send_to_char(buf1,ch);
 		}
 	}
+*/
 	if (!IS_NPC(ch))
 		ch->Profs()->UpdateProfPoints();
 	if (!IS_AFFECTED(ch, AFF_SLEEP) && is_affected(ch, gsn_bleeding) && ch->position == POS_SLEEPING)
