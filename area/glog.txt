@@ -292,3 +292,12 @@ Mon May 15 11:08:26 2017: SET- Krunk is setting .
 Mon May 15 11:08:30 2017: SET- Krunk is setting .
 Mon May 15 11:08:32 2017: SET- Krunk is setting race.
 Mon May 15 11:08:32 2017: SET- Krunk is setting .
+Mon May 15 12:56:17 2017: SET- Krunk is setting skill 'faerie fog' 100.
+Mon May 15 12:56:28 2017: SET- Krunk is setting skill faerie all.
+Mon May 15 12:56:45 2017: SET- Krunk is setting skill dagger all 90.
+Mon May 15 12:56:51 2017: SET- Krunk is setting skill dagger krunk 90.
+Mon May 15 12:57:05 2017: SET- Krunk is setting skill 'faerie fog' self 90.
+Mon May 15 13:02:46 2017: SET- Krunk is setting cabal horde.
+Mon May 15 13:02:46 2017: SET- Krunk is setting .
+Mon May 15 13:02:53 2017: SET- Krunk is setting sgroup.
+Mon May 15 13:02:57 2017: SET- Krunk is setting sgroup asdf.

@@ -1062,7 +1062,7 @@ void char_update( void )
 
 	ch_next = ch->next;
 	master = NULL;
-	if (IS_NPC(ch) && 
+/*	if (IS_NPC(ch) && 
 		(sun == SUN_RISE || sun == SUN_LIGHT) && 
 		ch->in_room &&
 		number_percent() < 90 && 
@@ -1089,7 +1089,7 @@ void char_update( void )
 		else if(IS_SET(ch->act, ACT_DIURNAL) && !IS_AFFECTED(ch, AFF_NOSHOW))
 			SET_BIT(ch->affected_by, AFF_NOSHOW);
 	}
-	
+*/	
 	if ( ch->pause > 0 )
 	    ch->pause--;
 	if (IS_NPC(ch) && ch->hit < 0 && ch->in_room)
