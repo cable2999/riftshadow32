@@ -1,5 +1,7 @@
 #include "rift.h"
 #include <arpa/inet.h>
+#include "stddef.h"
+
 #define WIZ_LINKS 1
 
 #define PLAYER_OUTPUT_SIZE	8192	//flah.
