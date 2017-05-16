@@ -3221,7 +3221,7 @@ void spell_magic_missile( int sn, int level, CHAR_DATA *ch,void *vo,int target)
 	
 	misses += level/10;
 	
-	for ( i=0; i < misses; i++ )
+	for ( int i=0; i < misses; i++ )
 	{
 		dam         = dice(1, 10);
 		dam         += level/10;
