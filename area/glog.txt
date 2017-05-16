@@ -311,3 +311,4 @@ Mon May 15 15:31:52 2017: INDUCT- Krunk is inducting Krunk into Horde..
 Mon May 15 15:36:44 2017: SET- Krunk is setting .
 Mon May 15 15:54:36 2017: TITLE- Krunk is titling  the Rampaging Berserker.
 Mon May 15 15:54:45 2017: TITLE- Krunk is titling the Rampaging Berserker.
+Tue May 16 14:13:58 2017: INDUCT- Krunk is inducting Krunk into Scion..

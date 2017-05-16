@@ -3217,20 +3217,25 @@ void spell_magic_missile( int sn, int level, CHAR_DATA *ch,void *vo,int target)
 {
     CHAR_DATA *victim = (CHAR_DATA *) vo;
     int dam;
-
-    dam		= dice(level, 3);
-    dam		+= level/4;
-
-    if ( saves_spell( level, victim,DAM_ENERGY) )
-		dam /= 2;
+    int misses = 3;
 	
-    act("Missiles of pure mana streak from $n's hands to strike $N!",ch,0,victim,TO_NOTVICT);
-    act("Missiles of pure mana streak from $n's hands to strike you!",ch,0,victim,TO_VICT);
-    act("Missiles of pure mana streak from your hands to strike $N!",ch,0,victim,TO_CHAR);
-    damage_new(ch,victim,dam,sn,DAM_ENERGY,TRUE,HIT_UNBLOCKABLE,HIT_NOADD,HIT_NOMULT,"magic missiles$");
+	misses += level/10;
+	
+	for ( i=0; i < misses; i++ )
+	{
+		dam         = dice(1, 10);
+		dam         += level/10;
+
+		if ( saves_spell( level, victim,DAM_ENERGY) )
+                dam /= 2;
+
+		act("Missiles of pure mana streak from $n's hands to strike $N!",ch,0,victim,TO_NOTVICT);
+		act("Missiles of pure mana streak from $n's hands to strike you!",ch,0,victim,TO_VICT);
+		act("Missiles of pure mana streak from your hands to strike $N!",ch,0,victim,TO_CHAR);
+		damage_new(ch,victim,dam,sn,DAM_ENERGY,TRUE,HIT_UNBLOCKABLE,HIT_NOADD,HIT_NOMULT,"magic missiles$");
+	}
     return;
 }
-
 void spell_mass_healing(int sn, int level, CHAR_DATA *ch, void *vo, int target)
 {
     CHAR_DATA *gch;
