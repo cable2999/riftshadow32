@@ -317,8 +317,6 @@ BEGIN_SPEC(mspec_academy_pet)
 			default:
 				msg = "I can show you where to find food, water, a boat, or a place to practice if you ask.  Remember to address me by my name, though."; break;                            
 		}
-		if(ch->leader->level < 15 && number_percent() > 50)
-			msg = "When you are ready to leave the Academy, walk out or recall and you will be trained to the twentieth level of your guild.";
 		do_say(ch,msg);
 		return 0;
 	}
