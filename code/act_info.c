@@ -3372,21 +3372,27 @@ void do_where( CHAR_DATA *ch, char *argument )
 	    &&   (!IS_SET(victim->in_room->room_flags,ROOM_IMP_ONLY) || ch->level==60)
  	    &&   (is_room_owner(ch,victim->in_room)
 	    ||    !room_is_private(victim->in_room))
-	    &&   (victim->in_room->area == ch->in_room->area
-		||   (is_adjacent_area(victim->in_room->area,ch->in_room->area)
-		&&   (IS_IMMORTAL(ch) || ch->pcdata->greaterdata[GREATER_GERYON] == GERYON_FINGER)) )
 	    &&   can_see( ch, victim )
 		&&	 !is_affected_room(victim->in_room, gsn_smokescreen)
 		&& 	!is_affected(victim, gsn_disguise))
 	    {
 		found = TRUE;
 
-		sprintf( buf, "%s%-28s %s%s%s\n\r",
-		    can_pk(ch,victim) ? "(PK) " : "     ",
-			(!IS_NPC(ch) && ch == victim && is_affected(ch, gsn_shroud_of_secrecy)) ? ch->true_name : PERS(victim,ch),
-			IS_IMMORTAL(ch) ? victim->in_room->area->name : "",
-			IS_IMMORTAL(ch) ? ": " : "",get_room_name(victim->in_room) );
-		send_to_char( buf, ch );
+                sprintf( buf, "%s%-28s %s%s%s\n\r",
+                    can_pk(ch,victim) ? "(PK) " : "     ",
+                        (!IS_NPC(ch) && ch == victim && is_affected(ch, gsn_shroud_of_secrecy)) ? ch->true_name : PERS(victim,ch),
+                        !IS_NPC(ch) ? victim->in_room->area->name : "",
+                        (victim->in_room->area == ch->in_room->area || 
+			 is_adjacent_area(victim->in_room->area,ch->in_room->area) ||
+			 IS_IMMORTAL(ch) ||
+			 ch->pcdata->greaterdata[GREATER_GERYON] == GERYON_FINGER)
+			? ": " : "",
+			(victim->in_room->area == ch->in_room->area || 
+			 is_adjacent_area(victim->in_room->area,ch->in_room->area) ||
+			 IS_IMMORTAL(ch) ||
+			 ch->pcdata->greaterdata[GREATER_GERYON] == GERYON_FINGER)
+			? get_room_name(victim->in_room) : "" );
+                send_to_char( buf, ch );
 	    }
 	}
 
