@@ -301,3 +301,13 @@ Mon May 15 13:02:46 2017: SET- Krunk is setting cabal horde.
 Mon May 15 13:02:46 2017: SET- Krunk is setting .
 Mon May 15 13:02:53 2017: SET- Krunk is setting sgroup.
 Mon May 15 13:02:57 2017: SET- Krunk is setting sgroup asdf.
+Mon May 15 15:29:10 2017: INDUCT- Krunk is inducting Grulk into Horde..
+Mon May 15 15:29:44 2017: SET- Krunk is setting communion.
+Mon May 15 15:29:44 2017: SET- Krunk is setting .
+Mon May 15 15:29:58 2017: SET- Krunk is setting skill communion skill 100.
+Mon May 15 15:30:11 2017: SET- Krunk is setting power.
+Mon May 15 15:30:11 2017: SET- Krunk is setting .
+Mon May 15 15:31:52 2017: INDUCT- Krunk is inducting Krunk into Horde..
+Mon May 15 15:36:44 2017: SET- Krunk is setting .
+Mon May 15 15:54:36 2017: TITLE- Krunk is titling  the Rampaging Berserker.
+Mon May 15 15:54:45 2017: TITLE- Krunk is titling the Rampaging Berserker.

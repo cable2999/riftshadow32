@@ -3359,7 +3359,8 @@ void do_where( CHAR_DATA *ch, char *argument )
 	
     if ( arg[0] == '\0' )
     {
-	send_to_char( "Players near you:\n\r", ch );
+        sprintf( buf, "You are in %s, Players in Shalar:\n\r", ch->in_room->area->name );
+	send_to_char( buf , ch );
 	found = FALSE;
 	for ( d = descriptor_list; d; d = d->next )
 	{
