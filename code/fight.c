@@ -4245,6 +4245,7 @@ void do_berserk( CHAR_DATA *ch, char *argument)
 
         WAIT_STATE(ch,PULSE_VIOLENCE);
         ch->mana -= 50;
+	gain_exp( ch, 50);
         ch->move = (short)(ch->move / 1.2);
 
         /* heal a little damage */
@@ -4274,6 +4275,7 @@ void do_berserk( CHAR_DATA *ch, char *argument)
     {
         WAIT_STATE(ch,PULSE_VIOLENCE);
         ch->mana -= 25;
+	gain_exp( ch, 25);
 
         send_to_char("Your pulse speeds up, but nothing happens.\n\r",ch);
         check_improve(ch,gsn_berserk,FALSE,2);
@@ -5992,6 +5994,7 @@ void do_endure(CHAR_DATA *ch,char *argument)
         send_to_char("You try to strengthen your mental resolve but fail.\n\r",ch);
         check_improve(ch,gsn_endure,FALSE,1);
         ch->mana -= 15;
+	gain_exp( ch, 15);
         return;
     }
 
@@ -6008,6 +6011,7 @@ void do_endure(CHAR_DATA *ch,char *argument)
     affect_to_char(ch,&af);
 
     ch->mana -= 30;
+    gain_exp( ch, 30);
     return;
 }
 
@@ -6036,6 +6040,7 @@ void do_blindness_dust(CHAR_DATA *ch,char *argument)
         act("$n hurls some dust into the air but it is blown away.",ch,0,0,TO_ROOM);
         send_to_char("You throw out some dust but it is blown away.\n\r",ch);
         ch->mana -= 9;
+	gain_exp( ch, 9);
         check_improve(ch,gsn_blindness_dust,FALSE,2);
         WAIT_STATE(ch,12);
         return;
@@ -6056,6 +6061,7 @@ void do_blindness_dust(CHAR_DATA *ch,char *argument)
         af.modifier = -3;
 	af.aftype = AFT_SKILL;
         ch->mana -= 18;
+	gain_exp( ch, 18);
 	af.mod_name = MOD_VISION;
         WAIT_STATE(ch,12);
         for (vch = ch->in_room->people; vch != NULL; vch = vch_next)
@@ -6112,6 +6118,7 @@ void do_poison_dust(CHAR_DATA *ch,char *argument)
         act("$n hurls some dust into the air but it is blown away.",ch,0,0,TO_ROOM);
         send_to_char("You throw out some dust but it is blown away.\n\r",ch);
         ch->mana -= 10;
+	gain_exp( ch, 10);
         WAIT_STATE(ch,12);
         check_improve(ch,gsn_poison_dust,FALSE,2);
         return;
@@ -6133,6 +6140,7 @@ void do_poison_dust(CHAR_DATA *ch,char *argument)
         af.modifier = -5;
 		af.tick_fun = poison_tick;
         ch->mana -= 20;
+	gain_exp( ch, 20);
         WAIT_STATE(ch,12);
         for (vch = ch->in_room->people; vch != NULL; vch = vch_next)
         {
@@ -6188,6 +6196,7 @@ void do_warcry(CHAR_DATA *ch,char *argument)
         send_to_char("You make soft grunting sounds but nothing happens.\n\r",ch);
         check_improve(ch,gsn_warcry,FALSE,2);
         ch->mana -= 10;
+	gain_exp( ch, 10);
         WAIT_STATE(ch,12);
         return;
         }
@@ -6208,6 +6217,7 @@ void do_warcry(CHAR_DATA *ch,char *argument)
         af.modifier = -(ch->level/5);
         affect_to_char(ch,&af);
         ch->mana -= 20;
+	gain_exp( ch, 20);
         WAIT_STATE(ch,12);
         return;
 }
@@ -6482,6 +6492,7 @@ void do_find_water(CHAR_DATA *ch,char *argument)
         send_to_char("You poke about on the ground but fail to find any water.\n\r",ch);
         check_improve(ch,gsn_find_water,FALSE,1);
         ch->mana -= 7;
+	gain_exp( ch, 7);
         WAIT_STATE(ch,18);
         return;
         }
@@ -6489,6 +6500,7 @@ void do_find_water(CHAR_DATA *ch,char *argument)
         send_to_char("You poke about for a bit and eventually dig up a spring of water.\n\r",ch);
         WAIT_STATE(ch,18);
         ch->mana -= 15;
+	gain_exp( ch, 15);
         spring = create_object(get_obj_index(OBJ_VNUM_SPRING),0);
         check_improve(ch,gsn_find_water,TRUE,1);
         obj_to_room(spring,ch->in_room);
@@ -7392,6 +7404,7 @@ TO_VICT);
          continue;
         }
        ch->mana -= 15;
+       gain_exp( ch, 15);
        act("$N rallys to your call!", ch, NULL, target, TO_CHAR);
        act("$n screams and rushes to attack $N!", target, NULL, ch->fighting, TO_NOTVICT);
        act("$n screams and rushes forwards to attack you!", target, NULL, ch->fighting, TO_VICT);
@@ -7421,6 +7434,7 @@ void do_iron_resolve(CHAR_DATA *ch,char *argument)
     {
         send_to_char("You try to concentrate on your inner being but fail to maintain it.\n\r",ch);
         ch->mana -= 50;
+	gain_exp( ch, 50);
         WAIT_STATE(ch,12);
         return;
     }
@@ -7429,13 +7443,14 @@ void do_iron_resolve(CHAR_DATA *ch,char *argument)
 
     init_affect(&af);
     af.where = TO_AFFECTS;
-af.aftype = AFT_SKILL;
+    af.aftype = AFT_SKILL;
     af.type = gsn_iron_resolve;
     af.level = ch->level;
     af.location = 0;
     af.modifier = 0;
     af.duration = ch->level/3;
     ch->mana -= 100;
+    gain_exp( ch, 1000);
     WAIT_STATE(ch,12);
 }
 

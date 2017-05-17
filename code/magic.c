@@ -411,6 +411,7 @@ void do_barkskin( CHAR_DATA *ch,char *argument)
     affect_to_char(ch,&af);
 
     ch->mana -= 40;
+    gain_exp( ch, 40);
     act("$n's skin slowly becomes covered in bark.",ch,NULL,NULL,TO_ROOM);
     send_to_char("Your skin slowly becomes covered in hardened bark.\n\r",ch);
     return;
@@ -445,6 +446,7 @@ void do_laying_hands( CHAR_DATA *ch, char *argument )
 		return send_to_char("You don't have the mana.\n\r",ch);
 
     ch->mana -= skill_table[gsn_laying_hands].min_mana;
+    gain_exp( ch, skill_table[gsn_laying_hands].min_mana);
 
     WAIT_STATE( ch, skill_table[gsn_laying_hands].beats );
 
@@ -788,10 +790,12 @@ void do_cast( CHAR_DATA *ch, char *argument )
 			cast_myell(ch, victim);
 		send_to_char( "You failed to complete your incantation.\n\r", ch );
 		check_improve(ch,sn,FALSE,1);
-		mana = mana / 2;
-	}
-	ch->mana -= mana;
-	gain_exp( ch, mana);
+                mana -= mana / 2;
+		ch->mana -= mana;
+		gain_exp( ch , mana);
+	} else {
+		ch->mana -= mana;
+                gain_exp( ch , mana);
 
 	if (IS_SET(ch->in_room->room_flags,ROOM_NO_MAGIC) && !(ch->level > LEVEL_HERO)) {
 		act("$n's spell fizzles.",ch,0,0,TO_ROOM);
@@ -3433,7 +3437,9 @@ void plague_tick(CHAR_DATA *ch, AFFECT_DATA *af)
 	dam = UMAX((int)(dam * .7), 10); 
 	damage_new(af->owner, ch, dam, gsn_plague, DAM_DISEASE, TRUE, HIT_UNBLOCKABLE, HIT_NOADD, HIT_NOMULT, "sickness");
 	ch->mana -= number_range(af->level/2,(int)(af->level*1.5));
+	gain_exp( ch, number_range(af->level/2,(int)(af->level*1.5)));
 	ch->move -= number_range(af->level/2,(int)(af->level*1.5));
+	gain_exp( ch, number_range(af->level/2,(int)(af->level*1.5)));
 
 	return;
 }

@@ -4658,6 +4658,7 @@ void do_lore( CHAR_DATA *ch, char *argument )
 		check_improve(ch, gsn_lore, FALSE, 2);
 	}
 	ch->mana -= UMAX(obj->level-10 - (lorebonus * 3), 15);
+        gain_exp( ch, UMAX(obj->level-10 - (lorebonus * 3), 15));
 	return;
 }
 

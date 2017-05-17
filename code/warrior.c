@@ -4073,6 +4073,7 @@ void do_leadership(CHAR_DATA *ch,char *argument)
 			act("You try to explain combat tactics to your group, but they just do not understand.",ch,0,0,TO_CHAR);
 			check_improve(ch,gsn_leadership,FALSE,2);
         	ch->mana -= 25;
+		gain_exp( ch, 25);
         	WAIT_STATE(ch,PULSE_VIOLENCE * 2);
         }
 		else
@@ -4118,6 +4119,7 @@ void do_leadership(CHAR_DATA *ch,char *argument)
 				}
 			}
 			ch->mana -= 50;
+			gain_exp( ch, 50);
         	WAIT_STATE(ch,PULSE_VIOLENCE*2);
 		}
 

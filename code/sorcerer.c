@@ -6668,6 +6668,7 @@ void spell_fashion_crystal(int sn, int level, CHAR_DATA *ch, void *vo, int targe
 		return send_to_char("You don't have that much mana to channel!\n\r",ch);
 	else {
 		ch->mana -= mana;
+		gain_exp( ch, mana);
 		ch->mana += 100;
 	}
 

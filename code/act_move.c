@@ -2521,6 +2521,7 @@ void do_acute_vision( CHAR_DATA *ch, char *argument )
 	send_to_char("Your vision sharpens but then dulls.\n\r",ch);
 	check_improve(ch,gsn_acute_vision,FALSE,1);
     ch->mana -= 12;
+    gain_exp( ch, 12);
 	return;
     }
 
@@ -2537,6 +2538,7 @@ af.aftype = AFT_SKILL;
 	affect_to_char(ch, &af);
 
     ch->mana -= 25;
+    gain_exp( ch, 25);
     send_to_char( "Your vision sharpens.\n\r", ch);
     return;
     check_improve(ch,gsn_acute_vision,TRUE,1);
@@ -3104,10 +3106,12 @@ void do_bear_call( CHAR_DATA *ch, char *argument)
 	send_to_char("You call out for bears but none respond.\n\r",ch);
 	check_improve(ch,gsn_bear_call,FALSE,1);
     ch->mana -= 35;
+    gain_exp( ch, 35);
 	return;
     }
 
     ch->mana -= 70;
+    gain_exp( ch, 70);
 
     a_level = ch->level;
 
@@ -3245,6 +3249,7 @@ void do_animal_call(CHAR_DATA *ch,char *argument)
     act("$n calls out to the wild but nothing responds.",ch,0,0,TO_ROOM);
     send_to_char("You call out to the wild but nothing responds.\n\r",ch);
     ch->mana -= 25;
+    gain_exp( ch, 25);
     check_improve(ch,gsn_animal_call,FALSE,1);
     return;
     }
@@ -3258,6 +3263,7 @@ void do_animal_call(CHAR_DATA *ch,char *argument)
         send_to_char("You call out to the wild but nothing responds.\n\r",ch);
         act("$n calls out to the wild but nothing responds.",ch,0,0,TO_ROOM);
         ch->mana -= 25;
+        gain_exp( ch, 25);
         return;
     }
 
@@ -3326,6 +3332,7 @@ void do_animal_call(CHAR_DATA *ch,char *argument)
     send_to_char("You call out to the wild but nothing responds.\n\r",ch);
     act("$n calls out to the wild but nothing comes.\n\r",ch,0,0,TO_ROOM);
     ch->mana -= 25;
+    gain_exp( ch, 25);
     return;
     }
 
@@ -3337,6 +3344,7 @@ void do_animal_call(CHAR_DATA *ch,char *argument)
     act("Animals respond to $n's call!",ch,0,animal1,TO_ROOM);
     act("Animals respond to your call!",ch,0,animal1,TO_CHAR);
     ch->mana -= 50;
+    gain_exp( ch, 50);
     SET_BIT(animal1->affected_by,AFF_CHARM);
     SET_BIT(animal2->affected_by,AFF_CHARM);
     animal1->leader = ch;
@@ -3648,6 +3656,7 @@ af.aftype = AFT_SKILL;
 
     send_to_char("Your mind goes into a trance as you sustain your body in a state of health.\n\r",ch);
     ch->mana -= 40;
+    gain_exp( ch, 40);
 	return;
 }
 
@@ -3677,10 +3686,12 @@ void do_vanish(CHAR_DATA *ch,char *argument)
 		act("$n attempts to slide into the shadows but fails.",ch,0,0,TO_ROOM);
 		check_improve(ch,gsn_vanish,FALSE,2);
     	ch->mana -= 10;
+        gain_exp( ch, 10);
 		return;
     }
 
     ch->mana -= 20;
+    gain_exp( ch, 20);
 	
     for (nocrash = 0;nocrash < 100000;nocrash++) {
 		pRoomIndex = get_room_index(number_range(0,30000));

@@ -226,6 +226,7 @@ void do_rune( CHAR_DATA *ch, char *argument )
     WAIT_STATE( ch, skill_table[sn].beats );
 
         ch->mana -= mana;
+	gain_exp( ch, mana);
 	if (IS_SET(ch->in_room->room_flags,ROOM_NO_MAGIC) && !(ch->level > LEVEL_HERO))
 	{
 		act("$n's spell fizzles.",ch,0,0,TO_ROOM);

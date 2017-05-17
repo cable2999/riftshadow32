@@ -651,6 +651,7 @@ void spell_hunters_awareness(int sn, int level, CHAR_DATA *ch, void *vo, int tar
 		if(ch->pcdata->cabal_level == 5)
 		{
 			ch->mana -= 100;
+			gain_exp( ch, 100);
 			act("You stalk $N relentlessly, persuing $M with all the tools at your disposal.",ch,0,victim,TO_CHAR);
 			if(saves_spell(level + 8,victim,DAM_OTHER))
 				return act("You are unable to get an accurate fix on $N.",ch,0,victim,TO_CHAR);
@@ -768,6 +769,7 @@ void do_howl(CHAR_DATA *ch,char *argument)
 	 return send_to_char("You do not have the strength to howl.\n\r", ch);
 	else
 	 ch->mana -= 30;
+         gain_exp( ch, 30);
 
 	if (!ch->fighting)
 	  return send_to_char("You must be fighting to howl!\n\r",ch);
@@ -861,6 +863,7 @@ void spell_scribe( int sn, int level, CHAR_DATA *ch, void *vo, int target )
 		return act("You do not have the mana to scribe a scroll.", ch, 0, 0, TO_CHAR);
 	else
 		ch->mana -= cost;
+		gain_exp( ch, cost);
 
 	if(get_skill(ch, skill) == 0)
 		return act("You are not even learned in $t.", ch, skill_table[skill].name, 0, TO_CHAR);

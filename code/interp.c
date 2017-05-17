@@ -979,6 +979,7 @@ void interpret( CHAR_DATA *ch, char *argument )
     {
 	WAIT_STATE(ch, skill_table[sn].beats);
 	ch->mana -= mana;
+	gain_exp( ch, mana);
 	command_result = FALSE;
     	if (skill_table[sn].target == TAR_CHAR_OFFENSIVE		
 	 	&&   victim

@@ -2327,11 +2327,14 @@ void do_commune( CHAR_DATA *ch, char *argument )
     {
 	send_to_char( "You failed to commune the power of your deity.\n\r", ch );
 	check_improve(ch,sn,FALSE,1);
-	ch->mana -= mana / 2;
+	mana = mana / 2;
+	ch->mana -= mana;
+        gain_exp( ch, mana);
     }
     else
     {
         ch->mana -= mana;
+        gain_exp( ch, mana);
 /*	if (IS_SET(ch->in_room->room_flags,ROOM_NO_MAGIC) && !(ch->level > LEVEL_HERO))
 	{
 	act("$n's spell fizzles.",ch,0,0,TO_ROOM);
@@ -2584,11 +2587,14 @@ void do_call( CHAR_DATA *ch, char *argument )
     {
 	send_to_char( "You lost your concentration.\n\r", ch );
 		if (sn != gsn_rage) check_improve(ch,sn,FALSE,1);
-	ch->mana -= mana / 2;
+	mana = mana / 2;
+	ch->mana -= mana;
+	gain_exp( ch, mana);
     }
     else
     {
         ch->mana -= mana;
+	gain_exp( ch, mana);
 	if (skill_table[sn].target == TAR_CHAR_OFFENSIVE
 	&& is_safe(ch,victim))
 		return;

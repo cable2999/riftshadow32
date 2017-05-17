@@ -1026,6 +1026,7 @@ void do_skin( CHAR_DATA *ch, char *argument)
 	act("$n tries to skin a corpse but fails and destroys it.",ch,NULL,NULL,TO_ROOM);
 	extract_obj(corpse);
 	ch->mana -= 25;
+        gain_exp( ch, 25);
 	return;
     }
 
@@ -1058,7 +1059,7 @@ void do_skin( CHAR_DATA *ch, char *argument)
     obj_to_char(sack,ch);
     extract_obj(corpse);
     ch->mana -= 25;
-
+    gain_exp( ch, 25);
     init_affect(&af);
     af.where = TO_AFFECTS;
 af.aftype = AFT_SKILL;

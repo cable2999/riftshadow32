@@ -2011,12 +2011,14 @@ void do_darksight(CHAR_DATA *ch, char *argument)
 		send_to_char("You peer into the shadows but your vision stays the same.\n\r",ch);
 		check_improve(ch,gsn_darksight,FALSE, 2);
 		ch->mana -= 20;
+                gain_exp( ch, 20);
 		return;
 	}
 
 	WAIT_STATE(ch,PULSE_VIOLENCE);
 	act("Dark power surges through your eyes as you focus upon the shadows.",ch,0,0,TO_CHAR);
 	ch->mana -= 40;
+        gain_exp( ch, 40);
 
 	init_affect(&af);
 	af.where		=	TO_AFFECTS;
