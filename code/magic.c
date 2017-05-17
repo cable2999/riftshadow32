@@ -788,9 +788,10 @@ void do_cast( CHAR_DATA *ch, char *argument )
 			cast_myell(ch, victim);
 		send_to_char( "You failed to complete your incantation.\n\r", ch );
 		check_improve(ch,sn,FALSE,1);
-		ch->mana -= mana / 2;
-	} else {
-		ch->mana -= mana;
+		mana = mana / 2;
+	}
+	ch->mana -= mana;
+	gain_exp( ch, mana);
 
 	if (IS_SET(ch->in_room->room_flags,ROOM_NO_MAGIC) && !(ch->level > LEVEL_HERO)) {
 		act("$n's spell fizzles.",ch,0,0,TO_ROOM);
