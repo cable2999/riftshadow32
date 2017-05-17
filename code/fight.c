@@ -3646,8 +3646,8 @@ it's actual dt is
         if (ch == victim) {
 			if (prop < victim->max_hit) {
             	sprintf( buf1, "$n %s $mself%c",vp,punct);
-            	sprintf( buf2, "You %s%s%s yourself%c",
-					get_char_color(ch,"damage"), vs, END_COLOR(ch), punct);
+            	sprintf( buf2, "You %s%s %s%s yourself%c",
+					get_char_color(ch,"damage"), vs, prop, END_COLOR(ch), punct);
 			} else {
 				sprintf( buf1, "$n's assault slays $mself outright!");
 				sprintf( buf2, "Your assault slays you outright!");
@@ -3657,8 +3657,8 @@ it's actual dt is
 				gch = gch->next_in_room) {
 			    if (gch != ch && gch != victim) {
 					if (prop < victim->max_hit) {
-						sprintf( buf1, "$n %s%s%s %s%c",
-							get_char_color(gch,"damage"), vp, END_COLOR(gch),
+						sprintf( buf1, "$n %s%s %s%s %s%c",
+							get_char_color(gch,"damage"), vp, prop, END_COLOR(gch),
 							get_descr_form(victim,gch,FALSE),punct);
 						act(buf1,ch,NULL,gch,TO_VICT);
 					} else {
@@ -3669,10 +3669,10 @@ it's actual dt is
 			    }
 			}
 			
-			sprintf( buf2, "You %s%s%s $N%c", get_char_color(ch,"damage"),
-				vs, END_COLOR(ch), punct );
-			sprintf( buf3, "$n %s%s%s you%c", get_char_color(victim,"damage"),
-				vp, END_COLOR(victim), punct );
+			sprintf( buf2, "You %s%s %s%s $N%c", get_char_color(ch,"damage"),
+				vs, prop, END_COLOR(ch), punct );
+			sprintf( buf3, "$n %s%s %s%s you%c", get_char_color(victim,"damage"),
+				vp, prop, END_COLOR(victim), punct );
         }
     } else {
 		if ( dt >= 0 && dt < MAX_SKILL )
@@ -3747,8 +3747,8 @@ it's actual dt is
 					gch = gch->next_in_room) {
 				    if (gch != ch && gch != victim) {
 						if (prop < victim->max_hit)						
-							sprintf( buf1, "%s %s%s%s %s%c", attack,
-								get_char_color(gch,"damage"),vp, END_COLOR(gch),
+							sprintf( buf1, "%s %s%s %s%s %s%c", attack,
+								get_char_color(gch,"damage"),vp, prop, END_COLOR(gch),
 				    			get_descr_form(victim,gch,FALSE),punct);
 						else
 							sprintf(buf1,"%s slays %s outright!", attack,
@@ -3759,21 +3759,21 @@ it's actual dt is
 			
 				if (ch == victim) {
 					if (prop < victim->max_hit)
-						sprintf( buf2, "%s %s%s%s you%c", attack,
-							get_char_color(ch,"damage"),vp,END_COLOR(ch),punct);
+						sprintf( buf2, "%s %s%s %s%s you%c", attack,
+							get_char_color(ch,"damage"),vp, prop, END_COLOR(ch),punct);
 					else
 						sprintf( buf2, "%s slays you outright!",attack);
 				} else {
 					if (prop < victim->max_hit)
-		   	      		sprintf( buf2, "%s %s%s%s $N%c", attack,
-							get_char_color(ch,"damage"),vp,END_COLOR(ch),punct);
+		   	      		sprintf( buf2, "%s %s%s %s%s $N%c", attack,
+							get_char_color(ch,"damage"),vp, prop, END_COLOR(ch),punct);
 					else
 						sprintf( buf2, "%s slays $N outright!",attack);
 				}
 
 				if (prop < victim->max_hit)
-	       	 		sprintf( buf3, "%s %s%s%s you%c", attack,
-						get_char_color(victim,"damage"), vp, END_COLOR(victim),
+	       	 		sprintf( buf3, "%s %s%s %s%s you%c", attack,
+						get_char_color(victim,"damage"), vp, prop, END_COLOR(victim),
 						punct);
 				else
 					sprintf (buf3, "%s slays you outright!",attack);
@@ -3782,8 +3782,8 @@ it's actual dt is
 					gch = gch->next_in_room) {
 		   		 	if (gch != ch && gch != victim) {
 						if (prop < victim->max_hit)
-							sprintf( buf1, "$n's %s %s%s%s $m%c", attack,
-								get_char_color(gch,"damage"), vp,
+							sprintf( buf1, "$n's %s %s%s %s%s $m%c", attack,
+								get_char_color(gch,"damage"), vp, prop,
 								END_COLOR(gch), punct);
 						else
 							sprintf( buf1, "$n's %s slays $m outright!",attack);
@@ -3792,8 +3792,8 @@ it's actual dt is
 				}
 		
 				if (prop < victim->max_hit)
-					sprintf( buf2, "Your %s %s%s%s you%c", attack,
-						get_char_color(ch,"damage"), vp, END_COLOR(ch), punct);
+					sprintf( buf2, "Your %s %s%s %s%s you%c", attack,
+						get_char_color(ch,"damage"), vp, prop, END_COLOR(ch), punct);
 				else
 					sprintf( buf2, "Your %s slays you outright!", attack);
 			} else {
@@ -3801,8 +3801,8 @@ it's actual dt is
 					gch = gch->next_in_room) {
 			    	if (gch != ch && gch != victim) {
 						if (prop < victim->max_hit)
-							sprintf( buf1, "$n's %s %s%s%s %s%c", attack,
-								get_char_color(gch,"damage"),vp,END_COLOR(gch),
+							sprintf( buf1, "$n's %s %s%s %s%s %s%c", attack,
+								get_char_color(gch,"damage"),vp, prop, END_COLOR(gch),
 					    		get_descr_form(victim,gch,FALSE),punct);
 						else
 							sprintf( buf1, "$n's %s slays %s outright!", attack,
@@ -3812,14 +3812,14 @@ it's actual dt is
 				}
 			
 				if (prop < victim->max_hit)
-					sprintf( buf2, "Your %s %s%s%s $N%c", attack,
-						get_char_color(ch,"damage"), vp, END_COLOR(ch), punct);
+					sprintf( buf2, "Your %s %s%s %s%s $N%c", attack,
+						get_char_color(ch,"damage"), vp, prop, END_COLOR(ch), punct);
 				else
 					sprintf( buf2, "Your %s slays $N outright!",attack);
        	
 				if (prop < victim->max_hit)
-					sprintf( buf3, "$n's %s \%s%s%s you%c", attack,
-						get_char_color(victim,"damage"), vp,
+					sprintf( buf3, "$n's %s \%s%s %s%s you%c", attack,
+						get_char_color(victim,"damage"), vp, prop,
 						END_COLOR(victim), punct);
 				else
 					sprintf( buf3, "$n's %s slays you outright!",attack);
