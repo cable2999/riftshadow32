@@ -3235,7 +3235,13 @@ void spell_magic_missile( int sn, int level, CHAR_DATA *ch,void *vo,int target)
 	if ( saves_spell( level, victim,DAM_ENERGY) )
                 dam /= 2;
 	*/
+	if ( victim->position == POS_DEAD )
+	{
+	  break;
+	}
+	else {
 		damage_new(ch,victim,dam,sn,DAM_ENERGY,TRUE,HIT_UNBLOCKABLE,HIT_NOADD,HIT_NOMULT,"magic missiles$");
+	}
     }
     return;
 }
