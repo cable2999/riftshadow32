@@ -992,12 +992,13 @@ int damage_new(CHAR_DATA *ch, CHAR_DATA *victim, int idam, int dt, int dam_type,
 	if (multiplier != HIT_NOMULT)
 		dam *= multiplier/100.1;
 
-	/*SCALED DAMAGE BY LEVEL*/
+	/*SCALED DAMAGE BY LEVEL - No.  That's stupid.
 
 	if (!IS_NPC(ch)) {
 		dam *= (ch->level + 49);
 		dam /= 100;
 	}
+	*/
 
     if ( victim != ch && ch->in_room == victim->in_room)
     {

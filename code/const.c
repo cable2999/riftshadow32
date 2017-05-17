@@ -1698,7 +1698,7 @@ const	struct	skill_type	skill_table	[MAX_SKILL]	=
     },
 
     {
-        "parry", {60, 1, 13, 7, 1, 1, 1, 20, 18, 21, 18, 16},
+        "parry", {60, 1, 13, 7, 1, 1, 1, 20, 18, 21, 18, 6},
         spell_null,             TAR_IGNORE,             POS_FIGHTING,
         &gsn_parry,             0,        0,     0,
         "",                     "!Parry!",		"", CMD_NONE
