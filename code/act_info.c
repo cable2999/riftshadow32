@@ -2438,25 +2438,20 @@ void do_affects(CHAR_DATA *ch, char *argument )
 	int showdur;
 	int i;
 
-    if ( ch->affected != NULL && (ch->affected->aftype!=AFT_INVIS || ch->affected->next!=NULL))
+    if ( ch->affected != NULL && ch->affected->next!=NULL)
     {
 	send_to_char( "You are affected by:\n\r", ch );
 	for ( paf = ch->affected; paf != NULL; paf = paf->next )
 	{
 
-	    if(paf->aftype==AFT_INVIS)
-		continue;
-
-		for (i=0;i<MSL;i++) {
+            for (i=0;i<MSL;i++) {
 			buf[i] = '\0';
 			buf2[i]= '\0';
-		}
+	    }
+
 	    if (paf_last != NULL && (paf->type == paf_last->type && ((paf->name == NULL && paf_last->name == NULL) || !str_cmp(paf->name,paf_last->name))))
-		{
-		if (ch->level >= 20)
-		    sprintf( buf, "                          ");
-		else
-		    continue;
+	    {
+		sprintf( buf, "                          ");
 	    } else {
 		if (paf->aftype == AFT_SKILL)
 	    	sprintf( buf, "Skill  : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
@@ -2467,16 +2462,16 @@ void do_affects(CHAR_DATA *ch, char *argument )
 		else if (paf->aftype == AFT_COMMUNE)
 	    	sprintf( buf, "Commune: %-17s", paf->name ? paf->name : skill_table[paf->type].name );
 		else if (paf->aftype == AFT_RUNE)
-			sprintf( buf, "Rune   : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
+		sprintf( buf, "Rune   : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
 		else if (paf->aftype == AFT_TIMER)
-			sprintf( buf, "Timer  : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
+		sprintf( buf, "Timer  : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
 		else if (paf->aftype != AFT_INVIS)
-			sprintf( buf, "Spell  : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
+		sprintf( buf, "Spell  : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
 		}
 
 	    	send_to_char( buf, ch );
 
-	    if ( ch->level >= 20 )
+	    if ( ch->level >= 1 )
 	    {
 			showdur = paf->duration+1;
 			sprintf( buf3, "%d", paf->modifier);
@@ -2486,8 +2481,8 @@ void do_affects(CHAR_DATA *ch, char *argument )
 		(paf->mod_name > -1) ? mod_names[paf->mod_name].name : affect_loc_name(paf->location),
 		(paf->mod_name > -1) ? "" : " by ",
 		(paf->mod_name > -1) ? "" : buf3);
-		if(paf->aftype!=AFT_INVIS)
-			send_to_char( buf, ch );
+		send_to_char( buf, ch );
+		
 		if ( paf->duration == -1 )
 		    sprintf( buf, "permanently" );
 		else {
@@ -2498,11 +2493,9 @@ void do_affects(CHAR_DATA *ch, char *argument )
 				(showdur % 2 == 0) ? "" : " a half",
 				(showdur == 1 || showdur == 2) ? "" : "s");
 		}
-		if(paf->aftype!=AFT_INVIS)
-			send_to_char( buf, ch );
+		send_to_char( buf, ch );
 	    }
-	    if(paf->aftype!=AFT_INVIS);
-	    	send_to_char( "\n\r", ch );
+	    send_to_char( "\n\r", ch );
 	    paf_last = paf;
 	}
     }
