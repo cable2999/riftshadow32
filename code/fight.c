@@ -3646,7 +3646,7 @@ it's actual dt is
         if (ch == victim) {
 			if (prop < victim->max_hit) {
             	sprintf( buf1, "$n %s $mself%c",vp,punct);
-            	sprintf( buf2, "You %s%s %s%s yourself%c",
+            	sprintf( buf2, "You %s%s %d%s yourself%c",
 					get_char_color(ch,"damage"), vs, prop, END_COLOR(ch), punct);
 			} else {
 				sprintf( buf1, "$n's assault slays $mself outright!");
@@ -3657,7 +3657,7 @@ it's actual dt is
 				gch = gch->next_in_room) {
 			    if (gch != ch && gch != victim) {
 					if (prop < victim->max_hit) {
-						sprintf( buf1, "$n %s%s %s%s %s%c",
+						sprintf( buf1, "$n %s%s %d%s %s%c",
 							get_char_color(gch,"damage"), vp, prop, END_COLOR(gch),
 							get_descr_form(victim,gch,FALSE),punct);
 						act(buf1,ch,NULL,gch,TO_VICT);
@@ -3669,9 +3669,9 @@ it's actual dt is
 			    }
 			}
 			
-			sprintf( buf2, "You %s%s %s%s $N%c", get_char_color(ch,"damage"),
+			sprintf( buf2, "You %s%s %d%s $N%c", get_char_color(ch,"damage"),
 				vs, prop, END_COLOR(ch), punct );
-			sprintf( buf3, "$n %s%s %s%s you%c", get_char_color(victim,"damage"),
+			sprintf( buf3, "$n %s%s %d%s you%c", get_char_color(victim,"damage"),
 				vp, prop, END_COLOR(victim), punct );
         }
     } else {
@@ -3747,7 +3747,7 @@ it's actual dt is
 					gch = gch->next_in_room) {
 				    if (gch != ch && gch != victim) {
 						if (prop < victim->max_hit)						
-							sprintf( buf1, "%s %s%s %s%s %s%c", attack,
+							sprintf( buf1, "%s %s%s %d%s %s%c", attack,
 								get_char_color(gch,"damage"),vp, prop, END_COLOR(gch),
 				    			get_descr_form(victim,gch,FALSE),punct);
 						else
@@ -3759,20 +3759,20 @@ it's actual dt is
 			
 				if (ch == victim) {
 					if (prop < victim->max_hit)
-						sprintf( buf2, "%s %s%s %s%s you%c", attack,
+						sprintf( buf2, "%s %s%s %d%s you%c", attack,
 							get_char_color(ch,"damage"),vp, prop, END_COLOR(ch),punct);
 					else
 						sprintf( buf2, "%s slays you outright!",attack);
 				} else {
 					if (prop < victim->max_hit)
-		   	      		sprintf( buf2, "%s %s%s %s%s $N%c", attack,
+		   	      		sprintf( buf2, "%s %s%s %d%s $N%c", attack,
 							get_char_color(ch,"damage"),vp, prop, END_COLOR(ch),punct);
 					else
 						sprintf( buf2, "%s slays $N outright!",attack);
 				}
 
 				if (prop < victim->max_hit)
-	       	 		sprintf( buf3, "%s %s%s %s%s you%c", attack,
+	       	 		sprintf( buf3, "%s %s%s %d%s you%c", attack,
 						get_char_color(victim,"damage"), vp, prop, END_COLOR(victim),
 						punct);
 				else
@@ -3782,7 +3782,7 @@ it's actual dt is
 					gch = gch->next_in_room) {
 		   		 	if (gch != ch && gch != victim) {
 						if (prop < victim->max_hit)
-							sprintf( buf1, "$n's %s %s%s %s%s $m%c", attack,
+							sprintf( buf1, "$n's %s %s%s %d%s $m%c", attack,
 								get_char_color(gch,"damage"), vp, prop,
 								END_COLOR(gch), punct);
 						else
@@ -3792,7 +3792,7 @@ it's actual dt is
 				}
 		
 				if (prop < victim->max_hit)
-					sprintf( buf2, "Your %s %s%s %s%s you%c", attack,
+					sprintf( buf2, "Your %s %s%s %d%s you%c", attack,
 						get_char_color(ch,"damage"), vp, prop, END_COLOR(ch), punct);
 				else
 					sprintf( buf2, "Your %s slays you outright!", attack);
@@ -3801,7 +3801,7 @@ it's actual dt is
 					gch = gch->next_in_room) {
 			    	if (gch != ch && gch != victim) {
 						if (prop < victim->max_hit)
-							sprintf( buf1, "$n's %s %s%s %s%s %s%c", attack,
+							sprintf( buf1, "$n's %s %s%s %d%s %s%c", attack,
 								get_char_color(gch,"damage"),vp, prop, END_COLOR(gch),
 					    		get_descr_form(victim,gch,FALSE),punct);
 						else
@@ -3812,13 +3812,13 @@ it's actual dt is
 				}
 			
 				if (prop < victim->max_hit)
-					sprintf( buf2, "Your %s %s%s %s%s $N%c", attack,
+					sprintf( buf2, "Your %s %s%s %d%s $N%c", attack,
 						get_char_color(ch,"damage"), vp, prop, END_COLOR(ch), punct);
 				else
 					sprintf( buf2, "Your %s slays $N outright!",attack);
        	
 				if (prop < victim->max_hit)
-					sprintf( buf3, "$n's %s \%s%s %s%s you%c", attack,
+					sprintf( buf3, "$n's %s \%s%s %d%s you%c", attack,
 						get_char_color(victim,"damage"), vp, prop,
 						END_COLOR(victim), punct);
 				else
