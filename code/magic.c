@@ -3226,8 +3226,11 @@ void spell_magic_missile( int sn, int level, CHAR_DATA *ch,void *vo,int target)
 		dam         = dice(1, 10);
 		dam         += level/5;
 
-		if ( saves_spell( level, victim,DAM_ENERGY) )
+	/* Add something interesting with the armor affect instead of a save.
+ 
+	if ( saves_spell( level, victim,DAM_ENERGY) )
                 dam /= 2;
+	*/
 
 		act("Missiles of pure mana streak from $n's hands to strike $N!",ch,0,victim,TO_NOTVICT);
 		act("Missiles of pure mana streak from $n's hands to strike you!",ch,0,victim,TO_VICT);
