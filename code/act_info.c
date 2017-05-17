@@ -2438,7 +2438,7 @@ void do_affects(CHAR_DATA *ch, char *argument )
 	int showdur;
 	int i;
 
-    if ( ch->affected != NULL && ch->affected->next!=NULL)
+    if ( ch->affected != NULL)
     {
 	send_to_char( "You are affected by:\n\r", ch );
 	for ( paf = ch->affected; paf != NULL; paf = paf->next )
