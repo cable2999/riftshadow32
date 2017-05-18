@@ -1734,6 +1734,22 @@ void equip_char( CHAR_DATA *ch, OBJ_DATA *obj, int iWear, bool show )
 	obj_to_room( obj, ch->in_room );
 	return;
     }
+    /* Count the number of limited items the character is wearing */
+    int limitems = 0;
+    OBJ_DATA *item;
+    for(item = ch->carrying; item; item = item->next_content)
+    {
+        if (item->pIndexData->limtotal > 0 && item->wear_loc != WEAR_NONE)
+	limitems += 1;
+    }
+
+    if (obj->pIndexData->limtotal > 0 && limitems >= 5)
+    {
+        act( "You cannot attune to $p due to too many limited items.", ch, obj, NULL, TO_CHAR );
+        return;
+    }
+    else if (obj->pIndexData->limtotal > 0)
+        act( "You attune to $p.", ch, obj, NULL, TO_CHAR );
 
 	obj->wear_loc = iWear;
 	if (show && IS_SET(obj->progtypes,IPROG_WEAR))
