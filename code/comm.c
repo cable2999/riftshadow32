@@ -2693,7 +2693,8 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
     }
 
         for (sn = 0; sn < MAX_SKILL; sn++) {
-                if (ch->pcdata->learned[sn] == 1 && skill_table[sn].ctype != CMD_POWER){
+                if (ch->level >= skill_table[sn].skill_level[ch->Class()->GetIndex()]
+                                 && ch->pcdata->learned[sn] == 1 && skill_table[sn].ctype != CMD_POWER){
                         ch->pcdata->learned[sn] = 70;
                 }
         }
