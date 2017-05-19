@@ -2449,7 +2449,7 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
     {
 	if ((ch->Class()->GetIndex() == CLASS_WARRIOR && type == ch->pcdata->start_weapon) ||
     		(ch->Class()->GetIndex() != CLASS_WARRIOR && ch->Class()->weapon == weapon_table[type].vnum))
-        		ch->pcdata->learned[*weapon_table[type].gsn] = 40;
+        		ch->pcdata->learned[*weapon_table[type].gsn] = 70;
     }
     SET_BIT(ch->comm,COMM_SHOW_AFFECTS);
 	do_help(ch,"hometown");	
