@@ -168,9 +168,9 @@ void gain_exp( CHAR_DATA *ch, int gain )
 	sprintf(buf,"$N has attained level %d!",ch->level);
 	wiznet(buf,ch,NULL,WIZ_LEVELS,0,0);
 	advance_level(ch,FALSE);
-	//ch->hit = ch->max_hit;
-	//ch->mana = ch->max_mana;
-	//ch->move = ch->max_move;
+	ch->hit = ch->max_hit;
+	ch->mana = ch->max_mana;
+	ch->move = ch->max_move;
 	save_char_obj(ch);
     }
 
