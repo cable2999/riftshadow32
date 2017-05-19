@@ -121,6 +121,13 @@ void advance_level( CHAR_DATA *ch, bool hide )
 		}
 	}
 
+        for (sn = 0; sn < MAX_SKILL; sn++) {
+		if (ch->pcdata->learned[sn] == 1 && skill_table[sn].ctype != CMD_POWER){
+                        ch->pcdata->learned[sn] = 70;
+                }
+        }
+
+
 	for (i=0;i<100;i++) {
 		if (ch->pcdata->recentkills[i] && ch->pcdata->recentkills[i][0] != '\0' && strcmp(ch->pcdata->recentkills[i],""))
 		{
