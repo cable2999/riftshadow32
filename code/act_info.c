@@ -3990,7 +3990,7 @@ void do_practice( CHAR_DATA *ch, char *argument )
                     if(ch->pcdata->learned[skill_lookup(group_table[gn].name)] < style_percent[p].percent)
                            return send_to_char("You can't practice that.\n\r",ch);
             
-	adept = IS_NPC(ch) ? 100 : 75;
+	adept = IS_NPC(ch) ? 100 : 90;
 
 	if ( ch->pcdata->learned[sn] >= adept )
 	{
@@ -4001,7 +4001,7 @@ void do_practice( CHAR_DATA *ch, char *argument )
 	else
 	{
 	    ch->practice--;
-		mcap = 80;
+		mcap = 90;
 
 		base = int_app[get_curr_stat(ch,STAT_INT)].learn;
 		base *= mcap - ch->pcdata->learned[sn];
@@ -4035,7 +4035,7 @@ void do_practice( CHAR_DATA *ch, char *argument )
 		}
 		if(ch->pcdata->learned[sn] >= adept)
 		{
-		   ch->pcdata->learned[sn] = adept;
+		   ch->pcdata->learned[sn] = UMIN(ch->pcdata->learned[sn], 100);
 		   act( "You have mastered the fundamental aspects of $T.", ch, NULL, skill_table[sn].name, TO_CHAR );
 		}
 	    
