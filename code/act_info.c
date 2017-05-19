@@ -4001,7 +4001,7 @@ void do_practice( CHAR_DATA *ch, char *argument )
 	else
 	{
 	    ch->practice--;
-		mcap = 90;
+		mcap = 110;
 
 		base = int_app[get_curr_stat(ch,STAT_INT)].learn;
 		base *= mcap - ch->pcdata->learned[sn];
