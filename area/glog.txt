@@ -337,3 +337,7 @@ Thu May 18 10:37:49 2017: LOAD- Krunk is loading .
 Thu May 18 10:37:55 2017: LOAD- Krunk is loading obj 4606.
 Thu May 18 10:38:13 2017: LOAD- Krunk is loading obj 4604.
 Thu May 18 10:41:53 2017: LOAD- Krunk is loading obj 20577.
+Thu May 18 15:27:35 2017: INDUCT- Krunk is inducting Grulk into Phalanx..
+Thu May 18 15:48:34 2017: LOAD- Krunk is loading 16100.
+Thu May 18 15:48:34 2017: LOAD- Krunk is loading .
+Thu May 18 15:48:37 2017: LOAD- Krunk is loading obj 16100.

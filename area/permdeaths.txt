@@ -158,3 +158,4 @@ DELETED||[41 Celest War]||Lystori the Bone Shatterer||Kills: 0||Deaths: 0||Age: 
 OLD-AGE||[42 Celest War]||[HORDE] Zod the Skull Cracker||Kills: 2||Deaths: 4||Age: 392||Hours: 27||Fri Aug  6 00:37:48 2004
 DELETED||[54  Human Thi]||Waekath the Demigod||Kills: 0||Deaths: 0||Age: 245||Hours: 26||Thu Mar 22 14:18:22 2007
 DELETED||[51  Duerg A-P]||Cabdru the Anti-Hero||Kills: 0||Deaths: 0||Age: 63||Hours: 0||Mon May 15 21:05:48 2017
+DELETED||[41  Abyss War]||[HORDE] Grulk the Bone Shatterer||Kills: 0||Deaths: 0||Age: 129||Hours: 3||Thu May 18 15:22:21 2017
