@@ -3229,7 +3229,7 @@ void spell_magic_missile( int sn, int level, CHAR_DATA *ch,void *vo,int target)
     act("Missiles of pure mana streak from $n's hands to strike you!",ch,0,victim,TO_VICT);
     act("Missiles of pure mana streak from your hands to strike $N!",ch,0,victim,TO_CHAR);
 
-    if ( is_affected(victim,gsn_armor))
+    if ( is_affected(victim,skill_lookup("armor")) )
     {
         act("The missiles explode in a shower of sparks after colliding with $N's magical armor!",ch,0,victim,TO_NOTVICT);
         act("$n's missiles explode in a shower of sparks after colliding with your magical armor!",ch,0,victim,TO_VICT);
