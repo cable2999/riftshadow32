@@ -3490,10 +3490,10 @@ void do_buy( CHAR_DATA *ch, char *argument )
 void do_list( CHAR_DATA *ch, char *argument )
 {
     char buf[MAX_STRING_LENGTH];
-
+/*
 	if(check_horde(ch))
 		return send_to_char("You would never buy what can be taken!\n\r",ch);
-
+*/
 
 	
     if ( IS_SET(ch->in_room->room_flags, ROOM_PET_SHOP) )

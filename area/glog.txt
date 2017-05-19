@@ -341,3 +341,21 @@ Thu May 18 15:27:35 2017: INDUCT- Krunk is inducting Grulk into Phalanx..
 Thu May 18 15:48:34 2017: LOAD- Krunk is loading 16100.
 Thu May 18 15:48:34 2017: LOAD- Krunk is loading .
 Thu May 18 15:48:37 2017: LOAD- Krunk is loading obj 16100.
+Thu May 18 22:07:55 2017: INDUCT- Krunk is inducting Krunk into Horde..
+Thu May 18 23:14:40 2017: LOAD- Krunk is loading obj 6244.
+Thu May 18 23:14:41 2017: LOAD- Krunk is loading obj 6244.
+Fri May 19 10:03:58 2017: TITLE- Krunk is titling , Chieftan..
+Fri May 19 10:10:26 2017: LOAD- Krunk is loading .
+Fri May 19 10:11:41 2017: INDUCT- Krunk is inducting Krunk into Scion..
+Fri May 19 10:12:26 2017: LOAD- Krunk is loading 5000000 gold.
+Fri May 19 10:12:26 2017: LOAD- Krunk is loading .
+Fri May 19 10:12:35 2017: SET- Krunk is setting .
+Fri May 19 10:12:39 2017: SET- Krunk is setting obj gold.
+Fri May 19 10:18:38 2017: STRING- Krunk is stringing .
+Fri May 19 10:20:42 2017: INDUCT- Krunk is inducting Krunk into Bounty..
+Fri May 19 10:21:58 2017: INDUCT- Krunk is inducting Krunk into Bounty..
+Fri May 19 10:41:47 2017: LOAD- Krunk is loading raft.
+Fri May 19 10:41:47 2017: LOAD- Krunk is loading .
+Fri May 19 10:41:50 2017: LOAD- Krunk is loading obj raft.
+Fri May 19 10:42:05 2017: LOAD- Krunk is loading obj 20571.
+Fri May 19 10:48:21 2017: SET- Krunk is setting .
