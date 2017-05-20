@@ -364,3 +364,23 @@ Fri May 19 15:04:02 2017: LOAD- Krunk is loading .
 Fri May 19 15:04:15 2017: LOAD- Krunk is loading obj 6244.
 Fri May 19 15:04:17 2017: LOAD- Krunk is loading obj 6244.
 Fri May 19 15:05:03 2017: INDUCT- Krunk is inducting Krunk into Horde..
+Fri May 19 20:26:47 2017: SET- Krunk is setting class.
+Fri May 19 20:26:47 2017: SET- Krunk is setting .
+Fri May 19 20:27:01 2017: SET- Krunk is setting sgroup.
+Fri May 19 20:27:08 2017: SET- Krunk is setting sgroup krunk sorcerer.
+Fri May 19 20:27:21 2017: SET- Krunk is setting sgroup krunk electric.
+Fri May 19 20:27:27 2017: SET- Krunk is setting skill.
+Fri May 19 20:27:44 2017: SET- Krunk is setting skill krunk all 100.
+Fri May 19 20:33:56 2017: SET- Krunk is setting class.
+Fri May 19 20:33:56 2017: SET- Krunk is setting .
+Fri May 19 20:34:10 2017: SET- Krunk is setting sgroup self paladin.
+Fri May 19 20:34:17 2017: SET- Krunk is setting class.
+Fri May 19 20:34:17 2017: SET- Krunk is setting .
+Fri May 19 20:34:24 2017: SET- Krunk is setting skill.
+Fri May 19 20:34:33 2017: SET- Krunk is setting skill self all 100.
+Fri May 19 22:09:13 2017: INDUCT- Krunk is inducting Istendil into Scion..
+Sat May 20 11:33:51 2017: LOAD- Krunk is loading 9308.
+Sat May 20 11:33:51 2017: LOAD- Krunk is loading .
+Sat May 20 11:33:57 2017: LOAD- Krunk is loading obj 9308.
+Sat May 20 11:50:51 2017: SET- Krunk is setting race.
+Sat May 20 11:50:51 2017: SET- Krunk is setting .
