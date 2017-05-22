@@ -374,7 +374,7 @@ void animate_four(CHAR_DATA *ch, OBJ_DATA *corpse)
     zombie->size = corpse->value[2];	
     if(corpse->item_type == ITEM_CORPSE_PC)
 		zombie->max_hit = corpse->ohp * 6;
-    if(corpse->item_type == ITEM_CORPSE_PC && corpse->level > 25)
+    if(corpse->level > 25)
 	soul_add(ch,1);
     else if (corpse->item_type == ITEM_CORPSE_PC && corpse->level <= 25)
 	act("The essence of $p was too weak for your studies.",ch,corpse,0,TO_CHAR);

@@ -384,3 +384,9 @@ Sat May 20 11:33:51 2017: LOAD- Krunk is loading .
 Sat May 20 11:33:57 2017: LOAD- Krunk is loading obj 9308.
 Sat May 20 11:50:51 2017: SET- Krunk is setting race.
 Sat May 20 11:50:51 2017: SET- Krunk is setting .
+Sun May 21 00:05:18 2017: LOAD- Krunk is loading mace.
+Sun May 21 00:05:18 2017: LOAD- Krunk is loading .
+Sun May 21 00:05:29 2017: LOAD- Krunk is loading 24586.
+Sun May 21 00:05:29 2017: LOAD- Krunk is loading .
+Sun May 21 00:05:37 2017: LOAD- Krunk is loading obj 24586.
+Sun May 21 21:34:38 2017: INDUCT- Krunk is inducting Gadrin into Phalanx..
