@@ -160,3 +160,4 @@ DELETED||[54  Human Thi]||Waekath the Demigod||Kills: 0||Deaths: 0||Age: 245||Ho
 DELETED||[51  Duerg A-P]||Cabdru the Anti-Hero||Kills: 0||Deaths: 0||Age: 63||Hours: 0||Mon May 15 21:05:48 2017
 DELETED||[41  Abyss War]||[HORDE] Grulk the Bone Shatterer||Kills: 0||Deaths: 0||Age: 129||Hours: 3||Thu May 18 15:22:21 2017
 DELETED||[51   Elf Sor]||Elfien the Elemental Hero||Kills: 0||Deaths: 0||Age: 206||Hours: 0||Fri May 19 14:54:53 2017
+DELETED||[37  Human Sor]||Sorccc the Master of Ether||Kills: 0||Deaths: 0||Age: 20||Hours: 0||Mon May 22 12:10:20 2017
