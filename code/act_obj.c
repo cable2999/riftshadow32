@@ -3241,8 +3241,8 @@ void do_buy( CHAR_DATA *ch, char *argument )
     int cost,roll;
 	int i;
 
-	if(check_horde(ch))
-		return send_to_char("You would never buy what can be be taken!\n\r",ch);
+//	if(check_horde(ch))
+//		return send_to_char("You would never buy what can be be taken!\n\r",ch);
 
 	if ( argument[0] == '\0' )
 		return send_to_char( "Buy what?\n\r", ch );

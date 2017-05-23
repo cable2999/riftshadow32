@@ -479,7 +479,7 @@ void gain_condition( CHAR_DATA *ch, int iCond, int value )
     if (condition == -1)
         return;
     ch->pcdata->condition[iCond]	= UMAX(0, condition + value);
-    if (ch->level > 10)
+    if (ch->level > 60)
     {
 	if (number_percent() > 50) {
     if (ch->pcdata->condition[iCond] == 0 && iCond == COND_HUNGER)

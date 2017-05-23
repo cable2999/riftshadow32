@@ -3923,10 +3923,11 @@ void do_practice( CHAR_DATA *ch, char *argument )
 		}
 
 
-		if ( sn == gsn_gladiator_skill || sn == gsn_duelist_skill ||
+/*		if ( sn == gsn_gladiator_skill || sn == gsn_duelist_skill ||
 			 sn == gsn_barbarian_skill || sn == gsn_dragoon_skill ||
 			 sn == gsn_skirmisher_skill || sn == gsn_tactician_skill)
 			hide_skill=TRUE;
+*/
 
 		if (skill_table[sn].skill_level[ch->Class()->GetIndex()] > 52)
 		continue;
