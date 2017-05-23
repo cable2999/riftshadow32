@@ -1,6 +1,6 @@
 #include "rift.h"
 
-#define PULSE_PER_SECOND 6
+#define PULSE_PER_SECOND 5
 
 #define ONCE_PER_SECOND 	if(mtime % 4 == 0)
 
