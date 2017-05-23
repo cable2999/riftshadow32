@@ -706,3 +706,5 @@ Lotherican | a human ambassador | The Elven Stronghold | An Arched Hallway | Sun
 Flarg | the Elven Lord | The Elven Stronghold | The Bed Chambers of the Elven Lord | Thu Jul  1 09:00:10 2004
 Hanz | a halfling ambassador | The Elven Stronghold | Before the gates of the Elven Stronghold | Wed Aug  4 17:16:01 2004
 Bruno | a stronghold patrolman | The Elven Stronghold | Upon a wooden bridge | Tue Aug 10 14:55:21 2004
+Grulk | the vampire, Shadar Lunn | Mausoleum | The workroom of Shadar Lunn | Mon May 22 23:03:51 2017
+Grulk | the great Dracolich | Mausoleum | The lair of the great Dracolich | Mon May 22 23:11:30 2017

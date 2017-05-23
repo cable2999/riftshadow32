@@ -2005,7 +2005,7 @@ void update_handler( void )
 
     if ( --pulse_point    <= 0 ) {
 		wiznet("TICK!",NULL,NULL,WIZ_TICKS,0,0);
-		pulse_point     = number_range( PULSE_TICK - 5, PULSE_TICK + 5);
+		pulse_point     = number_range( PULSE_TICK - (PULSE_TICK/5), PULSE_TICK + (PULSE_TICK/5));
 		time_update	( );
 		char_update	( );
 		rune_update	( );

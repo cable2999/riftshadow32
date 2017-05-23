@@ -395,3 +395,12 @@ Mon May 22 11:14:58 2017: LOAD- Krunk is loading .
 Mon May 22 11:15:03 2017: LOAD- Krunk is loading obj 2797.
 Mon May 22 11:38:47 2017: LOAD- Krunk is loading .
 Mon May 22 11:38:58 2017: LOAD- Krunk is loading mob 19239.
+Tue May 23 07:15:56 2017: SET- Krunk is setting .
+Tue May 23 07:54:09 2017: SET- Krunk is setting krunk hp 10000.
+Tue May 23 07:54:09 2017: SET- Krunk is setting .
+Tue May 23 07:54:15 2017: SET- Krunk is setting form krunk.
+Tue May 23 07:54:15 2017: SET- Krunk is setting .
+Tue May 23 07:54:18 2017: SET- Krunk is setting form.
+Tue May 23 07:54:18 2017: SET- Krunk is setting .
+Tue May 23 07:54:21 2017: SET- Krunk is setting form asdf.
+Tue May 23 07:54:21 2017: SET- Krunk is setting .
