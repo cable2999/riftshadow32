@@ -2465,6 +2465,8 @@ void do_affects(CHAR_DATA *ch, char *argument )
 		sprintf( buf, "Rune   : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
 		else if (paf->aftype == AFT_TIMER)
 		sprintf( buf, "Timer  : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
+		else if (paf->aftype == AFT_INVIS)
+		sprintf( buf, "Hidden : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
 		else if (paf->aftype != AFT_INVIS)
 		sprintf( buf, "Spell  : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
 		}
@@ -2478,7 +2480,8 @@ void do_affects(CHAR_DATA *ch, char *argument )
 
 		sprintf( buf,
 		    "| modifies %s%s%s ",
-		(paf->mod_name > -1) ? mod_names[paf->mod_name].name : affect_loc_name(paf->location),
+		(paf->mod_name > -1) ? mod_names[paf->mod_name].name : ( str_cmp(affect_loc_name( paf->location ), "asdf") ? affect_loc_name(paf->location) : apply_locations[paf->location].name ), 
+		//mod_names[paf->mod_name].name : affect_loc_name(paf->location),
 		(paf->mod_name > -1) ? "" : " by ",
 		(paf->mod_name > -1) ? "" : buf3);
 		send_to_char( buf, ch );
