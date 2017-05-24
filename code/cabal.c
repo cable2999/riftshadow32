@@ -200,7 +200,6 @@ void spell_rage(int sn,int level,CHAR_DATA *ch,void *vo,int target)
 	SET_BIT(af.bitvector, AFF_DARK_VISION);
 	SET_BIT(af.bitvector, AFF_RAGE);
 	affect_to_char(ch, &af);
-	af.aftype = AFT_INVIS;
 	zero_vector(af.bitvector);
 	
 	sprintf(buf,"You feel your rage grow as the spirit of the %s surges through you!\n\r",
