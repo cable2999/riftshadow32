@@ -4992,7 +4992,7 @@ void do_murder( CHAR_DATA *ch, char *argument )
         sprintf(buf, "Help!  I am being attacked by %s!",ch->short_descr);
 	else if (IS_NPC(ch) && !IS_NPC(victim))
 		sprintf(buf, "Help!  I am being attacked by %s!",PERS(ch,victim));
-    else if (!IS_NPC(victim))
+    else if (!IS_NPC(victim) || IS_NPC(victim))
     {
         switch(number_range(1,4))
         {
@@ -5018,7 +5018,7 @@ void do_murder( CHAR_DATA *ch, char *argument )
 yell is faked or not (see myell in act_comm.c for this).
 -Ceran
 */
-    if(!IS_NPC(victim))
+//    if(!IS_NPC(victim))
     	do_myell( victim, buf ,ch);
     check_blade_barrier(ch,victim);
     one_hit( ch, victim, TYPE_UNDEFINED );

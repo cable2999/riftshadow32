@@ -383,9 +383,7 @@ void myell_prog_lawful_city(AREA_DATA *area, CHAR_DATA *ch, CHAR_DATA *victim)
 {
 	AFFECT_DATA af;
 
-	if((IS_NPC(victim) && !IS_SET(victim->act, ACT_LAW))
-	   || IS_NPC(ch)
-	   || is_affected(ch, gsn_aggressor))
+	if(IS_NPC(ch) || is_affected(ch, gsn_aggressor))
 		return;
 
 	if(ch->law_pass)
