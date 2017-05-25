@@ -2209,13 +2209,13 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
 		return;
     case CON_ALLOCATE_STATS:
 		
-		argument = one_argument(argument,word);
+/*		argument = one_argument(argument,word);
 		if(word[0]=='\0') {
 			write_to_buffer(d,"> ", 0);
 			break;
 		}
-		
-		if(str_prefix(word,"FINISH"))
+*/		
+/*		if(str_prefix(word,"FINISH"))
 		{
 			modif = -1;
 			strcpy(tword,word);
@@ -2260,13 +2260,17 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
 			show_allocate(ch,1);
 			break;
 		}
-
-		if(!str_prefix(word,"FINISH")) {
+*/
+//		if(!str_prefix(word,"FINISH")) {
 			ch->mod_stat[STAT_STR]=0;
 			ch->mod_stat[STAT_INT]=0;
 			ch->mod_stat[STAT_WIS]=0;
 			ch->mod_stat[STAT_DEX]=0;
 			ch->mod_stat[STAT_CON]=0;
+			
+			for(i=STAT_STR;i<MAX_STATS;i++)
+				//allocate+=(pc_race_table[ch->race].max_stats[i]-13);
+				ch->perm_stat[i] = pc_race_table[ch->race].max_stats[i];
 
 			if (pc_race_table[ch->race].align == ALIGN_ANY && ch->Class()->align == ALIGN_ANY) {
 				write_to_buffer( d, "\n\r", 2 );
@@ -2311,7 +2315,7 @@ void nanny( DESCRIPTOR_DATA *d, char *argument )
         }
         d->connected = CON_GET_ALIGNMENT;
         break;
-	}
+//	}
 	write_to_buffer(d,"That's not a valid choice.\n\r",0);
 	show_allocate(ch,0);
 	write_to_buffer(d,"> ",0);
@@ -3532,10 +3536,10 @@ void colorconv( char *buffer, const char *txt, CHAR_DATA *ch )
 int get_allocate_points (CHAR_DATA *ch)
 {
 	int allocate = 0, i;
-	for(i=STAT_STR;i<MAX_STATS;i++)
-		allocate+=(pc_race_table[ch->race].max_stats[i]-13);
+//	for(i=STAT_STR;i<MAX_STATS;i++)
+//		allocate+=(pc_race_table[ch->race].max_stats[i]-13);
 	if(!strcmp(pc_race_table[ch->race].name,"human"))
-		allocate+=2;
+		allocate+=3;
 	return allocate;
 }
 
@@ -3553,14 +3557,14 @@ void show_allocate (CHAR_DATA *ch, int finish)
 	write_to_buffer(ch->desc, buf, 0);
 
 sprintf(buf,"Your stats: Str: %d (Max %d)  Int: %d (Max %d)  Wis: %d (Max %d)  Dex: %d (Max %d)  Con: %d (Max %d)\n\r",
-	ch->perm_stat[STAT_STR], pc_race_table[ch->race].max_stats[STAT_STR],
-	ch->perm_stat[STAT_INT], pc_race_table[ch->race].max_stats[STAT_INT],
-	ch->perm_stat[STAT_WIS], pc_race_table[ch->race].max_stats[STAT_WIS],
-	ch->perm_stat[STAT_DEX], pc_race_table[ch->race].max_stats[STAT_DEX],
-	ch->perm_stat[STAT_CON], pc_race_table[ch->race].max_stats[STAT_CON]);
+	pc_race_table[ch->race].max_stats[STAT_STR], pc_race_table[ch->race].max_stats[STAT_STR],
+        pc_race_table[ch->race].max_stats[STAT_INT], pc_race_table[ch->race].max_stats[STAT_INT],
+        pc_race_table[ch->race].max_stats[STAT_WIS], pc_race_table[ch->race].max_stats[STAT_WIS],
+        pc_race_table[ch->race].max_stats[STAT_DEX], pc_race_table[ch->race].max_stats[STAT_DEX],
+        pc_race_table[ch->race].max_stats[STAT_CON], pc_race_table[ch->race].max_stats[STAT_CON]);
 	send_to_char(buf,ch);
 
-	write_to_buffer(ch->desc,"> ", 0);
+	write_to_buffer(ch->desc,"[Your stats are maxed.  Hit any key to continue]", 0);
 }
 
 void process_text(CHAR_DATA *ch, char *text)
@@ -3675,3 +3679,4 @@ void process_text(CHAR_DATA *ch, char *text)
     	return send_to_char("Add what?",ch);
     return send_to_char("Line added.",ch);
 }
+
