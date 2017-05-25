@@ -5104,7 +5104,7 @@ void spell_icy_carapace (int sn, int level, CHAR_DATA *ch, void *vo, int target)
 	af.location	=	APPLY_DEX;
 	af.modifier	=	-3;
 	affect_to_char(ch,&af);
-	af.aftype	=	AFT_INVIS;
+	//af.aftype	=	AFT_INVIS;
 	af.location	=	0;
 	af.where	=	TO_RESIST;
 	af.mod_name = MOD_RESISTANCE;
