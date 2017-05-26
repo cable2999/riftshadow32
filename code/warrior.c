@@ -1366,6 +1366,12 @@ void do_dart(CHAR_DATA *ch, char *argument)
 	if(victim == NULL)
 		return send_to_char("You must be fighting to perform this attack!\n\r",ch);
 
+        if(skill==0) {
+                send_to_char("Huh?\n\r",ch);
+                return;
+        }
+
+
 	weapon = get_eq_char(ch,WEAR_WIELD);
 
 	if(weapon == NULL)

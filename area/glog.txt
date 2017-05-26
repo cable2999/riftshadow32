@@ -439,3 +439,8 @@ Tue May 23 14:46:17 2017: LOAD- Krunk is loading mob 19241.
 Tue May 23 14:46:17 2017: LOAD- Krunk is loading mob 19241.
 Wed May 24 22:49:30 2017: SET- Krunk is setting train.
 Wed May 24 22:49:30 2017: SET- Krunk is setting .
+Thu May 25 16:26:39 2017: LOAD- Krunk is loading 22612.
+Thu May 25 16:26:39 2017: LOAD- Krunk is loading .
+Thu May 25 16:26:43 2017: LOAD- Krunk is loading obj 22612.
+Thu May 25 16:26:48 2017: LOAD- Krunk is loading obj 22612.
+Thu May 25 16:27:22 2017: LOAD- Krunk is loading obj 22612.

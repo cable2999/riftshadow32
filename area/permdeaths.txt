@@ -162,3 +162,4 @@ DELETED||[41  Abyss War]||[HORDE] Grulk the Bone Shatterer||Kills: 0||Deaths: 0|
 DELETED||[51   Elf Sor]||Elfien the Elemental Hero||Kills: 0||Deaths: 0||Age: 206||Hours: 0||Fri May 19 14:54:53 2017
 DELETED||[37  Human Sor]||Sorccc the Master of Ether||Kills: 0||Deaths: 0||Age: 20||Hours: 0||Mon May 22 12:10:20 2017
 DELETED||[51 Halflng Thi]||Bilbo the Thief Hero||Kills: 0||Deaths: 0||Age: 101||Hours: 0||Tue May 23 08:44:41 2017
+DELETED||[51  Human Sor]||Haffot the Elemental Hero||Kills: 0||Deaths: 0||Age: 20||Hours: 0||Thu May 25 21:28:45 2017
