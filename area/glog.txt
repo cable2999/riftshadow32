@@ -444,3 +444,16 @@ Thu May 25 16:26:39 2017: LOAD- Krunk is loading .
 Thu May 25 16:26:43 2017: LOAD- Krunk is loading obj 22612.
 Thu May 25 16:26:48 2017: LOAD- Krunk is loading obj 22612.
 Thu May 25 16:27:22 2017: LOAD- Krunk is loading obj 22612.
+Mon May 29 19:58:27 2017: INDUCT- Krunk is inducting Dorf into Bounty..
+Mon May 29 21:08:53 2017: LOAD- Krunk is loading 201.
+Mon May 29 21:08:53 2017: LOAD- Krunk is loading .
+Mon May 29 21:09:01 2017: LOAD- Krunk is loading obj 201.
+Mon May 29 22:07:55 2017: LOAD- Krunk is loading obj 1.
+Tue May 30 14:38:27 2017: INDUCT- Krunk is inducting Zeus into Phalanx..
+Tue May 30 14:41:31 2017: LOAD- Krunk is loading obj 20173.
+Tue May 30 14:41:33 2017: LOAD- Krunk is loading obj 20173.
+Tue May 30 14:57:56 2017: LOAD- Krunk is loading 16106.
+Tue May 30 14:57:56 2017: LOAD- Krunk is loading .
+Tue May 30 14:58:00 2017: LOAD- Krunk is loading obj 16106.
+Tue May 30 14:58:01 2017: LOAD- Krunk is loading obj 16106.
+Tue May 30 15:53:00 2017: INDUCT- Krunk is inducting Necron into Scion..

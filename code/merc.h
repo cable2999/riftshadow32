@@ -282,7 +282,7 @@ char *crypt(const char *key, const char *salt);
 #define LEVEL_IMMORTAL		   (MAX_LEVEL - 8)
 
 #define CHARACTER_TIME_DEATH	    20736000  //characters die 8 months after being rolled.  yar.
-#define PULSE_PER_SECOND	    5
+#define PULSE_PER_SECOND	    6
 #define PULSE_PER_MOVE			2
 #define PULSE_VIOLENCE		  ( 3 * PULSE_PER_SECOND)
 #define PULSE_MOBILE		  ( 4 * PULSE_PER_SECOND)

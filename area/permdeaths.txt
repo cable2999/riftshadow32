@@ -163,3 +163,11 @@ DELETED||[51   Elf Sor]||Elfien the Elemental Hero||Kills: 0||Deaths: 0||Age: 20
 DELETED||[37  Human Sor]||Sorccc the Master of Ether||Kills: 0||Deaths: 0||Age: 20||Hours: 0||Mon May 22 12:10:20 2017
 DELETED||[51 Halflng Thi]||Bilbo the Thief Hero||Kills: 0||Deaths: 0||Age: 101||Hours: 0||Tue May 23 08:44:41 2017
 DELETED||[51  Human Sor]||Haffot the Elemental Hero||Kills: 0||Deaths: 0||Age: 20||Hours: 0||Thu May 25 21:28:45 2017
+DELETED||[51  Mino A-P]||Creds the Anti-Hero||Kills: 0||Deaths: 1||Age: 20||Hours: 0||Mon May 29 22:16:12 2017
+DELETED||[50  Drow A-P]||Cabdru the Hand of the Dark||Kills: 0||Deaths: 0||Age: 211||Hours: 0||Tue May 30 16:07:02 2017
+DELETED||[51  Sidhe Hea]||Credtoo the Holy Hero||Kills: 0||Deaths: 1||Age: 15||Hours: 0||Tue May 30 16:07:24 2017
+DELETED||[51  Dwarf War]||[BOUNTY] Dorf the Knight Hero, Master Hunter||Kills: 2||Deaths: 0||Age: 61||Hours: 1||Tue May 30 16:07:35 2017
+DELETED||[51  Dwarf Pal]||[PHALANX] Gadrin the Paladin Hero||Kills: 0||Deaths: 0||Age: 67||Hours: 1||Tue May 30 16:08:20 2017
+DELETED||[51   Imp Nec]||[SCION] Istendil the Anti-Hero of Death||Kills: 0||Deaths: 1||Age: 90||Hours: 1||Tue May 30 16:08:36 2017
+DELETED||[36 Halflng War]||[HORDE] Haffo the Rock Crusher||Kills: 0||Deaths: 0||Age: 107||Hours: 4||Tue May 30 16:12:00 2017
+DELETED||[51  Abyss War]||[HORDE] Grulk the Knight Hero||Kills: 0||Deaths: 0||Age: 135||Hours: 3||Tue May 30 16:12:09 2017

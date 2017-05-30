@@ -2304,3 +2304,8 @@ Mon Jun 21 10:27:26 2004 :: Brizzia places a bounty of 32044 gold on the life of
 Sun Jul 18 18:47:33 2004 :: Takimen collects the 16547 gold bounty on Lotranios.
 Fri May 19 10:20:19 2017 :: Krunk places a bounty of 453 gold on the life of Krunk.
 Fri May 19 10:21:45 2017 :: Krunk places a bounty of 1359 gold on the life of Grulk.
+Mon May 29 22:08:23 2017 :: Krunk places a bounty of 45030 gold on the life of Creds.
+Mon May 29 22:09:40 2017 :: Dorf collects the 45030 gold bounty on Creds.
+Mon May 29 22:17:18 2017 :: Krunk places a bounty of 34000 gold on the life of Credtoo.
+Mon May 29 22:17:40 2017 :: Dorf advances to Master Hunter.
+Mon May 29 22:17:40 2017 :: Dorf collects the 34000 gold bounty on Credtoo.
