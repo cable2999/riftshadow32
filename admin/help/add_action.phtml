@@ -6,5 +6,5 @@
 	$ntitle = addslashes($_POST[title]);
 	@mysql_db_query("rift","insert into helpfiles(title,skill,minlevel,helpdata, author) values('$ntitle','$_POST[skill]',$_POST[minlevel],'$nhelpdata','$_COOKIE[user]')",$conn);
 	$id = mysql_insert_id($conn);
-	Header("Location: http://admin.riftshadow.org/help/edit.phtml?id=$id&added=1");
+	Header("Location: http://192.168.1.91/help/edit.phtml?id=$id&added=1");
 ?>
