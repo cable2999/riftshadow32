@@ -1,4 +1,4 @@
-<?
+<?php
 	include("../header.inc");
 	$get_res = mysql_db_query("rift_core","select name,type,bit from bit_lookup",$core_conn);
 	for($count = 0; $row = mysql_fetch_array($get_res); $count++)

@@ -1,9 +1,9 @@
-<?
+<?php
 	$user = $_POST[user];
 	$password = $_POST[password];
 
 	$user = ucfirst($user);
-	$filename = "/home/rift/player/$user.plr";
+	$filename = "/home/rift/riftshadow32/player/$user.plr";
 	$fd = fopen ($filename, "r") or die("Character name is not valid.");
 
 	while (!feof ($fd))
@@ -37,8 +37,8 @@
 		setcookie("user","$user", time()+31536000);
 		setcookie("password","$password", time()+31536000);
 		setcookie("trust","$trust", time()+31536000);
-		Header("Location: http://admin.riftshadow.org\n\n");
+		Header("Location: http://192.168.1.91:8080\n\n");
 	}
 	else
-		echo "Your login information is incorrect.<br>";
+		echo "Your login information is incorrect.";
 ?>		

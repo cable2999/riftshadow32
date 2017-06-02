@@ -1,4 +1,4 @@
-<?
+<?php
 	include("../header.inc");
 	if(!$_REQUEST[step] || "$_REQUEST[step]"=="")
 		$step=1;
@@ -14,11 +14,11 @@
 <form action=search.phtml method=post>
 <input type=hidden name=step value=2>
 <table align=center width=60%>
-<tr><td align=right><? echo $def_font;?>Search:</td><td><input type=text name=search></td></tr>
+<tr><td align=right><?php echo $def_font;?>Search:</td><td><input type=text name=search></td></tr>
 <tr><td colspan=2 align=center><input type=submit value=Search></td></tr>
 </table>
 </form>
-<?
+<?php
 	}
 	else if($step == 2)
 	{
@@ -45,11 +45,11 @@
 <form action=search.phtml method=post>
 <input type=hidden name=step value=2>
 <table align=center width=60%>
-<tr><td align=right><? echo $def_font;?>Search:</td><td><input type=text name=search></td></tr>
+<tr><td align=right><?php echo $def_font;?>Search:</td><td><input type=text name=search></td></tr>
 <tr><td colspan=2 align=center><input type=submit value=Search></td></tr>
 </table>
 <br>
-<?
+<?php
 	}
 
 	include("../footer.inc");

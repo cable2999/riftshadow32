@@ -1,4 +1,4 @@
-<?
+<?php
 	$target_level=58;
 	include("../check_trust.inc");
 	include("../header.inc");
@@ -24,7 +24,7 @@
 	<td>Max Stats</td>
 </tr>
 
-<?
+<?php
 	$get_res = mysql_db_query("rift_core","select * from race_table order by pcrace DESC,name asc",$core_conn);
 	if(mysql_num_rows($get_res) < 1)
 		die("Error");
@@ -63,6 +63,6 @@
 New Race<br>
 
 	
-<?
+<?php
 	include("../footer.inc");
 ?>

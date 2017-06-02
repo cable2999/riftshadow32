@@ -1,4 +1,4 @@
-<?
+<?php
 	$target_level=53;
 	include("../check_trust.inc");
 	include("../header.inc");
@@ -17,28 +17,28 @@
 ?>
 <table width=65% align=center>
 <form action='edit_action.phtml' method=post>
-<input type=hidden name=id value=<? echo $id;?>>
+<input type=hidden name=id value=<?php echo $id;?>>
 <tr>
- <td align=right valign=top><? echo $def_font;?>Title:</td>
- <td><input type=text name=title value="<? echo $row[title];?>"></td>
+ <td align=right valign=top><?php echo $def_font;?>Title:</td>
+ <td><input type=text name=title value="<?php echo $row[title];?>"></td>
 </tr>
 <tr>
- <td align=right valign=top><? echo $def_font;?>Skill:</td>
- <td><input type=text name=skill value='<? echo $row[skill];?>'></td>
+ <td align=right valign=top><?php echo $def_font;?>Skill:</td>
+ <td><input type=text name=skill value='<?php echo $row[skill];?>'></td>
 </tr>
 <tr>
- <td align=right valign=top><? echo $def_font;?>Minlevel:</td>
- <td><input type=text name=minlevel value='<? echo $row[minlevel];?>'></td>
+ <td align=right valign=top><?php echo $def_font;?>Minlevel:</td>
+ <td><input type=text name=minlevel value='<?php echo $row[minlevel];?>'></td>
 </tr>
 <tr>
- <td align=right valign=top><? echo $def_font;?>Help:</td>
- <td><textarea name=helpdata cols=75 rows=10 WRAP=HARD><? echo stripslashes($row[helpdata]);?></textarea></td>
+ <td align=right valign=top><?php echo $def_font;?>Help:</td>
+ <td><textarea name=helpdata cols=75 rows=10 WRAP=HARD><?php echo stripslashes($row[helpdata]);?></textarea></td>
 </tr>
 <tr>
  <td colspan=2 align=center><input type=submit value=Submit></form></td>
 </tr>
 </table>
 </form>
-<?
+<?php
 	include("../footer.inc");
 ?>

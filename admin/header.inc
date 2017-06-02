@@ -1,6 +1,6 @@
-<?
+<?php
 	$conn  = mysql_connect("localhost", "rift", "rift123");
-	$core_conn = mysql_connect("localhost", "rscore", "rift");
+	$core_conn = mysql_connect("localhost", "rift", "rift123");
 
 	$def_path = "/home/rift/code/";
 
@@ -50,7 +50,7 @@ TR.bold		{font-weight: bold;}
 	<td width=120 bgcolor="CCCCCC" valign=top>
 		<center><b>Help</b></center>
 		<hr>
-<?
+<?php
 	if($trust >= 52)
 	{
 		echo "<li><a href='../help/add.phtml'>Add</a></li>";
@@ -58,7 +58,7 @@ TR.bold		{font-weight: bold;}
 ?>
 		<li><a href='../help/search.phtml'>Search</a></li>
 		<br>
-<?
+<?php
 	if($trust >= 58)
 	{
 		echo "<center><b>Core</b></center>";
