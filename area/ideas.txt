@@ -265,3 +265,6 @@
 [ 2580] Javen: Sun Apr 11 19:45:39 2004: pickaxe
 [11813] Lorrel: Wed May 12 15:43:01 2004: candle
 [ 2607] Krunk: Fri May 19 10:12:55 2017: tin
+[ 1469] Krunk: Wed May 31 22:42:14 2017: dagger
+[ 1477] Krunk: Wed May 31 22:48:07 2017: collar
+[18062] Krunk: Wed May 31 23:05:23 2017: bracelet

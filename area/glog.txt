@@ -457,3 +457,7 @@ Tue May 30 14:57:56 2017: LOAD- Krunk is loading .
 Tue May 30 14:58:00 2017: LOAD- Krunk is loading obj 16106.
 Tue May 30 14:58:01 2017: LOAD- Krunk is loading obj 16106.
 Tue May 30 15:53:00 2017: INDUCT- Krunk is inducting Necron into Scion..
+Wed May 31 23:16:23 2017: LOAD- Krunk is loading 22600.
+Wed May 31 23:16:23 2017: LOAD- Krunk is loading .
+Wed May 31 23:16:29 2017: LOAD- Krunk is loading obj 22600.
+Wed May 31 23:58:15 2017: INDUCT- Krunk is inducting Krunk into Horde..
