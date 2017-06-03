@@ -4179,7 +4179,10 @@ void disarm( CHAR_DATA *ch, CHAR_DATA *victim )
 		{
 	    	obj_to_room( obj, victim->in_room );
 			if (IS_NPC(victim) && victim->wait == 0 && can_see_obj(victim,obj))
-            	get_obj(victim,obj,NULL, TRUE);
+			{
+            			get_obj(victim,obj,NULL, TRUE);
+				wear_obj(victim,obj,FALSE);
+			}
 		}
     }
 
