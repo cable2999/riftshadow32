@@ -2870,6 +2870,7 @@ void do_owhere(CHAR_DATA *ch, char *argument )
     BUFFER *buffer;
     OBJ_DATA *obj;
     OBJ_DATA *in_obj;
+    AREA_DATA *area = ch->in_room->area; 
     bool found;
     int number = 0, max_found;
 
@@ -2898,13 +2899,13 @@ void do_owhere(CHAR_DATA *ch, char *argument )
 
         if ( in_obj->carried_by != NULL && can_see(ch,in_obj->carried_by)
 	&&   in_obj->carried_by->in_room != NULL)
-            sprintf( buf, "%3d) %s is carried by %s [Room %d]\n\r",
-                number, obj->short_descr,PERS(in_obj->carried_by, ch),
-		in_obj->carried_by->in_room->vnum );
+            sprintf( buf, "%3d) %s %d is carried by %s [Room %d] [%s]\n\r",
+                number, obj->short_descr,obj->pIndexData->vnum,PERS(in_obj->carried_by, ch),
+		in_obj->carried_by->in_room->vnum, in_obj->carried_by->in_room->area->name );
         else if (in_obj->in_room != NULL && can_see_room(ch,in_obj->in_room))
-            sprintf( buf, "%3d) %s is in %s [Room %d]\n\r",
-                number, obj->short_descr,get_room_name(in_obj->in_room),
-	   	in_obj->in_room->vnum);
+            sprintf( buf, "%3d) %s %d is in %s [Room %d] [%s]\n\r",
+                number, obj->short_descr,obj->pIndexData->vnum,get_room_name(in_obj->in_room),
+	   	in_obj->in_room->vnum, in_obj->in_room->area->name);
 	else
 	{
 		number--;
