@@ -315,7 +315,7 @@ const	struct	cmd_type	cmd_table	[] =
     { "murde",		do_murde,	POS_FIGHTING,	 0,  LOG_NORMAL, 0, 0, "none" 		},
     { "murder",         do_murder,      POS_FIGHTING,    0,  LOG_NORMAL, 1, 1, "none" 		},
     { "rescue",		do_rescue,	POS_FIGHTING,	 0,  LOG_NORMAL, 0, 1, "none" 		},
-    { "trip",		do_trip,	POS_FIGHTING,    0,  LOG_NORMAL, 1, 1, "none" 		},
+    { "trip",		do_trip,	POS_FIGHTING,    0,  LOG_NORMAL, 1, 1, "trip" 		},
     { "defend", 	do_defend,	POS_FIGHTING, 	 0,  LOG_NORMAL, 1, 0, "none" 		},
     { "assassinate", 	do_assassinate, POS_STANDING, 	 0,  LOG_NORMAL, 0, 1, "none" 		},
     { "forage", 	do_forage, 	POS_STANDING,    0,  LOG_NORMAL, 1, 1, "none" 		},
