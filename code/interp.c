@@ -1247,7 +1247,8 @@ void do_commands( CHAR_DATA *ch, char *argument )
     {
         if ( cmd_table[cmd].level <  LEVEL_HERO
         &&   cmd_table[cmd].level <= get_trust( ch )
-	&&   cmd_table[cmd].show)
+	&&   cmd_table[cmd].show
+	&&   knows_command(ch,cmd))
 	{
 	    sprintf( buf, "%-12s", cmd_table[cmd].name );
 	    send_to_char( buf, ch );
