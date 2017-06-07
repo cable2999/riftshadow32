@@ -26,9 +26,9 @@
 
 
 /*****************************************************************************
- Name:		string_edit
- Purpose:	Clears string and puts player into editing mode.
- Called by:	none
+ Name:      string_edit
+ Purpose:   Clears string and puts player into editing mode.
+ Called by: none
  ****************************************************************************/
 void string_edit( CHAR_DATA *ch, char **pString )
 {
@@ -54,9 +54,9 @@ void string_edit( CHAR_DATA *ch, char **pString )
 
 
 /*****************************************************************************
- Name:		string_append
- Purpose:	Puts player into append mode for given string.
- Called by:	(many)olc_act.c
+ Name:      string_append
+ Purpose:   Puts player into append mode for given string.
+ Called by: (many)olc_act.c
  ****************************************************************************/
 void string_append( CHAR_DATA *ch, char **pString )
 {
@@ -82,9 +82,9 @@ void string_append( CHAR_DATA *ch, char **pString )
 
 
 /*****************************************************************************
- Name:		string_replace
- Purpose:	Substitutes one string for another.
- Called by:	string_add(string.c) (aedit_builder)olc_act.c.
+ Name:      string_replace
+ Purpose:   Substitutes one string for another.
+ Called by: string_add(string.c) (aedit_builder)olc_act.c.
  ****************************************************************************/
 char * string_replace( char * orig, char * old, char * newstr )
 {
@@ -108,16 +108,16 @@ char * string_replace( char * orig, char * old, char * newstr )
 
 
 /*****************************************************************************
- Name:		string_add
- Purpose:	Interpreter for string editing.
- Called by:	game_loop_xxxx(comm.c).
+ Name:      string_add
+ Purpose:   Interpreter for string editing.
+ Called by: game_loop_xxxx(comm.c).
  ****************************************************************************/
 void string_add( CHAR_DATA *ch, char *argument )
 {
     char buf[MAX_STRING_LENGTH];
-	char obuf[MSL*2];
-	int len=0;
-	bool found=FALSE;
+    char obuf[MSL*2];
+    int len=0;
+    bool found=FALSE;
     /*
      * Thanks to James Seng
      */
@@ -156,7 +156,7 @@ void string_add( CHAR_DATA *ch, char *argument )
                 return;
             }
 
-	    	smash_tilde( arg3 );   /* Just to be sure -- Hugin */
+            smash_tilde( arg3 );   /* Just to be sure -- Hugin */
             *ch->desc->pString = string_replace( *ch->desc->pString, arg2, arg3 );
             sprintf( buf, "'%s' replaced with '%s'.\n\r", arg2, arg3 );
             send_to_char( buf, ch );
@@ -170,37 +170,37 @@ void string_add( CHAR_DATA *ch, char *argument )
             return;
         }
 
-		if ( !str_cmp( arg1, ".d" ) )
-		{
-			if(**ch->desc->pString == '\0')
-				return send_to_char("No lines left to delete.\n\r", ch);
+        if ( !str_cmp( arg1, ".d" ) )
+        {
+            if(**ch->desc->pString == '\0')
+                return send_to_char("No lines left to delete.\n\r", ch);
 
-			strcpy(obuf, *ch->desc->pString);
-			for (len = strlen(obuf); len > 0; len--)
-			{
-				if (obuf[len] == '\r')
-				{
-					if (!found)
-					{
-						if(len > 0)
-							len--;
-						found = TRUE;
-					}
-					else
-					{
-						obuf[len + 1] = '\0';
-						free_pstring(*ch->desc->pString);
-						*ch->desc->pString = palloc_string(obuf);
-						return send_to_char("Line deleted.\n\r", ch);
-					}
-				}
-			}
-			obuf[0] = '\0';
-			free_pstring(*ch->desc->pString);
-			*ch->desc->pString = palloc_string(obuf);
-			return send_to_char("Line Deleted.\n\r", ch);
-		}
-		
+            strcpy(obuf, *ch->desc->pString);
+            for (len = strlen(obuf); len > 0; len--)
+            {
+                if (obuf[len] == '\r')
+                {
+                    if (!found)
+                    {
+                        if(len > 0)
+                            len--;
+                        found = TRUE;
+                    }
+                    else
+                    {
+                        obuf[len + 1] = '\0';
+                        free_pstring(*ch->desc->pString);
+                        *ch->desc->pString = palloc_string(obuf);
+                        return send_to_char("Line deleted.\n\r", ch);
+                    }
+                }
+            }
+            obuf[0] = '\0';
+            free_pstring(*ch->desc->pString);
+            *ch->desc->pString = palloc_string(obuf);
+            return send_to_char("Line Deleted.\n\r", ch);
+        }
+        
         if ( !str_cmp( arg1, ".h" ) )
         {
             send_to_char( "Sedit help (commands on blank line):   \n\r", ch );
@@ -210,8 +210,8 @@ void string_add( CHAR_DATA *ch, char *argument )
             send_to_char( ".s               - show string so far  \n\r", ch );
             send_to_char( ".f               - (word wrap) string  \n\r", ch );
             send_to_char( ".c               - clear string so far \n\r", ch );
-			send_to_char( ".d               - delete the last line\n\r", ch );
-			send_to_char( "@                - end string          \n\r", ch );
+            send_to_char( ".d               - delete the last line\n\r", ch );
+            send_to_char( "@                - end string          \n\r", ch );
             return;
         }
 
@@ -236,7 +236,7 @@ void string_add( CHAR_DATA *ch, char *argument )
     {
         send_to_char( "String too long, last line skipped.\n\r", ch );
 
-	/* Force character out of editing mode. */
+    /* Force character out of editing mode. */
         ch->desc->pString = NULL;
         return;
     }
@@ -261,9 +261,9 @@ void string_add( CHAR_DATA *ch, char *argument )
  * Original wordwrap() written by Surreality.
  */
 /*****************************************************************************
- Name:		format_string
- Purpose:	Special string formating and word-wrapping.
- Called by:	string_add(string.c) (many)olc_act.c
+ Name:      format_string
+ Purpose:   Special string formating and word-wrapping.
+ Called by: string_add(string.c) (many)olc_act.c
  ****************************************************************************/
 char *format_string( char *oldstring /*, bool fSpace */)
 {
@@ -422,18 +422,18 @@ char *format_string( char *oldstring /*, bool fSpace */)
  * for one_argument.
  */
 /*****************************************************************************
- Name:		first_arg
- Purpose:	Pick off one argument from a string and return the rest.
- 		Understands quates, parenthesis (barring ) ('s) and
- 		percentages.
- Called by:	string_add(string.c)
+ Name:      first_arg
+ Purpose:   Pick off one argument from a string and return the rest.
+        Understands quates, parenthesis (barring ) ('s) and
+        percentages.
+ Called by: string_add(string.c)
  ****************************************************************************/
 char *first_arg( char *argument, char *arg_first, bool fCase )
 {
     char cEnd;
 
     while ( *argument == ' ' )
-	argument++;
+    argument++;
 
     cEnd = ' ';
     if ( *argument == '\'' || *argument == '"'
@@ -449,20 +449,20 @@ char *first_arg( char *argument, char *arg_first, bool fCase )
 
     while ( *argument != '\0' )
     {
-	if ( *argument == cEnd )
-	{
-	    argument++;
-	    break;
-	}
+    if ( *argument == cEnd )
+    {
+        argument++;
+        break;
+    }
     if ( fCase ) *arg_first = LOWER(*argument);
             else *arg_first = *argument;
-	arg_first++;
-	argument++;
+    arg_first++;
+    argument++;
     }
     *arg_first = '\0';
 
     while ( *argument == ' ' )
-	argument++;
+    argument++;
 
     return argument;
 }

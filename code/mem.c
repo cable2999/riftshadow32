@@ -34,17 +34,17 @@ extern          int                     top_exit;
 extern          int                     top_ed;
 extern          int                     top_room;
 
-AREA_DATA		*	area_free;
-extern EXTRA_DESCR_DATA	*	extra_descr_free;
-EXIT_DATA		*	exit_free;
-ROOM_INDEX_DATA		*	room_index_free;
-OBJ_INDEX_DATA		*	obj_index_free;
-SHOP_DATA		*	shop_free;
-MOB_INDEX_DATA		*	mob_index_free;
-RESET_DATA		*	reset_free;
-HELP_DATA		*	help_free;
+AREA_DATA       *   area_free;
+extern EXTRA_DESCR_DATA *   extra_descr_free;
+EXIT_DATA       *   exit_free;
+ROOM_INDEX_DATA     *   room_index_free;
+OBJ_INDEX_DATA      *   obj_index_free;
+SHOP_DATA       *   shop_free;
+MOB_INDEX_DATA      *   mob_index_free;
+RESET_DATA      *   reset_free;
+HELP_DATA       *   help_free;
 
-extern HELP_DATA		*	help_last;
+extern HELP_DATA        *   help_last;
 
 void free_extra_descr( EXTRA_DESCR_DATA *pExtra );
 void free_affect( AFFECT_DATA *af );
@@ -56,7 +56,7 @@ RESET_DATA *new_reset_data( void )
     if ( !reset_free )
     {
         pReset          =   new RESET_DATA;
-		CLEAR_MEM(pReset, sizeof(RESET_DATA));
+        CLEAR_MEM(pReset, sizeof(RESET_DATA));
         top_reset++;
     }
     else
@@ -65,8 +65,8 @@ RESET_DATA *new_reset_data( void )
         reset_free      =   reset_free->next;
     }
 
-	pReset->next        =   NULL;
-	pReset->command     =   'X';
+    pReset->next        =   NULL;
+    pReset->command     =   'X';
     pReset->arg1        =   0;
     pReset->arg2        =   0;
     pReset->arg3        =   0;
@@ -92,8 +92,8 @@ AREA_DATA *new_area( void )
 
     if ( !area_free )
     {
-		pArea = new AREA_DATA;
-		CLEAR_MEM(pArea, sizeof(AREA_DATA));
+        pArea = new AREA_DATA;
+        CLEAR_MEM(pArea, sizeof(AREA_DATA));
         top_area++;
     }
     else
@@ -107,8 +107,8 @@ AREA_DATA *new_area( void )
     SET_BIT(pArea->area_flags, AREA_ADDED);
     pArea->security         =   1;
     pArea->builders         =   palloc_string( "None" );
-	pArea->credits			=	palloc_string( "None" );
-	pArea->min_vnum            =   0;
+    pArea->credits          =   palloc_string( "None" );
+    pArea->min_vnum            =   0;
     pArea->max_vnum            =   0;
     pArea->age              =   0;
     pArea->nplayer          =   0;
@@ -116,12 +116,12 @@ AREA_DATA *new_area( void )
     sprintf( buf, "area%d.are", pArea->vnum );
     pArea->file_name        =   palloc_string( buf );
     pArea->vnum             =   top_area-1;
-	pArea->area_type		=	ARE_UNOPENED;
-	pArea->climate			=	0;
-	pArea->low_range		=	0;
-	pArea->high_range		=	0;
-	zero_vector(pArea->progtypes);
-	return pArea;
+    pArea->area_type        =   ARE_UNOPENED;
+    pArea->climate          =   0;
+    pArea->low_range        =   0;
+    pArea->high_range       =   0;
+    zero_vector(pArea->progtypes);
+    return pArea;
 }
 
 
@@ -145,8 +145,8 @@ EXIT_DATA *new_exit( void )
 
     if ( !exit_free )
     {
-		pExit = new EXIT_DATA;
-		CLEAR_MEM(pExit, sizeof(EXIT_DATA));
+        pExit = new EXIT_DATA;
+        CLEAR_MEM(pExit, sizeof(EXIT_DATA));
         top_exit++;
     }
     else
@@ -160,7 +160,7 @@ EXIT_DATA *new_exit( void )
 /*  pExit->vnum         =   0;                        ROM OLC */
     zero_vector(pExit->exit_info);
     pExit->key          =   0;
-    pExit->keyword      =  	NULL;
+    pExit->keyword      =   NULL;
     pExit->description  =   NULL;
 
     return pExit;
@@ -223,8 +223,8 @@ ROOM_INDEX_DATA *new_room_index( void )
 
     if ( !room_index_free )
     {
-		pRoom = new ROOM_INDEX_DATA;
-		CLEAR_MEM(pRoom, sizeof(ROOM_INDEX_DATA));
+        pRoom = new ROOM_INDEX_DATA;
+        CLEAR_MEM(pRoom, sizeof(ROOM_INDEX_DATA));
         top_room++;
     }
     else
@@ -234,43 +234,43 @@ ROOM_INDEX_DATA *new_room_index( void )
     }
 
     pRoom->next             =   NULL;
-	pRoom->next_room		=	NULL;
-	pRoom->aff_next			=	NULL;
-	pRoom->people           =   NULL;
+    pRoom->next_room        =   NULL;
+    pRoom->aff_next         =   NULL;
+    pRoom->people           =   NULL;
     pRoom->contents         =   NULL;
     pRoom->extra_descr      =   NULL;
     pRoom->area             =   NULL;
-    pRoom->alt_description  =	NULL;
-    pRoom->alt_name	    =	NULL;
+    pRoom->alt_description  =   NULL;
+    pRoom->alt_name     =   NULL;
     pRoom->alt_description_cond = 0;
     for ( door=0; door < MAX_DIR; door++ )
         pRoom->exit[door]   =   NULL;
-	
-	for ( i = 0; i < MAX_TRACKS; i++)
-		pRoom->tracks[i] = new_track_data();
-	
-	pRoom->path				=	NULL;
+    
+    for ( i = 0; i < MAX_TRACKS; i++)
+        pRoom->tracks[i] = new_track_data();
+    
+    pRoom->path             =   NULL;
     pRoom->name             =   palloc_string("Dummy Room");
     pRoom->description      =   NULL;
-	pRoom->owner			=	palloc_string("none");
-	pRoom->vnum             =   0;
+    pRoom->owner            =   palloc_string("none");
+    pRoom->vnum             =   0;
     zero_vector(pRoom->room_flags);
     pRoom->sector_type      =   0;
-    pRoom->heal_rate	    =   100;
-    pRoom->mana_rate	    =   100;
-	pRoom->cabal			=	0;
-	pRoom->guild			=	0;
-	pRoom->affected			=	NULL;
-	zero_vector(pRoom->affected_by);
-	pRoom->move_progs		=	FALSE;
-	pRoom->rune				=	NULL;
-	pRoom->has_rune			=	FALSE;
-	pRoom->light			=	0;
-	pRoom->reset_first		=	NULL;
-	pRoom->reset_last		=	NULL;
-	zero_vector(pRoom->progtypes);
-	pRoom->trap				=	NULL;
-	return pRoom;
+    pRoom->heal_rate        =   100;
+    pRoom->mana_rate        =   100;
+    pRoom->cabal            =   0;
+    pRoom->guild            =   0;
+    pRoom->affected         =   NULL;
+    zero_vector(pRoom->affected_by);
+    pRoom->move_progs       =   FALSE;
+    pRoom->rune             =   NULL;
+    pRoom->has_rune         =   FALSE;
+    pRoom->light            =   0;
+    pRoom->reset_first      =   NULL;
+    pRoom->reset_last       =   NULL;
+    zero_vector(pRoom->progtypes);
+    pRoom->trap             =   NULL;
+    return pRoom;
 }
 
 
@@ -317,11 +317,11 @@ SHOP_DATA *new_shop( void )
 {
     SHOP_DATA *pShop;
 
-	pShop = new SHOP_DATA;
-	CLEAR_MEM(pShop, sizeof(SHOP_DATA));
-	pShop->open_hour    =   0;
+    pShop = new SHOP_DATA;
+    CLEAR_MEM(pShop, sizeof(SHOP_DATA));
+    pShop->open_hour    =   0;
     pShop->close_hour   =   23;
-	pShop->direction	=	0;
+    pShop->direction    =   0;
     return pShop;
 }
 
@@ -341,8 +341,8 @@ OBJ_INDEX_DATA *new_obj_index( void )
 
     if ( !obj_index_free )
     {
-		pObj = new OBJ_INDEX_DATA;
-		CLEAR_MEM(pObj, sizeof(OBJ_INDEX_DATA));
+        pObj = new OBJ_INDEX_DATA;
+        CLEAR_MEM(pObj, sizeof(OBJ_INDEX_DATA));
         top_obj_index++;
     }
     else
@@ -356,7 +356,7 @@ OBJ_INDEX_DATA *new_obj_index( void )
     pObj->affected      =   NULL;
     pObj->area          =   NULL;
     pObj->name          =   palloc_string( "no name" );
-    pObj->level		=   1;
+    pObj->level     =   1;
     pObj->short_descr   =   palloc_string( "dummy object" );
     pObj->description   =   palloc_string( "dummy desc" );
     pObj->vnum          =   0;
@@ -364,36 +364,36 @@ OBJ_INDEX_DATA *new_obj_index( void )
     zero_vector(pObj->extra_flags);
     zero_vector(pObj->wear_flags);
     zero_vector(pObj->restrict_flags);
-    pObj->start_timer	=   0;
+    pObj->start_timer   =   0;
     pObj->count         =   0;
     pObj->weight        =   0;
     pObj->cost          =   0;
-    pObj->limtotal	=   0;
+    pObj->limtotal  =   0;
     pObj->material      =   palloc_string( "unknown" );      /* ROM */
     pObj->condition     =   100;                        /* ROM */
-    pObj->verb			=   NULL;
-	pObj->wear_echo[0]	=	NULL;
-	pObj->wear_echo[1]	=	NULL;
-	pObj->wear_echo[2]	=	NULL;
-	pObj->remove_echo[0]=	NULL;
-	pObj->remove_echo[1]=	NULL;
-	pObj->remove_echo[2]=	NULL;
-	pObj->cabal			=	0;
-	pObj->notes			=	NULL;
-	pObj->wear_loc_name =	NULL;
-	pObj->charaffs		=	NULL;
-	pObj->extra_descr	=	NULL;
-	pObj->apply			=	NULL;
-	
-	for ( value = 0; value < 5; value++ )               /* 5 - ROM */
+    pObj->verb          =   NULL;
+    pObj->wear_echo[0]  =   NULL;
+    pObj->wear_echo[1]  =   NULL;
+    pObj->wear_echo[2]  =   NULL;
+    pObj->remove_echo[0]=   NULL;
+    pObj->remove_echo[1]=   NULL;
+    pObj->remove_echo[2]=   NULL;
+    pObj->cabal         =   0;
+    pObj->notes         =   NULL;
+    pObj->wear_loc_name =   NULL;
+    pObj->charaffs      =   NULL;
+    pObj->extra_descr   =   NULL;
+    pObj->apply         =   NULL;
+    
+    for ( value = 0; value < 5; value++ )               /* 5 - ROM */
         pObj->value[value]  =   0;
     pObj->spec_prog.trapvector = 0;
     pObj->new_format    = TRUE; /* ROM */
-	zero_vector(pObj->progtypes);
-	zero_vector(pObj->imm_flags);
-	zero_vector(pObj->res_flags);
-	zero_vector(pObj->vuln_flags);
-    pObj->limcount		= 0;
+    zero_vector(pObj->progtypes);
+    zero_vector(pObj->imm_flags);
+    zero_vector(pObj->res_flags);
+    zero_vector(pObj->vuln_flags);
+    pObj->limcount      = 0;
     return pObj;
 }
 
@@ -428,12 +428,12 @@ void free_obj_index( OBJ_INDEX_DATA *pObj )
 MOB_INDEX_DATA *new_mob_index( void )
 {
     MOB_INDEX_DATA *pMob;
-	int i;
+    int i;
 
     if ( !mob_index_free )
     {
-		pMob = new MOB_INDEX_DATA;
-		CLEAR_MEM(pMob, sizeof(MOB_INDEX_DATA));
+        pMob = new MOB_INDEX_DATA;
+        CLEAR_MEM(pMob, sizeof(MOB_INDEX_DATA));
         top_mob_index++;
     }
     else
@@ -454,59 +454,59 @@ MOB_INDEX_DATA *new_mob_index( void )
     pMob->killed        =   0;
     pMob->sex           =   0;
     pMob->level         =   0;
-	pMob->dam_type		=	0;
-	zero_vector(pMob->act);
-	SET_BIT(pMob->act, ACT_IS_NPC);
+    pMob->dam_type      =   0;
+    zero_vector(pMob->act);
+    SET_BIT(pMob->act, ACT_IS_NPC);
     zero_vector(pMob->affected_by);
     pMob->alignment     =   0;
-    pMob->hitroll	=   0;
-	pMob->dam_mod		=	100;
+    pMob->hitroll   =   0;
+    pMob->dam_mod       =   100;
     pMob->race          =   race_lookup( "human" ); /* - Hugin */
     zero_vector(pMob->form);           /* ROM patch -- Hugin */
     zero_vector(pMob->parts);          /* ROM patch -- Hugin */
     zero_vector(pMob->imm_flags);           /* ROM patch -- Hugin */
     zero_vector(pMob->res_flags);           /* ROM patch -- Hugin */
-	zero_vector(pMob->vuln_flags);           /* ROM patch -- Hugin */
+    zero_vector(pMob->vuln_flags);           /* ROM patch -- Hugin */
     zero_vector(pMob->off_flags);           /* ROM patch -- Hugin */
     pMob->size          =   SIZE_MEDIUM; /* ROM patch -- Hugin */
-    pMob->ac[AC_PIERCE]	=   0;           /* ROM patch -- Hugin */
-    pMob->ac[AC_BASH]	=   0;           /* ROM patch -- Hugin */
-    pMob->ac[AC_SLASH]	=   0;           /* ROM patch -- Hugin */
-    pMob->ac[AC_EXOTIC]	=   0;           /* ROM patch -- Hugin */
-    pMob->hit[DICE_NUMBER]	=   0;   /* ROM patch -- Hugin */
-    pMob->hit[DICE_TYPE]	=   0;   /* ROM patch -- Hugin */
-    pMob->hit[DICE_BONUS]	=   0;   /* ROM patch -- Hugin */
-    pMob->mana[DICE_NUMBER]	=   0;   /* ROM patch -- Hugin */
-    pMob->mana[DICE_TYPE]	=   0;   /* ROM patch -- Hugin */
-    pMob->mana[DICE_BONUS]	=   0;   /* ROM patch -- Hugin */
-    pMob->damage[DICE_NUMBER]	=   0;   /* ROM patch -- Hugin */
-    pMob->damage[DICE_TYPE]	=   0;   /* ROM patch -- Hugin */
-    pMob->damage[DICE_NUMBER]	=   0;   /* ROM patch -- Hugin */
+    pMob->ac[AC_PIERCE] =   0;           /* ROM patch -- Hugin */
+    pMob->ac[AC_BASH]   =   0;           /* ROM patch -- Hugin */
+    pMob->ac[AC_SLASH]  =   0;           /* ROM patch -- Hugin */
+    pMob->ac[AC_EXOTIC] =   0;           /* ROM patch -- Hugin */
+    pMob->hit[DICE_NUMBER]  =   0;   /* ROM patch -- Hugin */
+    pMob->hit[DICE_TYPE]    =   0;   /* ROM patch -- Hugin */
+    pMob->hit[DICE_BONUS]   =   0;   /* ROM patch -- Hugin */
+    pMob->mana[DICE_NUMBER] =   0;   /* ROM patch -- Hugin */
+    pMob->mana[DICE_TYPE]   =   0;   /* ROM patch -- Hugin */
+    pMob->mana[DICE_BONUS]  =   0;   /* ROM patch -- Hugin */
+    pMob->damage[DICE_NUMBER]   =   0;   /* ROM patch -- Hugin */
+    pMob->damage[DICE_TYPE] =   0;   /* ROM patch -- Hugin */
+    pMob->damage[DICE_NUMBER]   =   0;   /* ROM patch -- Hugin */
     pMob->start_pos             =   POS_STANDING; /*  -- Hugin */
     pMob->wealth                =   0;
-	pMob->restrict_low			=	-1;
-	pMob->restrict_high			=	65535;
-	pMob->SetClass(CLASS_NONE);
-	pMob->new_format            = TRUE;  /* ROM */
-	pMob->barred_entry			= NULL;
-	pMob->mprogs				= NULL;
-    pMob->game_fun		= NULL;
-	zero_vector(pMob->progtypes);
-	for(i=0; i<MAX_MOB_AFFECT; i++)
-		pMob->affect_sn[i]=-1;
+    pMob->restrict_low          =   -1;
+    pMob->restrict_high         =   65535;
+    pMob->SetClass(CLASS_NONE);
+    pMob->new_format            = TRUE;  /* ROM */
+    pMob->barred_entry          = NULL;
+    pMob->mprogs                = NULL;
+    pMob->game_fun      = NULL;
+    zero_vector(pMob->progtypes);
+    for(i=0; i<MAX_MOB_AFFECT; i++)
+        pMob->affect_sn[i]=-1;
     for(i=0; i<MAX_MOB_CAST; i++)
-		pMob->cast_spell[i]=NULL;
-	pMob->speech		= NULL; //DIE MORGLUM DIE
-    pMob->cabal			= 0;
-    pMob->attack_yell	= NULL;
-	pMob->notes			= NULL;
-	zero_vector(pMob->styles);
-	pMob->ele_major		= 0;
-	pMob->ele_para		= 0;
-	for(int j = 0; j < MAX_PROFS_TAUGHT_BY_MOB; j++)
-		pMob->profs_taught[j] = -1;
+        pMob->cast_spell[i]=NULL;
+    pMob->speech        = NULL; //DIE MORGLUM DIE
+    pMob->cabal         = 0;
+    pMob->attack_yell   = NULL;
+    pMob->notes         = NULL;
+    zero_vector(pMob->styles);
+    pMob->ele_major     = 0;
+    pMob->ele_para      = 0;
+    for(int j = 0; j < MAX_PROFS_TAUGHT_BY_MOB; j++)
+        pMob->profs_taught[j] = -1;
 
-	return pMob;
+    return pMob;
 }
 
 

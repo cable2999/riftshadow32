@@ -16,18 +16,18 @@
  ***************************************************************************/
 
 /***************************************************************************
-*	ROM 2.4 is copyright 1993-1996 Russ Taylor			   *
-*	ROM has been brought to you by the ROM consortium		   *
-*	    Russ Taylor (rtaylor@efn.org)				   *
-*	    Gabrielle Taylor						   *
-*	    Brian Moore (zump@rom.org)					   *
-*	By using this code, you have agreed to follow the terms of the	   *
-*	ROM license, in the file Tartarus/doc/rom.license                  *
+*   ROM 2.4 is copyright 1993-1996 Russ Taylor             *
+*   ROM has been brought to you by the ROM consortium          *
+*       Russ Taylor (rtaylor@efn.org)                  *
+*       Gabrielle Taylor                           *
+*       Brian Moore (zump@rom.org)                     *
+*   By using this code, you have agreed to follow the terms of the     *
+*   ROM license, in the file Tartarus/doc/rom.license                  *
 ***************************************************************************/
 
 /***************************************************************************
 *       Tartarus code is copyright (C) 1997-1998 by Daniel Graham          *
-*	In using this code you agree to comply with the Tartarus license   *
+*   In using this code you agree to comply with the Tartarus license   *
 *       found in the file /Tartarus/doc/tartarus.doc                       *
 ***************************************************************************/
 
@@ -52,11 +52,11 @@ NOTE_DATA *new_note()
     NOTE_DATA *note;
 
     if (note_free == NULL)
-	note  = new NOTE_DATA;
+    note  = new NOTE_DATA;
     else
     {
-	note = note_free;
-	note_free = note_free->next;
+    note = note_free;
+    note_free = note_free->next;
     }
     VALIDATE(note);
     return note;
@@ -65,7 +65,7 @@ NOTE_DATA *new_note()
 void free_note(NOTE_DATA *note)
 {
     if (!IS_VALID(note))
-	return;
+    return;
 
     free_pstring( note->text    );
     free_pstring( note->subject );
@@ -88,11 +88,11 @@ BAN_DATA *new_ban(void)
     BAN_DATA *ban;
 
     if (ban_free == NULL)
-	ban  = new BAN_DATA;
+    ban  = new BAN_DATA;
     else
     {
-	ban = ban_free;
-	ban_free = ban_free->next;
+    ban = ban_free;
+    ban_free = ban_free->next;
     }
 
     *ban = ban_zero;
@@ -104,7 +104,7 @@ BAN_DATA *new_ban(void)
 void free_ban(BAN_DATA *ban)
 {
     if (!IS_VALID(ban))
-	return;
+    return;
 
     free_pstring(ban->name);
     INVALIDATE(ban);
@@ -122,13 +122,13 @@ DESCRIPTOR_DATA *new_descriptor(void)
     DESCRIPTOR_DATA *d;
 
     if (descriptor_free == NULL)
-	d  = new DESCRIPTOR_DATA;
+    d  = new DESCRIPTOR_DATA;
     else
     {
-	d = descriptor_free;
-	descriptor_free = descriptor_free->next;
+    d = descriptor_free;
+    descriptor_free = descriptor_free->next;
     }
-	
+    
     *d = d_zero;
     VALIDATE(d);
     return d;
@@ -137,11 +137,11 @@ DESCRIPTOR_DATA *new_descriptor(void)
 void free_descriptor(DESCRIPTOR_DATA *d)
 {
     if (!IS_VALID(d))
-	return;
+    return;
 
     free_pstring( d->host );
     if(d->outbuf)
-    	delete[] d->outbuf;
+        delete[] d->outbuf;
     INVALIDATE(d);
     d->next = descriptor_free;
     descriptor_free = d;
@@ -156,11 +156,11 @@ GEN_DATA *new_gen_data(void)
     GEN_DATA *gen;
 
     if (gen_data_free == NULL)
-	gen  = new GEN_DATA;
+    gen  = new GEN_DATA;
     else
     {
-	gen = gen_data_free;
-	gen_data_free = gen_data_free->next;
+    gen = gen_data_free;
+    gen_data_free = gen_data_free->next;
     }
     *gen = gen_zero;
     VALIDATE(gen);
@@ -170,7 +170,7 @@ GEN_DATA *new_gen_data(void)
 void free_gen_data(GEN_DATA *gen)
 {
     if (!IS_VALID(gen))
-	return;
+    return;
 
     INVALIDATE(gen);
 
@@ -182,237 +182,237 @@ void free_gen_data(GEN_DATA *gen)
 
 TROPHY_DATA *new_trophy_data(char *victname)
 {
-	TROPHY_DATA* trophy;
+    TROPHY_DATA* trophy;
 
-	trophy  = new TROPHY_DATA;
+    trophy  = new TROPHY_DATA;
 
-	if (trophy == NULL) {
-		return (NULL);
-	}
+    if (trophy == NULL) {
+        return (NULL);
+    }
 
-	trophy->victname = palloc_string(victname);
-	trophy->next = NULL;
+    trophy->victname = palloc_string(victname);
+    trophy->next = NULL;
 
-	return trophy;
+    return trophy;
 }
 
 void free_trophy(TROPHY_DATA *trophy)
 {
-	if(!trophy)
-		return (void)bug("ERROR: Null trophy freed!",0);
-	if(trophy->next == NULL) {
-		delete trophy;
-		return;
-	} else {
-		free_trophy(trophy->next);
-		delete trophy;
+    if(!trophy)
+        return (void)bug("ERROR: Null trophy freed!",0);
+    if(trophy->next == NULL) {
+        delete trophy;
+        return;
+    } else {
+        free_trophy(trophy->next);
+        delete trophy;
 
-		return;
-	}
+        return;
+    }
 }
 
 /* mob speech memory management */
 
 SPEECH_DATA *new_speech_data(void)
 {
-	SPEECH_DATA *speech;
+    SPEECH_DATA *speech;
 
-	speech  = new SPEECH_DATA;
+    speech  = new SPEECH_DATA;
 
-	speech->next = NULL;
-	speech->prev = NULL;
-	speech->mob = NULL;
-	speech->name = NULL;
-	speech->first_line = NULL;
-	speech->current_line = NULL;
+    speech->next = NULL;
+    speech->prev = NULL;
+    speech->mob = NULL;
+    speech->name = NULL;
+    speech->first_line = NULL;
+    speech->current_line = NULL;
 
-	return speech;
+    return speech;
 }
 
 void free_speech(SPEECH_DATA *speech)
 {
-	free_pstring(speech->name);
-	if (speech->next) {
-		if (speech->prev) {
-			speech->prev->next = speech->next;
-			speech->next->prev = speech->prev;
-		} else {
-			speech->mob->speech = speech->next;
-		}
-	}
-	delete speech;
-	return;
+    free_pstring(speech->name);
+    if (speech->next) {
+        if (speech->prev) {
+            speech->prev->next = speech->next;
+            speech->next->prev = speech->prev;
+        } else {
+            speech->mob->speech = speech->next;
+        }
+    }
+    delete speech;
+    return;
 }
 
 void free_line(LINE_DATA *line)
 {
-	LINE_DATA *lptr;
-	
-	free_pstring(line->text);
-	if (line->next) {
-		if (line->prev) {
-			line->prev->next = line->next;
-			line->next->prev = line->prev;
-		} else {
-			line->speech->first_line = line->next;
-		}
-	}
+    LINE_DATA *lptr;
+    
+    free_pstring(line->text);
+    if (line->next) {
+        if (line->prev) {
+            line->prev->next = line->next;
+            line->next->prev = line->prev;
+        } else {
+            line->speech->first_line = line->next;
+        }
+    }
 
-	for (lptr = line; lptr; lptr = lptr->next)
-		lptr->number--;
+    for (lptr = line; lptr; lptr = lptr->next)
+        lptr->number--;
 
-	delete line;
-	return;
+    delete line;
+    return;
 }
 
 LINE_DATA *new_line_data(void)
 {
-	LINE_DATA *line;
+    LINE_DATA *line;
 
-	line = new LINE_DATA;
+    line = new LINE_DATA;
 
-	line->speech = NULL;
-	line->next = NULL;
-	line->prev = NULL;
-	line->number = -1;
-	line->delay = -1;
-	line->type = -1;
-	line->text = NULL;
+    line->speech = NULL;
+    line->next = NULL;
+    line->prev = NULL;
+    line->number = -1;
+    line->delay = -1;
+    line->type = -1;
+    line->text = NULL;
 
-	return line;
+    return line;
 }
 
 IPROG_DATA *new_iprog(void)
 {
-	IPROG_DATA *ipr = new IPROG_DATA;
-	ipr->wear_name = NULL;
-	ipr->remove_name = NULL;
-	ipr->get_name = NULL;
-	ipr->loot_name = NULL;
-	ipr->drop_name = NULL;
-	ipr->sac_name = NULL;
-	ipr->sac_name = NULL;
-	ipr->entry_name = NULL;
-	ipr->give_name = NULL;
-	ipr->greet_name = NULL;
-	ipr->fight_name = NULL;
-	ipr->death_name = NULL;
-	ipr->speech_name = NULL;
-	ipr->pulse_name = NULL;
-	ipr->invoke_name = NULL;
-	ipr->open_name = NULL;
-	ipr->look_name = NULL;
-	ipr->verb_name = NULL;
-	ipr->hit_name = NULL;
-	return ipr;
+    IPROG_DATA *ipr = new IPROG_DATA;
+    ipr->wear_name = NULL;
+    ipr->remove_name = NULL;
+    ipr->get_name = NULL;
+    ipr->loot_name = NULL;
+    ipr->drop_name = NULL;
+    ipr->sac_name = NULL;
+    ipr->sac_name = NULL;
+    ipr->entry_name = NULL;
+    ipr->give_name = NULL;
+    ipr->greet_name = NULL;
+    ipr->fight_name = NULL;
+    ipr->death_name = NULL;
+    ipr->speech_name = NULL;
+    ipr->pulse_name = NULL;
+    ipr->invoke_name = NULL;
+    ipr->open_name = NULL;
+    ipr->look_name = NULL;
+    ipr->verb_name = NULL;
+    ipr->hit_name = NULL;
+    return ipr;
 }
 
 RACE_DATA *new_race_data(void)
 {
-	RACE_DATA *race_specs;
+    RACE_DATA *race_specs;
 
-	race_specs = new RACE_DATA;
+    race_specs = new RACE_DATA;
 
-	if (race_specs == NULL) {
-		return (NULL);
-	}
+    if (race_specs == NULL) {
+        return (NULL);
+    }
 
-	race_specs->next = NULL;
-	race_specs->first = NULL;
-	race_specs->name = NULL;
-	race_specs->number = -1;
-	zero_vector(race_specs->act);
-	zero_vector(race_specs->aff);
-	zero_vector(race_specs->off);
-	zero_vector(race_specs->imm);
-	zero_vector(race_specs->res);
-	zero_vector(race_specs->vuln);
-	zero_vector(race_specs->form);
-	zero_vector(race_specs->parts);
+    race_specs->next = NULL;
+    race_specs->first = NULL;
+    race_specs->name = NULL;
+    race_specs->number = -1;
+    zero_vector(race_specs->act);
+    zero_vector(race_specs->aff);
+    zero_vector(race_specs->off);
+    zero_vector(race_specs->imm);
+    zero_vector(race_specs->res);
+    zero_vector(race_specs->vuln);
+    zero_vector(race_specs->form);
+    zero_vector(race_specs->parts);
 
-	return(race_specs);
+    return(race_specs);
 }
 
 void free_race_data(RACE_DATA *race_specs)
 {
-	if (race_specs->next == NULL) {
-		delete race_specs;
-		return;
-	} else {
-		free_race_data(race_specs->next);
-		delete race_specs;
+    if (race_specs->next == NULL) {
+        delete race_specs;
+        return;
+    } else {
+        free_race_data(race_specs->next);
+        delete race_specs;
 
-		return;
-	}
+        return;
+    }
 }
-	
+    
 
 /* Stuff for recycling track data */
 
 TRACK_DATA *new_track_data(void)
 {
-	TRACK_DATA * tracks;
+    TRACK_DATA * tracks;
 
-	tracks = new TRACK_DATA;
+    tracks = new TRACK_DATA;
 
-	if (tracks == NULL) {
-		return (NULL);
-	}
+    if (tracks == NULL) {
+        return (NULL);
+    }
 
-	tracks->prey = NULL;
-	tracks->time = time_info;
-	tracks->direction = -1;
+    tracks->prey = NULL;
+    tracks->time = time_info;
+    tracks->direction = -1;
 
-	return tracks;
+    return tracks;
 }
 
 void free_track(TRACK_DATA *tracks)
 {
-	delete tracks;
-	return;
+    delete tracks;
+    return;
 }
 
 PATHFIND_DATA *new_path_data(void)
 {
-	PATHFIND_DATA *path;
-	int i;
+    PATHFIND_DATA *path;
+    int i;
 
-	path = new PATHFIND_DATA;
+    path = new PATHFIND_DATA;
 
-	if (path == NULL) {
-		return (NULL);
-	}
+    if (path == NULL) {
+        return (NULL);
+    }
 
-	path->room 		=	NULL;
-	path->evaluated	=	FALSE;
-	path->dir_from	=	-1;
-	path->steps		=	-1;
-	path->prev		=	NULL;
-	for (i = 0; i < 6; i++)
-		path->dir_to[i] = NULL;
+    path->room      =   NULL;
+    path->evaluated =   FALSE;
+    path->dir_from  =   -1;
+    path->steps     =   -1;
+    path->prev      =   NULL;
+    for (i = 0; i < 6; i++)
+        path->dir_to[i] = NULL;
 
-	return (path);
+    return (path);
 }
 
 void free_path (PATHFIND_DATA *path)
 {
-	int i;
-	
-	if (!path->dir_to[DIR_NORTH]
-		&& !path->dir_to[DIR_EAST]
-		&& !path->dir_to[DIR_SOUTH]
-		&& !path->dir_to[DIR_WEST]
-		&& !path->dir_to[DIR_UP]
-		&& !path->dir_to[DIR_DOWN]) {
-		delete path;
-	} else {
-		for (i = 0; i < 6; i++)
-			if (path->dir_to[i])
-				free_path(path->dir_to[i]);
-		delete path;
-	}
+    int i;
+    
+    if (!path->dir_to[DIR_NORTH]
+        && !path->dir_to[DIR_EAST]
+        && !path->dir_to[DIR_SOUTH]
+        && !path->dir_to[DIR_WEST]
+        && !path->dir_to[DIR_UP]
+        && !path->dir_to[DIR_DOWN]) {
+        delete path;
+    } else {
+        for (i = 0; i < 6; i++)
+            if (path->dir_to[i])
+                free_path(path->dir_to[i]);
+        delete path;
+    }
 
-	return;
+    return;
 }
 
 /* stuff for recycling extended descs -- UGLY */
@@ -423,11 +423,11 @@ EXTRA_DESCR_DATA *new_extra_descr(void)
     EXTRA_DESCR_DATA *ed;
 
     if (extra_descr_free == NULL)
-	ed  = new EXTRA_DESCR_DATA;
+    ed  = new EXTRA_DESCR_DATA;
     else
     {
-	ed = extra_descr_free;
-	extra_descr_free = extra_descr_free->next;
+    ed = extra_descr_free;
+    extra_descr_free = extra_descr_free->next;
     }
 
     ed->keyword = &str_empty[0];
@@ -439,7 +439,7 @@ EXTRA_DESCR_DATA *new_extra_descr(void)
 void free_extra_descr(EXTRA_DESCR_DATA *ed)
 {
     if (!IS_VALID(ed))
-	return;
+    return;
 
     free_pstring(ed->keyword);
     free_pstring(ed->description);
@@ -453,31 +453,31 @@ OBJ_APPLY_DATA *apply_free;
 
 OBJ_APPLY_DATA *new_apply_data(void)
 {
-	static OBJ_APPLY_DATA app_zero;
-	OBJ_APPLY_DATA *app;
+    static OBJ_APPLY_DATA app_zero;
+    OBJ_APPLY_DATA *app;
 
-	if (apply_free == NULL)
-		app  = new OBJ_APPLY_DATA;
-	else {
-		app = apply_free;
-		apply_free = apply_free->next;
-	}
+    if (apply_free == NULL)
+        app  = new OBJ_APPLY_DATA;
+    else {
+        app = apply_free;
+        apply_free = apply_free->next;
+    }
 
-	*app = app_zero;
-	app->type = 0;
+    *app = app_zero;
+    app->type = 0;
 
-	VALIDATE(app);
-	return app;
+    VALIDATE(app);
+    return app;
 }
 
 void free_apply (OBJ_APPLY_DATA *app)
 {
-	if (!IS_VALID(app))
-		return;
+    if (!IS_VALID(app))
+        return;
 
-	INVALIDATE(app);
-	app->next = apply_free;
-	apply_free = app;
+    INVALIDATE(app);
+    app->next = apply_free;
+    apply_free = app;
 }
 
 /* stuff for recycling affects */
@@ -492,11 +492,11 @@ AFFECT_DATA *new_affect(void)
     AFFECT_DATA *af;
 
     if (affect_free == NULL)
-	af  = new AFFECT_DATA;
+    af  = new AFFECT_DATA;
     else
     {
-	af = affect_free;
-	affect_free = affect_free->next;
+    af = affect_free;
+    affect_free = affect_free->next;
     }
 
     *af = af_zero;
@@ -507,20 +507,20 @@ AFFECT_DATA *new_affect(void)
 
 TRAP_DATA *new_trap(void)
 {
-	TRAP_DATA *trap;
+    TRAP_DATA *trap;
 
-	trap  = new TRAP_DATA;
+    trap  = new TRAP_DATA;
 
-	return trap;
+    return trap;
 }
 
 void free_trap(TRAP_DATA *trap)
 {
-	free_pstring(trap->exec_echo);
-	free_pstring(trap->trig_echo);
-	delete trap;
-	
-	return;
+    free_pstring(trap->exec_echo);
+    free_pstring(trap->trig_echo);
+    delete trap;
+    
+    return;
 }
 
 RUNE_DATA *rune_free;
@@ -530,11 +530,11 @@ RUNE_DATA *new_rune(void)
     RUNE_DATA *rune;
 
     if(rune_free == NULL)
-	rune  = new RUNE_DATA;
+    rune  = new RUNE_DATA;
     else
     {
-	rune = rune_free;
-	rune_free = rune->next;
+    rune = rune_free;
+    rune_free = rune->next;
     }
     *rune = rune_zero;
     return rune;
@@ -574,7 +574,7 @@ void free_queue(QUEUE_DATA *queue)
 void free_affect(AFFECT_DATA *af)
 {
     if (!IS_VALID(af))
-	return;
+    return;
 
     free_pstring(af->name);
     INVALIDATE(af);
@@ -604,7 +604,7 @@ ROOM_AFFECT_DATA *new_affect_room(void)
 void free_affect_room(ROOM_AFFECT_DATA *af)
 {
     if (!IS_VALID(af))
-	return;
+    return;
 
     INVALIDATE(af);
     af->next = raffect_free;
@@ -613,57 +613,57 @@ void free_affect_room(ROOM_AFFECT_DATA *af)
 
 OBJ_AFFECT_DATA *new_affect_obj (void)
 {
-	static OBJ_AFFECT_DATA af_zero;
-	OBJ_AFFECT_DATA *af;
+    static OBJ_AFFECT_DATA af_zero;
+    OBJ_AFFECT_DATA *af;
 
-	if (oaffect_free == NULL) {
-		af  = new OBJ_AFFECT_DATA;
-	} else {
-		af = oaffect_free;
-		oaffect_free = oaffect_free->next;
-	}
+    if (oaffect_free == NULL) {
+        af  = new OBJ_AFFECT_DATA;
+    } else {
+        af = oaffect_free;
+        oaffect_free = oaffect_free->next;
+    }
 
-	*af = af_zero;
+    *af = af_zero;
 
-	VALIDATE(af);
-	return af;
+    VALIDATE(af);
+    return af;
 }
 
 void free_affect_obj(OBJ_AFFECT_DATA *af)
 {
-	if(!IS_VALID(af))	return;
+    if(!IS_VALID(af))   return;
 
-	INVALIDATE(af);
-	af->next = oaffect_free;
-	oaffect_free = af;
+    INVALIDATE(af);
+    af->next = oaffect_free;
+    oaffect_free = af;
 }
-	
+    
 AREA_AFFECT_DATA *new_affect_area(void)
 {
-	static AREA_AFFECT_DATA af_zero;
-	AREA_AFFECT_DATA *af;
+    static AREA_AFFECT_DATA af_zero;
+    AREA_AFFECT_DATA *af;
 
-	if (aaffect_free == NULL) {
-		af  = new AREA_AFFECT_DATA;
-	} else {
-		af = aaffect_free;
-		aaffect_free = aaffect_free->next;
-	}
+    if (aaffect_free == NULL) {
+        af  = new AREA_AFFECT_DATA;
+    } else {
+        af = aaffect_free;
+        aaffect_free = aaffect_free->next;
+    }
 
-	*af = af_zero;
+    *af = af_zero;
 
-	VALIDATE(af);
-	return af;
+    VALIDATE(af);
+    return af;
 }
 
 void free_affect_area(AREA_AFFECT_DATA *af)
 {
-	if (!IS_VALID(af))
-		return;
+    if (!IS_VALID(af))
+        return;
 
-	INVALIDATE(af);
-	af->next = aaffect_free;
-	aaffect_free = af;
+    INVALIDATE(af);
+    af->next = aaffect_free;
+    aaffect_free = af;
 }
 
 /* stuff for recycling objects */
@@ -675,11 +675,11 @@ OBJ_DATA *new_obj(void)
     OBJ_DATA *obj;
 
     if (obj_free == NULL)
-	obj  = new OBJ_DATA;
+    obj  = new OBJ_DATA;
     else
     {
-	obj = obj_free;
-	obj_free = obj_free->next;
+    obj = obj_free;
+    obj_free = obj_free->next;
     }
     *obj = obj_zero;
     VALIDATE(obj);
@@ -693,19 +693,19 @@ void free_obj(OBJ_DATA *obj)
     EXTRA_DESCR_DATA *ed, *ed_next;
 
     if (!IS_VALID(obj))
-	return;
+    return;
 
     for (paf = obj->affected; paf != NULL; paf = paf_next)
     {
-	paf_next = paf->next;
-	free_affect_obj(paf);
+    paf_next = paf->next;
+    free_affect_obj(paf);
     }
     obj->affected = NULL;
 
     for (ed = obj->extra_descr; ed != NULL; ed = ed_next )
     {
-	ed_next = ed->next;
-	free_extra_descr(ed);
+    ed_next = ed->next;
+    free_extra_descr(ed);
      }
      obj->extra_descr = NULL;
 
@@ -731,26 +731,26 @@ CHAR_DATA *new_char (void)
 
     if (char_free == NULL)
     {
-		ch  = new CHAR_DATA;
-		if(bDebug)
-			bug("Char free is null.  . . . . !",0);
+        ch  = new CHAR_DATA;
+        if(bDebug)
+            bug("Char free is null.  . . . . !",0);
     }
     else
     {
-	ch = char_free;
-	char_free = char_free->next;
+    ch = char_free;
+    char_free = char_free->next;
     }
 
-    *ch				= ch_zero;
+    *ch             = ch_zero;
     VALIDATE(ch);
     ch->name                    = &str_empty[0];
     ch->short_descr             = &str_empty[0];
     ch->long_descr              = &str_empty[0];
     ch->description             = &str_empty[0];
     ch->prompt                  = &str_empty[0];
-    ch->prefix			= &str_empty[0];
+    ch->prefix          = &str_empty[0];
     ch->logon                   = current_time;
-    ch->played			= 0;
+    ch->played          = 0;
     ch->lines                   = PAGELEN;
     for (i = 0; i < 4; i++)
         ch->armor[i]            = 0;
@@ -761,15 +761,15 @@ CHAR_DATA *new_char (void)
     ch->max_mana                = 100;
     ch->move                    = 100;
     ch->max_move                = 100;
-    ch->arms					= 2;
-    ch->legs					= 2;
-	ch->regen_rate				= 0;
-    ch->balance					= 0;
-	ch->batter					= 0;
-	ch->analyze					= 0;
-	ch->talismanic				= 0;
-    ch->law_pass				= FALSE;
-	zero_vector(ch->imm_flags);
+    ch->arms                    = 2;
+    ch->legs                    = 2;
+    ch->regen_rate              = 0;
+    ch->balance                 = 0;
+    ch->batter                  = 0;
+    ch->analyze                 = 0;
+    ch->talismanic              = 0;
+    ch->law_pass                = FALSE;
+    zero_vector(ch->imm_flags);
     for (i = 0; i < MAX_STATS; i ++)
     {
         ch->perm_stat[i] = 13;
@@ -787,24 +787,24 @@ void free_char (CHAR_DATA *ch)
     AFFECT_DATA *paf;
     AFFECT_DATA *paf_next;
     if (!IS_VALID(ch) || !ch)
-	return;
+    return;
 
     if (IS_NPC(ch))
-	mobile_count--;
+    mobile_count--;
 
     for (obj = ch->carrying; obj != NULL; obj = obj_next)
     {
-		obj_next = obj->next_content;
-		extract_obj(obj);
+        obj_next = obj->next_content;
+        extract_obj(obj);
     }
 
     for (paf = ch->affected; paf != NULL; paf = paf_next)
     {
-		paf_next = paf->next;
-		paf->pulse_fun	= NULL;
-		paf->tick_fun	= NULL;
-		paf->end_fun	= NULL;
-		affect_remove(ch,paf);
+        paf_next = paf->next;
+        paf->pulse_fun  = NULL;
+        paf->tick_fun   = NULL;
+        paf->end_fun    = NULL;
+        affect_remove(ch,paf);
     }
     free_pstring(ch->name);
     free_pstring(ch->short_descr);
@@ -815,7 +815,7 @@ void free_char (CHAR_DATA *ch)
     free_pstring(ch->prefix);
 
     if (ch->pcdata != NULL)
-    	free_pcdata(ch->pcdata);
+        free_pcdata(ch->pcdata);
 
     ch->next = char_free;
     char_free  = ch;
@@ -833,30 +833,30 @@ PC_DATA *new_pcdata(void)
     PC_DATA *pcdata;
 
     if (pcdata_free == NULL)
-	pcdata  = new PC_DATA;
+    pcdata  = new PC_DATA;
     else
     {
-	pcdata = pcdata_free;
-	pcdata_free = pcdata_free->next;
+    pcdata = pcdata_free;
+    pcdata_free = pcdata_free->next;
     }
 
     *pcdata = pcdata_zero;
 
     for (alias = 0; alias < MAX_ALIAS; alias++)
     {
-	pcdata->alias[alias] = NULL;
-	pcdata->alias_sub[alias] = NULL;
+    pcdata->alias[alias] = NULL;
+    pcdata->alias_sub[alias] = NULL;
     }
 
     pcdata->buffer = new_buf();
 
     VALIDATE(pcdata);
-	pcdata->trusting = NULL;
-	pcdata->death_status = 0;
+    pcdata->trusting = NULL;
+    pcdata->death_status = 0;
     return pcdata;
 }
 
-OLD_CHAR *oldtype_free;	
+OLD_CHAR *oldtype_free; 
 
 OLD_CHAR *new_oldchar(void)
 {
@@ -878,38 +878,38 @@ OLD_CHAR *new_oldchar(void)
 
 void free_oldchar( OLD_CHAR *old )
 {
-	free_pstring(old->name);
-	free_pstring(old->short_descr);
-	free_pstring(old->long_descr);
-	free_pstring(old->description);
+    free_pstring(old->name);
+    free_pstring(old->short_descr);
+    free_pstring(old->long_descr);
+    free_pstring(old->description);
 
-	old->next = oldtype_free;
-	oldtype_free = old;
-	return;
+    old->next = oldtype_free;
+    oldtype_free = old;
+    return;
 }
 
 
 void free_pcdata(PC_DATA *pcdata)
 {
     if (!IS_VALID(pcdata))
-	return;
+    return;
 
     free_pstring(pcdata->pwd);
     free_pstring(pcdata->bamfin);
     free_pstring(pcdata->bamfout);
     free_pstring(pcdata->title);
     free_buf(pcdata->buffer);
-	for(int i = 0; i < 100; i++)
-		if(pcdata->recentkills[i] != NULL)
-			free_pstring(pcdata->recentkills[i]);
+    for(int i = 0; i < 100; i++)
+        if(pcdata->recentkills[i] != NULL)
+            free_pstring(pcdata->recentkills[i]);
 
 /*    for (alias = 0; alias < MAX_ALIAS; alias++)
     {
-		if(pcdata->alias[alias] != NULL)
-		{	
-			free_pstring(pcdata->alias[alias]);
-			free_pstring(pcdata->alias_sub[alias]);
-		}
+        if(pcdata->alias[alias] != NULL)
+        {   
+            free_pstring(pcdata->alias[alias]);
+            free_pstring(pcdata->alias_sub[alias]);
+        }
     } */
     INVALIDATE(pcdata);
     pcdata->next = pcdata_free;
@@ -918,12 +918,12 @@ void free_pcdata(PC_DATA *pcdata)
     return;
 }
 
-	
+    
 
 
 /* stuff for setting ids */
-long	last_pc_id;
-long	last_mob_id;
+long    last_pc_id;
+long    last_mob_id;
 
 long get_pc_id(void)
 {
@@ -951,11 +951,11 @@ MEM_DATA *new_mem_data(void)
     MEM_DATA *memory;
 
     if (mem_data_free == NULL)
-	memory  = new MEM_DATA;
+    memory  = new MEM_DATA;
     else
     {
-	memory = mem_data_free;
-	mem_data_free = mem_data_free->next;
+    memory = mem_data_free;
+    mem_data_free = mem_data_free->next;
     }
 
     memory->next = NULL;
@@ -970,7 +970,7 @@ MEM_DATA *new_mem_data(void)
 void free_pstruct_data(MEM_DATA *memory)
 {
     if (!IS_VALID(memory))
-	return;
+    return;
 
     memory->next = mem_data_free;
     mem_data_free = memory;
@@ -992,10 +992,10 @@ int get_size (int val)
     int i;
 
     for (i = 0; i < MAX_BUF_LIST; i++)
-	if (buf_size[i] >= val)
-	{
-	    return buf_size[i];
-	}
+    if (buf_size[i] >= val)
+    {
+        return buf_size[i];
+    }
 
     return -1;
 }
@@ -1005,20 +1005,20 @@ BUFFER *new_buf()
     BUFFER *buffer;
 
     if (buf_free == NULL)
-		buffer  = new BUFFER;
+        buffer  = new BUFFER;
     else {
-		buffer = buf_free;
-		buf_free = buf_free->next;
+        buffer = buf_free;
+        buf_free = buf_free->next;
     }
 
-    buffer->next	= NULL;
-    buffer->state	= BUFFER_SAFE;
-//    buffer->size	= get_size(BASE_BUF);
+    buffer->next    = NULL;
+    buffer->state   = BUFFER_SAFE;
+//    buffer->size  = get_size(BASE_BUF);
 
-//    buffer->string	= palloc_struct(buffer->size);
-//    buffer->string[0]	= '\0';					JUST SAY NO TO DIKU.  --D
-    buffer->size	= 0;
-    buffer->string	= NULL;
+//    buffer->string    = palloc_struct(buffer->size);
+//    buffer->string[0] = '\0';                 JUST SAY NO TO DIKU.  --D
+    buffer->size    = 0;
+    buffer->string  = NULL;
     VALIDATE(buffer);
 
     return buffer;
@@ -1027,7 +1027,7 @@ BUFFER *new_buf()
 void free_buf(BUFFER *buffer)
 {
     if (!IS_VALID(buffer))
-	return;
+    return;
     if(buffer->string)
         free_pstring(buffer->string);
     buffer->string = NULL;
@@ -1043,28 +1043,28 @@ void free_buf(BUFFER *buffer)
 bool add_buf(BUFFER *buffer, char *string)
 {
     int len;
-	char *tptr;
+    char *tptr;
     if(string[0] == '\0' || string == NULL)
-	return FALSE;
+    return FALSE;
 
     if (!buffer->string || !strlen(buffer->string)) //like a virgin.. touched for the very first tiiiiime
     {
-	buffer->string = palloc_string(string);
-	buffer->size = strlen(string) + 1;
-	return TRUE;
+    buffer->string = palloc_string(string);
+    buffer->size = strlen(string) + 1;
+    return TRUE;
     }
-	
+    
     len = strlen(buffer->string) + strlen(string) + 1;
-	if(len > 32766)
-		return TRUE;
-	tptr = buffer->string;
+    if(len > 32766)
+        return TRUE;
+    tptr = buffer->string;
     buffer->string = new char[len];
     if(!buffer->string)
-		return FALSE;
-	buffer->size = len;
-	strcpy(buffer->string, tptr);
+        return FALSE;
+    buffer->size = len;
+    strcpy(buffer->string, tptr);
     strcat(buffer->string, string);
-	delete[] tptr;
+    delete[] tptr;
     return TRUE;
 }
 

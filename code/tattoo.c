@@ -16,18 +16,18 @@
  ***************************************************************************/
 
 /***************************************************************************
-*	ROM 2.4 is copyright 1993-1996 Russ Taylor			   *
-*	ROM has been brought to you by the ROM consortium		   *
-*	    Russ Taylor (rtaylor@pacinfo.com)				   *
-*	    Gabrielle Taylor (gtaylor@pacinfo.com)			   *
-*	    Brian Moore (rom@rom.efn.org)				   *
-*	By using this code, you have agreed to follow the terms of the	   *
-*	ROM license, in the file Tartarus/doc/rom.license                  *
+*   ROM 2.4 is copyright 1993-1996 Russ Taylor             *
+*   ROM has been brought to you by the ROM consortium          *
+*       Russ Taylor (rtaylor@pacinfo.com)                  *
+*       Gabrielle Taylor (gtaylor@pacinfo.com)             *
+*       Brian Moore (rom@rom.efn.org)                  *
+*   By using this code, you have agreed to follow the terms of the     *
+*   ROM license, in the file Tartarus/doc/rom.license                  *
 ***************************************************************************/
 
 /***************************************************************************
 *       Tartarus code is copyright (C) 1997-1998 by Daniel Graham          *
-*	In using this code you agree to comply with the Tartarus license   *
+*   In using this code you agree to comply with the Tartarus license   *
 *       found in the file /Tartarus/doc/tartarus.doc                       *
 ***************************************************************************/
 
@@ -84,8 +84,8 @@ void do_brands( CHAR_DATA *ch, char *argument )
 
 /*    if ( IS_NPC(victim) )
     {
-	send_to_char( "Trying to tattoo a mob?\n\r", ch );
-	return;
+    send_to_char( "Trying to tattoo a mob?\n\r", ch );
+    return;
     }
 */
     if (ch == victim)
@@ -101,13 +101,13 @@ void do_brands( CHAR_DATA *ch, char *argument )
 
     if ( (obj = get_eq_char(ch, WEAR_BRAND) ) != NULL )
     {
-	objj = create_object(obj->pIndexData, 0);
+    objj = create_object(obj->pIndexData, 0);
         clone_object(obj, objj);
         obj_to_char( objj, victim );
         equip_char( victim, objj, WEAR_BRAND, TRUE);
         act("You mark $N with $p!",ch,objj,victim,TO_CHAR);
-	act("$n marks you with $p!",ch,objj,victim,TO_VICT);
-	act("$n marks $N with $p!",ch,objj,victim,TO_NOTVICT);
+    act("$n marks you with $p!",ch,objj,victim,TO_VICT);
+    act("$n marks $N with $p!",ch,objj,victim,TO_NOTVICT);
         return;
     }
     send_to_char("You don't have a brand yourself.\n\r", ch);
@@ -139,8 +139,8 @@ void do_unbrands( CHAR_DATA *ch, char *argument )
     }
     if (IS_NPC(victim))
     {
-	send_to_char( "Trying to untattoo a mob?\n\r", ch );
-	return;
+    send_to_char( "Trying to untattoo a mob?\n\r", ch );
+    return;
     }
     if (ch == victim)
     {
@@ -149,8 +149,8 @@ void do_unbrands( CHAR_DATA *ch, char *argument )
     }
     if ((obj = get_eq_char(victim, WEAR_BRAND)) == NULL)
     {
-	send_to_char( "That person doesn't have a tattoo.\n\r", ch );
-	return;
+    send_to_char( "That person doesn't have a tattoo.\n\r", ch );
+    return;
     }
     unequip_char(victim, obj, TRUE);
     obj_from_char(obj);
@@ -162,79 +162,79 @@ void do_unbrands( CHAR_DATA *ch, char *argument )
 
 void do_invoke( CHAR_DATA *ch, char *argument )
 {
-	OBJ_DATA *obj;
-	char arg[MAX_STRING_LENGTH];
+    OBJ_DATA *obj;
+    char arg[MAX_STRING_LENGTH];
 
-	argument = one_argument(argument,arg);
+    argument = one_argument(argument,arg);
 
-	if (arg[0] == '\0')
-	{
-		send_to_char("Invoke what?\n\r",ch);
-		return;
-	}
+    if (arg[0] == '\0')
+    {
+        send_to_char("Invoke what?\n\r",ch);
+        return;
+    }
 
-	if ((obj = get_obj_wear(ch,arg)) == NULL)
-	{
-		send_to_char("You're not wearing that.\n\r",ch);
-		return;
-	}
+    if ((obj = get_obj_wear(ch,arg)) == NULL)
+    {
+        send_to_char("You're not wearing that.\n\r",ch);
+        return;
+    }
 
-	if (IS_SET(obj->progtypes,IPROG_INVOKE))
-	{
-		(obj->pIndexData->iprogs->invoke_prog) (obj,ch,argument);
-	} else {
-		send_to_char("You can't invoke that.\n\r",ch);
-		return;
-	}
+    if (IS_SET(obj->progtypes,IPROG_INVOKE))
+    {
+        (obj->pIndexData->iprogs->invoke_prog) (obj,ch,argument);
+    } else {
+        send_to_char("You can't invoke that.\n\r",ch);
+        return;
+    }
 }
 
 void do_invoke_jackass( CHAR_DATA *ch )
 {
-	OBJ_DATA *obj;
+    OBJ_DATA *obj;
 
-	obj = get_eq_char(ch, WEAR_BRAND);
+    obj = get_eq_char(ch, WEAR_BRAND);
       act("$n's $p doesn't glow much due to $s stupidity.",ch,obj,0,TO_ROOM);
       act("Your $p doesn't glow much, probably because you're a jackass.",ch,obj,0,TO_CHAR);
       send_to_char("You smite yourself! What a jackass!\n\r",ch);
       act("$n smites $mself! What a jackass!",ch,NULL,NULL,TO_ROOM);
-	ch->hit /= 2;
-	return;
+    ch->hit /= 2;
+    return;
 }
 
 /*
 void do_invoke_detlef( CHAR_DATA *ch )
 {
-	OBJ_DATA *obj;
-	AFFECT_DATA af;
+    OBJ_DATA *obj;
+    AFFECT_DATA af;
 
-	if (is_affected(ch,gsn_phat_blunt))
-	{
+    if (is_affected(ch,gsn_phat_blunt))
+    {
         send_to_char("You cannot smoke phat blunt too much!\n\r",ch);
         return;
-	}
+    }
 
-	obj = get_eq_char(ch, WEAR_BRAND);
+    obj = get_eq_char(ch, WEAR_BRAND);
         act("$n's $p glows green.",ch,obj,0,TO_ROOM);
         act("Your $p glows green.",ch,obj,0,TO_CHAR);
-	
+    
         ch->hit += (ch->level*2) * 10;
         ch->hit = UMIN(ch->hit,ch->max_hit);
         send_to_char("You smoke a phat blunt and feel MUCH better.\n\r",ch);
         act("$n smokes $s phat blunt and feels much better.",ch,NULL,NULL,TO_ROOM);
 
-	if (check_dispel(ch->level+3,ch,skill_lookup("blindness")))
-	{
-		act("$n is no longer blinded.",ch,NULL,NULL,TO_ROOM);
-	}
-	if (check_dispel(ch->level+3,ch,skill_lookup("poison")))
-	{
-		act("$n looks less ill.",ch,NULL,NULL,TO_ROOM);
-	}
-	if (check_dispel(ch->level+3,ch,skill_lookup("plague")))
-	{
-		act("$n's sores vanish.",ch,NULL,NULL,TO_ROOM);
-	}
-	
+    if (check_dispel(ch->level+3,ch,skill_lookup("blindness")))
+    {
+        act("$n is no longer blinded.",ch,NULL,NULL,TO_ROOM);
+    }
+    if (check_dispel(ch->level+3,ch,skill_lookup("poison")))
+    {
+        act("$n looks less ill.",ch,NULL,NULL,TO_ROOM);
+    }
+    if (check_dispel(ch->level+3,ch,skill_lookup("plague")))
+    {
+        act("$n's sores vanish.",ch,NULL,NULL,TO_ROOM);
+    }
+    
       init_affect(&af);
       af.where        = TO_AFFECTS;
 af.aftype        = AFT_SPELL;
