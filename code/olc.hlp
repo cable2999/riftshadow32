@@ -1,14 +1,14 @@
 #HELPS
 
 -1 OLC EDIT~
-Syntax: EDIT AREA [create/reset] [vnum]		- Area Creation and Repoping.
-Syntax: EDIT ROOM ( [create] [vnum] )		- Room Creation and Editing.
-Syntax: EDIT OBJ  [create] <vnum>		- Object Creation and Editing.
-Syntax: EDIT MOB  [create] <vnum>		- Mobile Creation and Editing.
+Syntax: EDIT AREA [create/reset] [vnum]     - Area Creation and Repoping.
+Syntax: EDIT ROOM ( [create] [vnum] )       - Room Creation and Editing.
+Syntax: EDIT OBJ  [create] <vnum>       - Object Creation and Editing.
+Syntax: EDIT MOB  [create] <vnum>       - Mobile Creation and Editing.
 
-Syntax: ASAVE  <world/area/changed/list>	- Save Editing to Disk.
+Syntax: ASAVE  <world/area/changed/list>    - Save Editing to Disk.
 Syntax: ALIST                                   - Listing of Areas.
-Syntax: RESET  See Help Resets.			- Set Game Resets.
+Syntax: RESET  See Help Resets.         - Set Game Resets.
 
 Definition: [optional]  <required>  (combined arguments)
 
@@ -35,7 +35,7 @@ vnum assignments and the builder(s) assigned to editing them.
 
 
 0 AEDIT~
-Syntax: edit area	 -Enters the editor for the current area.
+Syntax: edit area    -Enters the editor for the current area.
 Syntax: edit area <vnum> -Enters the editor for the selected area.
 
 The follow commands are available from within the AEDITOR:
@@ -59,7 +59,7 @@ uvnum <upper>       - set the upper vnum
 
 
 0 REDIT~
-Syntax: edit room		-Enters the editor for the current room.
+Syntax: edit room       -Enters the editor for the current room.
 
 The following commands are available from within the REDITOR:
 
@@ -104,7 +104,7 @@ a player closing the door and not due to the door being set to be closed.
 
 
 0 OEDIT~
-Syntax: edit object <vnum>	-Enters the editor for the selected object.
+Syntax: edit object <vnum>  -Enters the editor for the selected object.
 
 The following commands are available from within the OEDITOR:
 
@@ -125,8 +125,8 @@ v2 <num>            - sets the value '2' on the object
 v3 <num>            - sets the value '3' on the object
 v4 <num>            - sets the vlaue '4' on the objcet
 weight <num>        - sets the weight of the object
-type         	    - type of object, type ? TYPE for a list
-extra		    - attributes of object, type ? EXTRA for a list
+type                - type of object, type ? TYPE for a list
+extra           - attributes of object, type ? EXTRA for a list
 wear                - where object is worn, type ? WEAR for a list
 material            - material the object is made from
 ~
@@ -134,7 +134,7 @@ material            - material the object is made from
 
 
 0 MEDIT~
-Syntax: medit <vnum>		-Enters the editor for the selected mobile.
+Syntax: medit <vnum>        -Enters the editor for the selected mobile.
 
 The following commands are available from within the MEDITOR:
 
@@ -153,18 +153,18 @@ spec                - sets a mobiles spec proc, type ? SPEC for a list
 sex                 - set the mobile's sex, type ? SEX for a list
 act                 - mobiles actions, type ? ACT for a list
 affect              - mobile affects, type ? AFFECT for a list
-ac		    - set the mobile's ac, type ? AC for a list
-form		    - mobiles body-form, type ? FORM for a list
-part		    - mobiles bodyparts, type ? PART for a list
-imm		    - mobile is immune to, type ? IMM for a list
-res		    - mobile is resistant to, type ? RES for a list
-vuln		    - mobile is vulnerable to, type ? VULN for a list
-material	    - material mobile is made from, type ? MATERIAL for a list
-off		    - offensive behaviour, type ? OFF for a list
-size		    - size, type ? SIZE for a list
-hitdice		    - dice to toss to get mobile's hitpoints
-manadice	    - dice to toss to get mobile's mana
-damdice		    - dice to toss to get mobile's hand to hand damage
+ac          - set the mobile's ac, type ? AC for a list
+form            - mobiles body-form, type ? FORM for a list
+part            - mobiles bodyparts, type ? PART for a list
+imm         - mobile is immune to, type ? IMM for a list
+res         - mobile is resistant to, type ? RES for a list
+vuln            - mobile is vulnerable to, type ? VULN for a list
+material        - material mobile is made from, type ? MATERIAL for a list
+off         - offensive behaviour, type ? OFF for a list
+size            - size, type ? SIZE for a list
+hitdice         - dice to toss to get mobile's hitpoints
+manadice        - dice to toss to get mobile's mana
+damdice         - dice to toss to get mobile's hand to hand damage
 
 type 'help HITDICE', 'help MANADICE', 'help DAMDICE' for lists of reasonable dice 
 combinations on different levels.
@@ -178,13 +178,13 @@ Suggested values are:
 
        level:     dice         min         max        mean
          1:       1d2+6       7(  7)     8(   8)     8(   8)
-	 2:       1d3+15     16( 15)    18(  18)    17(  17)
-	 3:       1d6+24     25( 24)    30(  30)    27(  27)
-	 5:      1d17+42     43( 42)    59(  59)    51(  51)
-	10:      3d22+96     99( 95)   162( 162)   131( 129)
-	15:      5d30+161   166(159)   311( 311)   239( 235)
-	30:     10d61+416   426(419)  1026(1026)   726( 723)
-	50:    10d169+920   930(923)  2610(2610)  1770(1767)
+     2:       1d3+15     16( 15)    18(  18)    17(  17)
+     3:       1d6+24     25( 24)    30(  30)    27(  27)
+     5:      1d17+42     43( 42)    59(  59)    51(  51)
+    10:      3d22+96     99( 95)   162( 162)   131( 129)
+    15:      5d30+161   166(159)   311( 311)   239( 235)
+    30:     10d61+416   426(419)  1026(1026)   726( 723)
+    50:    10d169+920   930(923)  2610(2610)  1770(1767)
 
 Diff = max - min.  Mean is the arithmetic mean.
 The values in parenthesis are the the standard merc values.

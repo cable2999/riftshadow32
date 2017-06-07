@@ -6,14 +6,14 @@
 class CSize
 {
 public:
-	CSize();
-	~CSize();
+    CSize();
+    ~CSize();
 
-	RString &	GetName();
-	
-	CSize *		first_size;
+    RString &   GetName();
+    
+    CSize *     first_size;
 private:
-	int			size;
-	CSize *		next_size;
-	RString		name;
+    int         size;
+    CSize *     next_size;
+    RString     name;
 };

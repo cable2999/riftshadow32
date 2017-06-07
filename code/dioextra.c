@@ -1,4 +1,5 @@
 /***************************************************************************
+/***************************************************************************
  *  Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,        *
  *  Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.   *
  *                                                                         *
@@ -16,18 +17,18 @@
  ***************************************************************************/
 
 /***************************************************************************
-*	ROM 2.4 is copyright 1993-1996 Russ Taylor			   *
-*	ROM has been brought to you by the ROM consortium		   *
-*	    Russ Taylor (rtaylor@pacinfo.com)				   *
-*	    Gabrielle Taylor (gtaylor@pacinfo.com)			   *
-*	    Brian Moore (rom@rom.efn.org)				   *
-*	By using this code, you have agreed to follow the terms of the	   *
-*	ROM license, in the file Tartarus/doc/rom.license                  *
+*   ROM 2.4 is copyright 1993-1996 Russ Taylor             *
+*   ROM has been brought to you by the ROM consortium          *
+*       Russ Taylor (rtaylor@pacinfo.com)                  *
+*       Gabrielle Taylor (gtaylor@pacinfo.com)             *
+*       Brian Moore (rom@rom.efn.org)                  *
+*   By using this code, you have agreed to follow the terms of the     *
+*   ROM license, in the file Tartarus/doc/rom.license                  *
 ***************************************************************************/
 
 /***************************************************************************
 *       Tartarus code is copyright (C) 1997-1998 by Daniel Graham          *
-*	In using this code you agree to comply with the Tartarus license   *
+*   In using this code you agree to comply with the Tartarus license   *
 *       found in the file /Tartarus/doc/tartarus.doc                       *
 ***************************************************************************/
 
@@ -342,8 +343,8 @@ void do_divine_intervention(CHAR_DATA *ch, char *argument) {
     }
     if (!str_cmp(arg2,"pet"))
     {
-	create_academy_pet(victim);
-	return;
+    create_academy_pet(victim);
+    return;
     }
     if (!(is_number(arg3))) {
         send_to_char("Value must be numeric.\n\r",ch);
@@ -394,7 +395,7 @@ void do_divine_intervention(CHAR_DATA *ch, char *argument) {
     af.duration     = duration;
     af.modifier     = value;
     af.location     = enchant_type;
-    af.aftype 	    = AFT_COMMUNE;
+    af.aftype       = AFT_COMMUNE;
     affect_to_char(victim,&af);
 
     if (isgoodaffect == TRUE)
@@ -420,10 +421,10 @@ void do_ccb( CHAR_DATA *ch, char *argument )
     int cabal;
     DESCRIPTOR_DATA *d;
     /*
-    	if (!IS_IMMORTAL(ch)) {
-    		send_to_char("Huh?\n\r",ch);
-    		return;
-    	}
+        if (!IS_IMMORTAL(ch)) {
+            send_to_char("Huh?\n\r",ch);
+            return;
+        }
     */
     argument = one_argument(argument,arg1);
     strcpy(arg2, argument);
@@ -566,7 +567,7 @@ void do_powers(CHAR_DATA *ch, char *argument)
             if (ch->level < level)
                 sprintf(buf,"%-18s n/a      ", skill_table[sn].name);
             else
-                sprintf(buf,"%-18s %3d%%      ",skill_table[sn].name,	ch->pcdata->learned[sn]);
+                sprintf(buf,"%-18s %3d%%      ",skill_table[sn].name,   ch->pcdata->learned[sn]);
 
             if (skill_list[level][0] == '\0')
                 sprintf(skill_list[level],"\n\rLevel %2d: %s",level,buf);
@@ -776,8 +777,8 @@ void report_cabal_items(CHAR_DATA *ch, char *argument)
     if (strstr(argument,"where is") || strstr(argument,"Where is"))
     {
 
-	if(IS_NPC(ch))
-		return;
+    if(IS_NPC(ch))
+        return;
 
         for ( gch = ch->in_room->people; gch != NULL; gch = gch->next_in_room )
         {
@@ -789,29 +790,29 @@ void report_cabal_items(CHAR_DATA *ch, char *argument)
         }
 
         if(guardian==NULL) {
-		return;
-	}
+        return;
+    }
 
-	sprintf(buf1,"%s is the guardian.", guardian->short_descr);
-	wiznet(buf1,0,NULL,WIZ_DEBUG,0,0);
-		
-	for (obj = object_list; obj != NULL; obj = obj->next)
+    sprintf(buf1,"%s is the guardian.", guardian->short_descr);
+    wiznet(buf1,0,NULL,WIZ_DEBUG,0,0);
+        
+    for (obj = object_list; obj != NULL; obj = obj->next)
         {
-		if(obj->pIndexData->cabal != guardian->cabal) {
-			continue;
-		}
-		
-		if (obj->carried_by!=NULL) {
-			sprintf(pbuf,"%s is carried by %s.",
-				obj->short_descr,
-				IS_NPC(obj->carried_by) ? obj->carried_by->short_descr : obj->carried_by->name);
-			break;
-		}
+        if(obj->pIndexData->cabal != guardian->cabal) {
+            continue;
+        }
+        
+        if (obj->carried_by!=NULL) {
+            sprintf(pbuf,"%s is carried by %s.",
+                obj->short_descr,
+                IS_NPC(obj->carried_by) ? obj->carried_by->short_descr : obj->carried_by->name);
+            break;
+        }
         }
 
-	if(guardian!=NULL && pbuf!=NULL && obj!=NULL)
+    if(guardian!=NULL && pbuf!=NULL && obj!=NULL)
             do_say(guardian,pbuf);
-	}
+    }
 }
 
 void easy_uninduct(CHAR_DATA *ch)
@@ -922,11 +923,11 @@ int get_spell_aftype(CHAR_DATA *ch) {
 
 #define KEYV( literal, field )                      \
                 if ( !str_cmp( word, literal ) )    \
-				{                                   \
-					fread_flag_new(field, fp);        \
-					fMatch = TRUE;                  \
-					break;                          \
-				}
+                {                                   \
+                    fread_flag_new(field, fp);        \
+                    fMatch = TRUE;                  \
+                    break;                          \
+                }
 
 
 void do_finger(CHAR_DATA *ch, char *argument)
@@ -941,7 +942,7 @@ void do_finger(CHAR_DATA *ch, char *argument)
     char buf97[MAX_STRING_LENGTH], *tbuf = NULL;
     FILE *fp;
     int align = -1, class_index = -1, ethos = -1, kills = -1, gkills = -1, nkills = -1, ekills = -1;
-    int	pkilled	= -1, mkilled = -1, level = -1, played = -1, cabal = 0, induct = -1, race = -1;
+    int pkilled = -1, mkilled = -1, level = -1, played = -1, cabal = 0, induct = -1, race = -1;
     int con = 0, stat = 25, died = 0,agemod = 0, bcredits = 0, hometown = 0, aobj = -1, lobj = -1, timeplayed = -1;
     int vnum = 0, room = 0;
     char *history, *name, *login, *title, *extitle, *sex, *allsites, *desc;
@@ -1015,9 +1016,9 @@ void do_finger(CHAR_DATA *ch, char *argument)
             fread_to_eol( fp );
             break;
         case 'A':
-            KEY( "Alig",	align,		fread_number( fp ) );
-            KEYV( "Act",	act);
-            KEY( "Agemod",	agemod,		fread_number( fp ) );
+            KEY( "Alig",    align,      fread_number( fp ) );
+            KEYV( "Act",    act);
+            KEY( "Agemod",  agemod,     fread_number( fp ) );
             if (!str_cmp(word,"Attr"))
             {
                 for (stat = 0; stat < MAX_STATS; stat++) {
@@ -1029,8 +1030,8 @@ void do_finger(CHAR_DATA *ch, char *argument)
             }
             break;
         case 'B':
-            KEY( "BCredits",	bcredits,		fread_number( fp ) );
-            KEY( "Born",		born,			fread_number( fp ) );
+            KEY( "BCredits",    bcredits,       fread_number( fp ) );
+            KEY( "Born",        born,           fread_number( fp ) );
             break;
         case 'C':
             if(!str_cmp(word,"Cla"))
@@ -1039,17 +1040,17 @@ void do_finger(CHAR_DATA *ch, char *argument)
                 fMatch = TRUE;
                 break;
             }
-            KEY( "Cabal",		cabal,		cabal_lookup(fread_string(fp)));
-            KEY( "Comm",		comm,		fread_flag( fp ) );
+            KEY( "Cabal",       cabal,      cabal_lookup(fread_string(fp)));
+            KEY( "Comm",        comm,       fread_flag( fp ) );
             break;
         case 'D':
-            KEY( "Died",		died,		fread_number( fp ) );
-            KEY( "Desc",		desc,		fread_string( fp ) );
-            KEY( "DeathTime",	dtime,		fread_number( fp ) );
+            KEY( "Died",        died,       fread_number( fp ) );
+            KEY( "Desc",        desc,       fread_string( fp ) );
+            KEY( "DeathTime",   dtime,      fread_number( fp ) );
             break;
         case 'E':
-            KEY( "Etho",		ethos,		fread_number( fp ) );
-            KEY( "EXTitl",		extitle,		fread_string(fp) );
+            KEY( "Etho",        ethos,      fread_number( fp ) );
+            KEY( "EXTitl",      extitle,        fread_string(fp) );
             if ( !str_cmp( word, "End" ) )
             {
                 end = TRUE;
@@ -1071,11 +1072,11 @@ void do_finger(CHAR_DATA *ch, char *argument)
             }
             break;
         case 'H':
-            KEY( "History",		history,     fread_string( fp ) );
-            KEY( "HomeTown",	hometown,     fread_number( fp ) );
+            KEY( "History",     history,     fread_string( fp ) );
+            KEY( "HomeTown",    hometown,     fread_number( fp ) );
             break;
         case 'I':
-            KEY( "Indu",		induct,     fread_number( fp ) );
+            KEY( "Indu",        induct,     fread_number( fp ) );
             break;
         case 'K':
             if (!str_cmp(word,"kls"))
@@ -1093,29 +1094,29 @@ void do_finger(CHAR_DATA *ch, char *argument)
             fMatch = TRUE;
             break;
         case 'L':
-            KEY( "Levl",		level,		fread_number( fp ) );
-            KEY( "LogonTime",		login,		fread_string( fp ) );
+            KEY( "Levl",        level,      fread_number( fp ) );
+            KEY( "LogonTime",       login,      fread_string( fp ) );
             break;
         case 'N':
-            KEY( "Name",		name,		fread_string( fp ) );
+            KEY( "Name",        name,       fread_string( fp ) );
             break;
         case 'P':
-            KEY( "Plyd",		played,		fread_number( fp ) );
+            KEY( "Plyd",        played,     fread_number( fp ) );
             break;
         case 'Q':
             if(!str_cmp(word,"Quest"))
                 quests[fread_number(fp)] = fread_number(fp);
             break;
         case 'R':
-            KEY( "Race",		race,		race_lookup(fread_string( fp )) );
-            KEY( "Rep",	reputation,	fread_number( fp ) );
-            KEY( "Room",		room,		fread_number( fp ) );
-            KEY( "Role",		tbuf,		fread_string(fp));
+            KEY( "Race",        race,       race_lookup(fread_string( fp )) );
+            KEY( "Rep", reputation, fread_number( fp ) );
+            KEY( "Room",        room,       fread_number( fp ) );
+            KEY( "Role",        tbuf,       fread_string(fp));
             break;
         case 'S':
-            KEY( "Sex",		sex,		sex_table[fread_number(fp)].name );
-            KEY( "SiteTrack",	allsites,	fread_string(fp));
-            KEY( "Souls",		souls, fread_number(fp));
+            KEY( "Sex",     sex,        sex_table[fread_number(fp)].name );
+            KEY( "SiteTrack",   allsites,   fread_string(fp));
+            KEY( "Souls",       souls, fread_number(fp));
             if(!str_cmp(word,"Sect"))
             {
                 while((i=fread_number(fp))!=-1)
@@ -1126,10 +1127,10 @@ void do_finger(CHAR_DATA *ch, char *argument)
             }
             break;
         case 'T':
-            KEY( "Titl",		title,		fread_string(fp) );
-            KEY( "TimePlayed",	timeplayed,	fread_number(fp) );
-            KEY( "TrackAObj",	aobj,		fread_number(fp) );
-            KEY( "TrackLObj",	lobj,		fread_number(fp) );
+            KEY( "Titl",        title,      fread_string(fp) );
+            KEY( "TimePlayed",  timeplayed, fread_number(fp) );
+            KEY( "TrackAObj",   aobj,       fread_number(fp) );
+            KEY( "TrackLObj",   lobj,       fread_number(fp) );
             break;
 
         }
@@ -1409,7 +1410,7 @@ char * get_login(CHAR_DATA *ch, FILE *fpChar2) {
             }
             break;
         case 'L':
-            KEY( "LogonTime",		login,		fread_string(fpChar2));
+            KEY( "LogonTime",       login,      fread_string(fpChar2));
             break;
         }
         if (!fMatch) fread_to_eol(fpChar2);

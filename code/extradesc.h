@@ -1,15 +1,15 @@
 class CExtraDesc
 {
 public:
-	CExtraDesc();
-	~CExtraDesc();
-	
-	CExtraDesc *			next;
-	
-	RString					keyword;
-	RString					description;
-	
-	bool					IsValid();
+    CExtraDesc();
+    ~CExtraDesc();
+    
+    CExtraDesc *            next;
+    
+    RString                 keyword;
+    RString                 description;
+    
+    bool                    IsValid();
 private:
-	bool					valid;
+    bool                    valid;
 };
