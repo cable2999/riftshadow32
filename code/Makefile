@@ -75,12 +75,12 @@ O_FILES = strings.o \
           class.o \
           prof.o
 tartarus: $(O_FILES)
-    rm -f rift
-    $(CC) $(L_FLAGS) -o rift.out $(O_FILES)
-    chmod 770 *.o
+	rm -f rift
+	$(CC) $(L_FLAGS) -o rift.out $(O_FILES)
+	chmod 770 *.o
 
 clean:
-    rm -f *.o
+	rm -f *.o
 
 .c.o: merc.h
-    $(CC) -c $(INCLUDES) $<
+	$(CC) -c $(INCLUDES) $<

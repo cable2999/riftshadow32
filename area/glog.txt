@@ -461,3 +461,4 @@ Wed May 31 23:16:23 2017: LOAD- Krunk is loading 22600.
 Wed May 31 23:16:23 2017: LOAD- Krunk is loading .
 Wed May 31 23:16:29 2017: LOAD- Krunk is loading obj 22600.
 Wed May 31 23:58:15 2017: INDUCT- Krunk is inducting Krunk into Horde..
+Mon Jun  5 15:21:32 2017: INDUCT- Krunk is inducting Krunk into Theatre..
