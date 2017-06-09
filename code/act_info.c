@@ -4212,9 +4212,9 @@ CHAR_DATA * get_char_room( CHAR_DATA *ch, char *argument)
 
     for (rch = ch->in_room->people; rch != NULL; rch = rch->next_in_room)
     {
-    if(argument[0] == '\0')
-        return NULL;
-        if (!can_see(ch,rch) )
+        if(argument[0] == '\0')
+            return NULL;
+        if ( !can_see(ch,rch) )
             continue;
         if ( (arg[0] != '\0') && !is_name(arg,rch->name) && (!IS_IMMORTAL(ch) || !rch->true_name || !is_name(arg,rch->true_name)))
             continue;
