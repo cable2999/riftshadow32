@@ -943,28 +943,30 @@ bool is_name ( const char *str, const char *namelist )
         return FALSE;
 
     string = (char *)str;
+    
     /* we need ALL parts of string to match part of namelist */
     for ( ; ; )  /* start parsing string */
     {
-    str = one_argument((char *)str,part);
+        str = one_argument((char *)str,part);
 
-    if (part[0] == '\0' )
-        return TRUE;
+        if (part[0] == '\0' )
+            return TRUE;
 
-    /* check to see if this is part of namelist */
-    list = (char *)namelist;
-    for ( ; ; )  /* start parsing namelist */
-    {
-        list = one_argument(list,name);
-        if (name[0] == '\0')  /* this name was not found */
-        return FALSE;
+        /* check to see if this is part of namelist */
+        list = (char *)namelist;
+    
+        for ( ; ; )  /* start parsing namelist */
+        {
+            list = one_argument(list,name);
+            if (name[0] == '\0')  /* this name was not found */
+                return FALSE;
 
-        if (!str_cmp(string,name))
-        return TRUE; /* full pattern match */
+            if (!str_prefix(string,name))
+                return TRUE; /* full pattern match */
 
-        if (!str_cmp(part,name))
-        break;
-    }
+            if (!str_cmp(part,name))
+                break;
+        }
     }
 }
 
