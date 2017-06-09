@@ -499,10 +499,10 @@ void CProficiencies::UpdateProfPoints(void)
         return;
     sprintf(buf,"%sYou feel ready to study new proficiencies.%s\n\r",
         get_char_color(ch,"yellow"), END_COLOR(ch));
-    if(pawardedtime == 0)
-        send_to_char("See HELP PROFICIENCY for more information.\n\r",ch);
+//  if(pawardedtime == 0)
+//      send_to_char("See HELP PROFICIENCY for more information.\n\r",ch);
     points += POINTS_PER_HOUR;
-    send_to_char(buf,ch);
+//  send_to_char(buf,ch);
     pawardedtime = ch->played + (current_time - ch->logon);
 }
 void CProficiencies::DisplayProfsForStat(CHAR_DATA *imm)
