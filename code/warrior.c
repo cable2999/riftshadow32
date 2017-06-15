@@ -48,6 +48,29 @@ void do_specialize(CHAR_DATA *ch, char *argument)
     if(IS_NPC(ch))
         return;
 
+    if(ch->Class()->GetIndex() == CLASS_PALADIN)
+    {
+
+            if(!ch->pcdata->special)
+                return send_to_char("You have no available specializations.\n\r",ch);
+     
+            if(!strcmp(argument, "protector"))
+            {
+                ch->pcdata->paladin_path = PALADIN_PROTECTOR;
+                group_add(ch,"protector",FALSE);
+                return send_to_char("You have chosen the path of the Protector.\n\r",ch);
+            }
+            else if(!strcmp(argument, "crusader"))
+            {
+                ch->pcdata->paladin_path = PALADIN_CRUSADER;
+                group_add(ch,"crusader",FALSE);
+                return send_to_char("You have chosen the path of the Crusader.\n\r",ch);
+            }
+            else
+                return send_to_char("That's not a paladin path.\n\r",ch);
+
+    }
+
     if(ch->Class()->GetIndex() != CLASS_WARRIOR)
         return send_to_char("Huh?\n\r", ch);
     

@@ -110,6 +110,8 @@ void advance_level( CHAR_DATA *ch, bool hide )
          ch->train      += 1;
     if(ch->Class()->GetIndex() == CLASS_WARRIOR && ch->level % 20 == 0)
         ch->pcdata->special++;
+    if(ch->Class()->GetIndex() == CLASS_PALADIN && ch->level == 2)
+        ch->pcdata->special++;
     ch->pcdata->perm_hit    += add_hp;
     ch->pcdata->perm_mana   += add_mana;
     ch->pcdata->perm_move   += add_move;
