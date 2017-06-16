@@ -171,3 +171,4 @@ DELETED||[51  Dwarf Pal]||[PHALANX] Gadrin the Paladin Hero||Kills: 0||Deaths: 0
 DELETED||[51   Imp Nec]||[SCION] Istendil the Anti-Hero of Death||Kills: 0||Deaths: 1||Age: 90||Hours: 1||Tue May 30 16:08:36 2017
 DELETED||[36 Halflng War]||[HORDE] Haffo the Rock Crusher||Kills: 0||Deaths: 0||Age: 107||Hours: 4||Tue May 30 16:12:00 2017
 DELETED||[51  Abyss War]||[HORDE] Grulk the Knight Hero||Kills: 0||Deaths: 0||Age: 135||Hours: 3||Tue May 30 16:12:09 2017
+DELETED||[51  Human Thi]||Remy the Thief Hero||Kills: 0||Deaths: 0||Age: 22||Hours: 1||Thu Jun 15 15:53:52 2017

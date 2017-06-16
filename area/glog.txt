@@ -465,3 +465,5 @@ Mon Jun  5 15:21:32 2017: INDUCT- Krunk is inducting Krunk into Theatre..
 Thu Jun  8 21:56:27 2017: LOAD- Krunk is loading obj 11434.
 Thu Jun  8 21:57:53 2017: LOAD- Krunk is loading obj troll.
 Thu Jun  8 21:58:00 2017: LOAD- Krunk is loading obj 24202.
+Thu Jun 15 16:29:18 2017: INDUCT- Krunk is inducting Pally into Phalanx..
+Thu Jun 15 16:29:22 2017: INDUCT- Krunk is inducting Goodmage into Phalanx..

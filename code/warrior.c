@@ -58,12 +58,14 @@ void do_specialize(CHAR_DATA *ch, char *argument)
             {
                 ch->pcdata->paladin_path = PALADIN_PROTECTOR;
                 group_add(ch,"protector",FALSE);
+                ch->pcdata->special--;
                 return send_to_char("You have chosen the path of the Protector.\n\r",ch);
             }
             else if(!strcmp(argument, "crusader"))
             {
                 ch->pcdata->paladin_path = PALADIN_CRUSADER;
                 group_add(ch,"crusader",FALSE);
+                ch->pcdata->special--;
                 return send_to_char("You have chosen the path of the Crusader.\n\r",ch);
             }
             else
