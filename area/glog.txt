@@ -467,3 +467,4 @@ Thu Jun  8 21:57:53 2017: LOAD- Krunk is loading obj troll.
 Thu Jun  8 21:58:00 2017: LOAD- Krunk is loading obj 24202.
 Thu Jun 15 16:29:18 2017: INDUCT- Krunk is inducting Pally into Phalanx..
 Thu Jun 15 16:29:22 2017: INDUCT- Krunk is inducting Goodmage into Phalanx..
+Mon Jun 26 16:15:28 2017: INDUCT- Krunk is inducting Killbot into Scion..
