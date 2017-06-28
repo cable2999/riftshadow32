@@ -6074,20 +6074,6 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
     af.end_fun  = talismanic_end;
     af.mod_name = MOD_PROTECTION;
 
-    if (timer == 0) {
-        init_affect(&af);
-        af.where        = TO_AFFECTS;
-        af.type         = gsn_talismanic;
-        af.aftype       = AFT_TIMER;
-        af.duration     = 8;
-        af.location     = 0;
-        af.modifier     = 0;
-        af.owner        = ch;
-        affect_to_char(ch,&af);
-    }
-
-
-
     if (is_affected(ch,gsn_talismanic))
     {
         send_to_char("You channel energy into fortifying your talismanic aura.\n\r",ch);
@@ -6111,6 +6097,19 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
         affect_to_char(ch,&af);
         //ch->talismanic++;
     }
+
+    if (timer == 0) {
+        init_affect(&af);
+        af.where        = TO_AFFECTS;
+        af.type         = gsn_talismanic;
+        af.aftype       = AFT_TIMER;
+        af.duration     = 8;
+        af.location     = 0;
+        af.modifier     = 0;
+        af.owner        = ch;
+        affect_to_char(ch,&af);
+    }
+
 
 }
 
