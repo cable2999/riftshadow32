@@ -6044,6 +6044,7 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
         if (paf->type == gsn_talismanic) {
             count++;
             if (paf->aftype == AFT_TIMER) {
+                count--;
                 timer = paf->duration;
                 if (timer > 16) return send_to_char("You cannot call upon your talismanic powers again so soon.\n\r",ch);
                 else paf->duration += 8;
