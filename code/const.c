@@ -4209,7 +4209,7 @@ const   struct  skill_type  skill_table [MAX_SKILL] =
         "infidels fate", {60, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40},
         spell_null,     TAR_IGNORE, POS_STANDING,
         &gsn_infidels_fate, 0,  0,  0,
-        "", "", "", CMD_NONE
+        "", "You are no longer burdened by the weight of your sins.", "", CMD_NONE
     },
 
     {
