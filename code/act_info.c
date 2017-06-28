@@ -2449,10 +2449,10 @@ void do_affects(CHAR_DATA *ch, char *argument )
             buf2[i]= '\0';
         }
 
-        if (paf_last != NULL && (paf->type == paf_last->type && ((paf->name == NULL && paf_last->name == NULL) || !str_cmp(paf->name,paf_last->name))))
-        {
-        sprintf( buf, "                          ");
-        } else {
+//      if (paf_last != NULL && (paf->type == paf_last->type && ((paf->name == NULL && paf_last->name == NULL) || !str_cmp(paf->name,paf_last->name))))
+//      {
+//      sprintf( buf, "                          ");
+ //     } else {
         if (paf->aftype == AFT_SKILL)
             sprintf( buf, "Skill  : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
         else if (paf->aftype == AFT_POWER)
@@ -2469,7 +2469,7 @@ void do_affects(CHAR_DATA *ch, char *argument )
         sprintf( buf, "Hidden : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
         else if (paf->aftype != AFT_INVIS)
         sprintf( buf, "Spell  : %-17s", paf->name ? paf->name : skill_table[paf->type].name );
-        }
+//      }
 
             send_to_char( buf, ch );
 
