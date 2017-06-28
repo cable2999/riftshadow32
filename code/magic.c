@@ -6041,15 +6041,13 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
     int timer = 0;
 
     for (paf = ch->affected;paf != NULL;paf = paf->next) {
-        if (paf->type == gsn_talismanic) {
-            count++;
-            if (paf->aftype == AFT_TIMER) {
-                count--;
+        if (paf->type == gsn_talismanic && paf->aftype == AFT_SPELL) count++;
+        if (paf->type == gsn_talismanic && paf->aftype == AFT_TIMER) {
                 timer = paf->duration;
                 taf = paf;
                 if (timer > 16) return send_to_char("You cannot call upon your talismanic powers again so soon.\n\r",ch);
-            }
-       }
+        }
+       
     }
 
     if(count > 2) {
@@ -6099,6 +6097,7 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
         affect_to_char(ch,&af);
         af.aftype       = AFT_TIMER;
         af.duration     = 8;
+        af.end_fun  = talismanic_end;
         affect_to_char(ch,&af);
         //ch->talismanic++;
     }
@@ -6110,6 +6109,10 @@ void talismanic_end(CHAR_DATA *ch, AFFECT_DATA *af)
     if (af->aftype == AFT_INVIS) {  
     send_to_char("The multihued aura flickers and fades.\n\r",ch);
     }
+    if (af->aftype == AFT_TIMER) {
+    send_to_char("You regain your full talismanic powers.\n\r",ch);
+    }
+
 }
 
 void puddle_evaporate(OBJ_DATA *obj, OBJ_AFFECT_DATA *af)
