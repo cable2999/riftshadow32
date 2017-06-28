@@ -4300,7 +4300,7 @@ const   struct  group_type      group_table     [MAX_GROUP]     =
         "shadow cloak","stealth","counterfeit","strip","unholy communion",
         "infidels weight", "burning vision", "somatic casting", "protection",
         "healing sleep", "chill touch", "gag","steal","spiritual hammer","benevolence",
-        "slash", "mana infusion"}
+        "slash", "mana infusion", "talismanic aura"}
     },
 
     {
