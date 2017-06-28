@@ -6037,13 +6037,22 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
 {
     AFFECT_DATA af, *paf;
     float reduction;
-
-    if(ch->talismanic > 2) {
-        return send_to_char("You cannot yet call upon the talismanic powers again.\n\r",ch);
-    }
+    int count = 0;
+    int timer = 0;
 
     for (paf = ch->affected;paf != NULL;paf = paf->next) {
-        if (paf->type == gsn_talismanic) break;
+        if (paf->type == gsn_talismanic) {
+            count++;
+            if (paf->aftype == AFT_TIMER) {
+                timer = paf->duration;
+                if (timer > 16) return send_to_char("You cannot call upon your talismanic powers again so soon.\n\r",ch);
+                else paf->duration += 8;
+            }
+       }
+    }
+
+    if(count > 2) {
+        return send_to_char("You cannot strengthen your talismanic powers further.\n\r",ch);
     }
 
     if(ch->Class()->name == "necromancer")
@@ -6064,6 +6073,21 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
     af.owner    = ch;
     af.end_fun  = talismanic_end;
     af.mod_name = MOD_PROTECTION;
+
+    if (timer == 0) {
+        init_affect(&af);
+        af.where        = TO_AFFECTS;
+        af.type         = gsn_talismanic;
+        af.aftype       = AFT_TIMER;
+        af.duration     = 8;
+        af.location     = 0;
+        af.modifier     = 0;
+        af.owner        = ch;
+        affect_to_char(ch,&af);
+    }
+
+
+
     if (is_affected(ch,gsn_talismanic))
     {
         send_to_char("You channel energy into fortifying your talismanic aura.\n\r",ch);
@@ -6074,7 +6098,7 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
         af.aftype = AFT_SPELL;
         af.modifier = 0;
         affect_to_char(ch,&af);
-        ch->talismanic++;
+        //ch->talismanic++;
     }
     else
     {
@@ -6085,9 +6109,9 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
         af.aftype = AFT_SPELL;
         af.modifier = 0;
         affect_to_char(ch,&af);
-        ch->talismanic++;
+        //ch->talismanic++;
     }
-    
+
 }
 
 void talismanic_end(CHAR_DATA *ch, AFFECT_DATA *af)
