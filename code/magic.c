@@ -6035,7 +6035,7 @@ void spell_deafen(int sn, int level, CHAR_DATA *ch, void *vo, int target)
 
 void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int target)
 {
-    AFFECT_DATA af, *paf;
+    AFFECT_DATA af, *paf, *taf;
     float reduction;
     int count = 0;
     int timer = 0;
@@ -6046,8 +6046,8 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
             if (paf->aftype == AFT_TIMER) {
                 count--;
                 timer = paf->duration;
+                taf = paf;
                 if (timer > 16) return send_to_char("You cannot call upon your talismanic powers again so soon.\n\r",ch);
-                else paf->duration += 8;
             }
        }
     }
@@ -6085,6 +6085,7 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
         af.aftype = AFT_SPELL;
         af.modifier = 0;
         affect_to_char(ch,&af);
+        taf->duration += 8;
         //ch->talismanic++;
     }
     else
@@ -6096,21 +6097,11 @@ void spell_talismanic_aura(int sn, int level, CHAR_DATA *ch, void *vo, int targe
         af.aftype = AFT_SPELL;
         af.modifier = 0;
         affect_to_char(ch,&af);
-        //ch->talismanic++;
-    }
-
-    if (timer == 0) {
-        init_affect(&af);
-        af.where        = TO_AFFECTS;
-        af.type         = gsn_talismanic;
         af.aftype       = AFT_TIMER;
         af.duration     = 8;
-        af.location     = 0;
-        af.modifier     = 0;
-        af.owner        = ch;
         affect_to_char(ch,&af);
+        //ch->talismanic++;
     }
-
 
 }
 
