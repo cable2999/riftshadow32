@@ -842,8 +842,8 @@ int one_hit_new( CHAR_DATA *ch, CHAR_DATA *victim, int dt, bool specials, bool b
             dam /= 2;
         }
 
-        if (ch->Class()->name == "thief")
-            dam *= 0.75;
+//      if (ch->Class()->name == "thief")
+//          dam *= 0.75;
 
         if (get_skill(ch,gsn_brutality) > 0
            && (!IS_NPC(ch)) && number_percent() < get_skill(ch,gsn_brutality)
