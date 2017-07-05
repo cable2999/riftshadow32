@@ -1663,7 +1663,7 @@ const   struct  skill_type  skill_table [MAX_SKILL] =
     },
 
     {
-        "dodge", {60, 13, 1, 53, 53, 20, 14, 1, 53, 53, 53, 53},
+        "dodge", {60, 13, 1, 53, 53, 20, 14, 1, 53, 53, 1, 1},
         spell_null,             TAR_IGNORE,             POS_FIGHTING,
         &gsn_dodge,             0,        0,     0,
         "",                     "!Dodge!",      "", CMD_NONE

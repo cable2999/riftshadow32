@@ -473,3 +473,11 @@ Tue Jun 27 22:19:38 2017: LOAD- Krunk is loading .
 Tue Jun 27 22:19:44 2017: LOAD- Krunk is loading obj 11435.
 Tue Jun 27 22:25:13 2017: INDUCT- Krunk is inducting Lava into Scion..
 Tue Jun 27 22:35:53 2017: LOAD- Krunk is loading obj 10018.
+Thu Jun 29 21:29:56 2017: LOAD- Krunk is loading xpman.
+Thu Jun 29 21:29:56 2017: LOAD- Krunk is loading .
+Thu Jun 29 21:30:00 2017: LOAD- Krunk is loading mob xpman.
+Thu Jun 29 21:30:11 2017: LOAD- Krunk is loading mob 2899.
+Sun Jul  2 00:28:16 2017: SET- Krunk is setting class.
+Sun Jul  2 00:28:16 2017: SET- Krunk is setting .
+Sun Jul  2 00:28:36 2017: SET- Krunk is setting class.
+Sun Jul  2 00:28:36 2017: SET- Krunk is setting .
