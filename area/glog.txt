@@ -525,3 +525,23 @@ Wed Jul  5 23:05:26 2017: SET- Krunk is setting sword.
 Wed Jul  5 23:05:26 2017: SET- Krunk is setting .
 Wed Jul  5 23:06:56 2017: SET- Krunk is setting obj sword.
 Wed Jul  5 23:07:02 2017: SET- Krunk is setting obj sword cost 20000.
+Thu Jul  6 15:38:05 2017: LOAD- Krunk is loading mob 2233.
+Thu Jul  6 16:04:46 2017: SET- Krunk is setting .
+Thu Jul  6 16:04:49 2017: SET- Krunk is setting mob.
+Thu Jul  6 16:05:11 2017: SET- Krunk is setting mob tiamat special.
+Thu Jul  6 16:05:14 2017: SET- Krunk is setting mob tiamat special 1.
+Thu Jul  6 16:05:32 2017: SET- Krunk is setting mob tiamat special smarttrack.
+Thu Jul  6 16:05:44 2017: SET- Krunk is setting mob tiamat security.
+Thu Jul  6 16:05:46 2017: SET- Krunk is setting mob tiamat security 1.
+Thu Jul  6 16:06:02 2017: SET- Krunk is setting mob tiamat.
+Thu Jul  6 16:11:42 2017: SET- Krunk is setting .
+Thu Jul  6 16:11:46 2017: SET- Krunk is setting obj.
+Thu Jul  6 16:11:47 2017: SET- Krunk is setting form.
+Thu Jul  6 16:11:47 2017: SET- Krunk is setting .
+Thu Jul  6 16:11:50 2017: SET- Krunk is setting form asdf.
+Thu Jul  6 16:11:50 2017: SET- Krunk is setting .
+Thu Jul  6 16:11:53 2017: SET- Krunk is setting sgroup.
+Thu Jul  6 16:11:55 2017: SET- Krunk is setting skill.
+Thu Jul  6 16:12:01 2017: SET- Krunk is setting room.
+Thu Jul  6 16:12:05 2017: SET- Krunk is setting mob flags.
+Thu Jul  6 16:12:09 2017: SET- Krunk is setting char.

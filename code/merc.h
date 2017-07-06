@@ -1234,7 +1234,7 @@ struct  kill_data
 #define ACT_SENTINEL            (B)             /* Stays in one room     */
 #define ACT_SCAVENGER           (C)             /* Picks up objects      */
 #define ACT_WARD_MOB            (D)             /* Ward mobs         */
-#define ACT_WANDER              (E)     /* wanders       */
+#define ACT_WANDER              (E)             /* wanders       */
 #define ACT_AGGRESSIVE          (F)             /* Attacks PC's          */
 #define ACT_STAY_AREA           (G)             /* Won't leave area      */
 #define ACT_WIMPY               (H)
@@ -1243,11 +1243,11 @@ struct  kill_data
 #define ACT_PRACTICE            (K)             /* Can practice PC's     */
 #define ACT_SMARTTRACK          (L)             /* Will use pathfinding  */
 #define ACT_UNDEAD              (O)
-#define ACT_INNER_GUARDIAN      (P)     /* yay.          */ 
+#define ACT_INNER_GUARDIAN      (P)             /* yay.          */ 
 #define ACT_CLERIC              (Q)
 #define ACT_MAGE                (R)
 #define ACT_INTELLIGENT         (S)
-#define ACT_FAST_TRACK          (T)
+#define ACT_NOCTURNAL           (T)
 #define ACT_NOALIGN             (U)
 #define ACT_NOPURGE             (V)
 #define ACT_OUTDOORS            (W)
@@ -1258,7 +1258,7 @@ struct  kill_data
 #define ACT_UPDATE_ALWAYS       (cc)
 #define ACT_DETECT_SPECIAL      (dd)
 #define ACT_BANKER              (ee)
-#define ACT_NOCTURNAL           (ff)
+#define ACT_FAST_TRACK          (ff)
 #define ACT_DIURNAL             (gg)
 #define ACT_FASTWANDER          (hh)
 #define ACT_LAW                 (ii)
