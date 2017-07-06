@@ -141,7 +141,7 @@ void spell_siphon(int sn, int level, CHAR_DATA *ch, void *vo, int target)
     
     if(!IS_NPC(victim))
         power_urn(ch,blood);
-    else if (victim->level > ch->level + 8 || (ch->level > 49 && victim->level > ch->level + 3))
+    else if (victim->level >= ch->level)
         if(number_percent() > 40)
             power_urn(ch,blood/2);
 }
