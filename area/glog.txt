@@ -488,3 +488,40 @@ Wed Jul  5 15:15:09 2017: SET- Krunk is setting mob krunk align good.
 Wed Jul  5 15:15:35 2017: SET- Krunk is setting align.
 Wed Jul  5 15:15:35 2017: SET- Krunk is setting .
 Wed Jul  5 15:15:49 2017: SET- Krunk is setting obj sword.
+Wed Jul  5 22:58:35 2017: SET- Krunk is setting obj.
+Wed Jul  5 22:58:46 2017: SET- Krunk is setting obj 24589.
+Wed Jul  5 22:59:00 2017: SET- Krunk is setting obj 24589 value0.
+Wed Jul  5 22:59:14 2017: SET- Krunk is setting obj 24589 v1 8.
+Wed Jul  5 22:59:30 2017: SET- Krunk is setting obj small steel sword v1 8.
+Wed Jul  5 22:59:38 2017: SET- Krunk is setting obj 'small steel sword' v1 8.
+Wed Jul  5 22:59:56 2017: SET- Krunk is setting obj 'small steel sword' v1 10.
+Wed Jul  5 23:00:07 2017: SET- Krunk is setting obj 'small steel sword' v0 1.
+Wed Jul  5 23:00:53 2017: SET- Krunk is setting obj 'small steel sword' v1 1.
+Wed Jul  5 23:00:59 2017: SET- Krunk is setting obj 'small steel sword' v2 60.
+Wed Jul  5 23:01:13 2017: SET- Krunk is setting obj 'small steel sword'.
+Wed Jul  5 23:01:22 2017: SET- Krunk is setting obj 'small steel sword' extra.
+Wed Jul  5 23:01:24 2017: SET- Krunk is setting obj 'small steel sword' extra 1.
+Wed Jul  5 23:01:40 2017: SET- Krunk is setting obj 'small steel sword' value2 dagger.
+Wed Jul  5 23:01:59 2017: SET- Krunk is setting obj 'small steel sword' value2 60.
+Wed Jul  5 23:02:03 2017: SET- Krunk is setting obj 'small steel sword' value3 60.
+Wed Jul  5 23:02:14 2017: SET- Krunk is setting obj 'small steel sword' value4 60.
+Wed Jul  5 23:02:27 2017: SET- Krunk is setting obj 'small steel sword' value4 50.
+Wed Jul  5 23:02:37 2017: SET- Krunk is setting obj 'small steel sword' value4 55.
+Wed Jul  5 23:02:45 2017: SET- Krunk is setting obj 'small steel sword' value4 56.
+Wed Jul  5 23:02:52 2017: SET- Krunk is setting obj 'small steel sword' value4 57.
+Wed Jul  5 23:02:58 2017: SET- Krunk is setting obj 'small steel sword' value4 58.
+Wed Jul  5 23:03:06 2017: SET- Krunk is setting obj 'small steel sword' value4 1.
+Wed Jul  5 23:03:11 2017: SET- Krunk is setting obj 'small steel sword' value4 2.
+Wed Jul  5 23:03:26 2017: SET- Krunk is setting obj 'small steel sword' value4 12.
+Wed Jul  5 23:03:38 2017: SET- Krunk is setting obj 'small steel sword' value0 1.
+Wed Jul  5 23:03:49 2017: SET- Krunk is setting obj 'small steel sword' value0 60.
+Wed Jul  5 23:03:57 2017: SET- Krunk is setting obj 'small steel sword' value0 2.
+Wed Jul  5 23:05:05 2017: SET- Krunk is setting sword.
+Wed Jul  5 23:05:05 2017: SET- Krunk is setting .
+Wed Jul  5 23:05:12 2017: SET- Krunk is setting obj sword.
+Wed Jul  5 23:05:18 2017: SET- Krunk is setting obj sword value1 2.
+Wed Jul  5 23:05:23 2017: SET- Krunk is setting obj sword value2 24.
+Wed Jul  5 23:05:26 2017: SET- Krunk is setting sword.
+Wed Jul  5 23:05:26 2017: SET- Krunk is setting .
+Wed Jul  5 23:06:56 2017: SET- Krunk is setting obj sword.
+Wed Jul  5 23:07:02 2017: SET- Krunk is setting obj sword cost 20000.

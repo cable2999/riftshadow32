@@ -21,7 +21,7 @@
     88  _.'     !'|   .' | /   perilous lands of   \|  `-.|  `.    |`.|  88
     88"'|     .'  | .'   !/  R I F T S H A D O W ?  \   | `.   `.  |  `. 88
     8888888888888888888888888888888888888888888888888888888888888(FL/IH)888
-    88            maintained by Calenduil, Morglum and Zethus            88
+    88   Maintained by Krunk https://github.com/cable2999/riftshadow32   88
     88888888888888888888888888888888888888888888888888888888888888888888888 
     88   Original DikuMUD (c) Hans Staerfeldt, Katya Nyboe, Tom Madsen,  88
     88      Michael Seifert, and Sebastian Hammer - Based on ROM 2.4     88
