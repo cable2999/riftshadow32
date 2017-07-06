@@ -1781,7 +1781,7 @@ void aggr_update( void )
         &&   ( !IS_SET(ch->act, ACT_WIMPY) || !IS_AWAKE(vch) )
         &&   can_see( ch, vch )
         &&  (!IS_SET(ch->act,ACT_DIURNAL) || sun >= SUN_SET)
-                &&  (!IS_SET(ch->act,ACT_NOCTURNAL) || (sun != SUN_RISE && sun != SUN_LIGHT))
+                &&  (!IS_SET(ch->act,ACT_NOCTURNAL) || (sun != SUN_RISE && sun != SUN_LIGHT)) // This is the piece that makes aggro not work since all NPC's are flagged as nocturnal incorrectly.
         && !is_safe_new(ch,vch,FALSE)
         && !is_affected(vch,skill_lookup("radiance")) )
         {
