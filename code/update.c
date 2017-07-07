@@ -1071,7 +1071,7 @@ void char_update( void )
 
     ch_next = ch->next;
     master = NULL;
-/*  if (IS_NPC(ch) && 
+    if (IS_NPC(ch) && 
         (sun == SUN_RISE || sun == SUN_LIGHT) && 
         ch->in_room &&
         number_percent() < 90 && 
@@ -1098,7 +1098,7 @@ void char_update( void )
         else if(IS_SET(ch->act, ACT_DIURNAL) && !IS_AFFECTED(ch, AFF_NOSHOW))
             SET_BIT(ch->affected_by, AFF_NOSHOW);
     }
-*/  
+  
     if ( ch->pause > 0 )
         ch->pause--;
     if (IS_NPC(ch) && ch->hit < 0 && ch->in_room)
@@ -1781,7 +1781,9 @@ void aggr_update( void )
         &&   ( !IS_SET(ch->act, ACT_WIMPY) || !IS_AWAKE(vch) )
         &&   can_see( ch, vch )
         &&  (!IS_SET(ch->act,ACT_DIURNAL) || sun >= SUN_SET)
-                &&  (!IS_SET(ch->act,ACT_NOCTURNAL) || (sun != SUN_RISE && sun != SUN_LIGHT)) // This is the piece that makes aggro not work since all NPC's are flagged as nocturnal incorrectly.
+        &&  (!IS_SET(ch->act,ACT_NOCTURNAL) || (sun != SUN_RISE && sun != SUN_LIGHT)) 
+        // This is the piece that makes aggro not work since all NPC's are flagged as nocturnal incorrectly.
+        // Everything is no longer nocturnal, so this isn't an issue anymore.
         && !is_safe_new(ch,vch,FALSE)
         && !is_affected(vch,skill_lookup("radiance")) )
         {
