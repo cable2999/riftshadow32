@@ -117,7 +117,7 @@ void advance_level( CHAR_DATA *ch, bool hide )
     ch->pcdata->perm_move   += add_move;
 
     for (sn = 0; sn < MAX_SKILL; sn++) {
-        if (ch->pcdata->learned[sn] > 10 && skill_table[sn].ctype != CMD_POWER){
+        if (ch->pcdata->learned[sn] > 10 ){
             ch->pcdata->learned[sn]++;
             ch->pcdata->learned[sn] = UMIN(ch->pcdata->learned[sn],100);
         }
