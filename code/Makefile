@@ -1,6 +1,6 @@
 CC      = g++
 PROF    = -O1 -g
-INCLUDES=  -Wall -Wno-unused-variable -Wno-deprecated $(PROF) $(NOCRYPT) -I/usr/include/mysql
+INCLUDES=  -Wall -Wno-unused-variable -Wno-deprecated -Wno-write-strings $(PROF) $(NOCRYPT) -I/usr/include/mysql
 L_FLAGS =  $(PROF) -lcrypt -L/usr/lib/mysql -lmysqlclient
 
 O_FILES = strings.o \

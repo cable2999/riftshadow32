@@ -55,7 +55,7 @@ struct olc_help_type
 
 bool show_version( CHAR_DATA *ch, char *argument )
 {
-    send_to_char( VERSION, ch );
+    send_to_char( OLCVER, ch );
     send_to_char( "\n\r", ch );
     send_to_char( AUTHOR, ch );
     send_to_char( "\n\r", ch );
