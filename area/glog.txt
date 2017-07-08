@@ -558,3 +558,29 @@ Thu Jul  6 21:55:21 2017: LOAD- Krunk is loading mob 24304.
 Thu Jul  6 21:55:21 2017: LOAD- Krunk is loading mob 24304.
 Thu Jul  6 22:01:18 2017: LOAD- Krunk is loading mob 24304.
 Thu Jul  6 22:01:32 2017: LOAD- Krunk is loading mob 24304.
+Fri Jul  7 23:12:29 2017: SET- Krunk is setting skill.
+Fri Jul  7 23:12:35 2017: SET- Krunk is setting skill krunk all 100.
+Fri Jul  7 23:13:01 2017: TITLE- Krunk is titling the Rampaging Berserker..
+Fri Jul  7 23:13:19 2017: INDUCT- Krunk is inducting Krunk into Horde..
+Fri Jul  7 23:13:29 2017: SET- Krunk is setting ch.
+Fri Jul  7 23:13:33 2017: SET- Krunk is setting ch int 25.
+Fri Jul  7 23:13:39 2017: SET- Krunk is setting char krunk int 25.
+Fri Jul  7 23:13:42 2017: SET- Krunk is setting char krunk wis 25.
+Fri Jul  7 23:13:47 2017: SET- Krunk is setting char krunk dex 25.
+Fri Jul  7 23:13:51 2017: SET- Krunk is setting char krunk con 25.
+Fri Jul  7 23:14:03 2017: SET- Krunk is setting char krunk hp 1000.
+Fri Jul  7 23:14:13 2017: SET- Krunk is setting char krunk mana 10000.
+Fri Jul  7 23:14:16 2017: SET- Krunk is setting char krunk mana 1000.
+Fri Jul  7 23:14:19 2017: SET- Krunk is setting char krunk move 1000.
+Fri Jul  7 23:14:36 2017: SET- Krunk is setting char krunk tribe boar.
+Fri Jul  7 23:15:25 2017: SET- Krunk is setting krunk spec.
+Fri Jul  7 23:15:25 2017: SET- Krunk is setting .
+Fri Jul  7 23:15:34 2017: SET- Krunk is setting mob krunk special skirmisher.
+Fri Jul  7 23:15:37 2017: SET- Krunk is setting mob krunk special.
+Fri Jul  7 23:15:52 2017: SET- Krunk is setting mob krunk race orc.
+Fri Jul  7 23:17:33 2017: SET- Krunk is setting ch self.
+Fri Jul  7 23:17:37 2017: SET- Krunk is setting skills.
+Fri Jul  7 23:17:37 2017: SET- Krunk is setting .
+Fri Jul  7 23:17:43 2017: SET- Krunk is setting skill krunk all.
+Fri Jul  7 23:17:45 2017: SET- Krunk is setting skill krunk all 100.
+Fri Jul  7 23:22:28 2017: SET- Krunk is setting ch.
