@@ -155,7 +155,7 @@ void tick_prog_academy_reset(AREA_DATA *area)
 {
     CHAR_DATA *ch;
     for(ch = char_list; ch; ch = ch->next)
-        if(!IS_NPC(ch) && ch->in_room->area == area && ch->level > 10 && !ch->fighting && !IS_IMMORTAL(ch))
+        if(!IS_NPC(ch) && ch->in_room->area == area && ch->level > 15 && !ch->fighting && !IS_IMMORTAL(ch))
         {
             char buf[MSL];
             send_to_char("A small contingent of guards rapidly marches up to you.\n\r",ch);

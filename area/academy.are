@@ -683,7 +683,7 @@ into its skull, and its claws are thick and long, attached to muscular arms
 and legs.  
 ~
 -1000 0 0 demon~
-10 5d8+125 4d2+8 1 100 bite
+10 5d8+75 4d2+8 1 100 bite
 0 0 0 0
 standing male none
 0 0 medium
