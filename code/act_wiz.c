@@ -3793,7 +3793,7 @@ void do_advance( CHAR_DATA *ch, char *argument )
     if(victim->level >= 52)
         res = RS.SQL.Delete("players WHERE name = '%s'",victim->true_name);
 
-    victim->exp   = exp_per_level(victim) * UMAX( 1, victim->level );
+    victim->exp   = exp_per_level(victim) * UMAX( 1, victim->level - 1);
     save_char_obj(victim);
     return;
 }
