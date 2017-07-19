@@ -178,3 +178,4 @@ DELETED||[40  Duerg War]||Durg the Master of War||Kills: 0||Deaths: 0||Age: 61||
 DELETED||[51   Imp Thi]||Meata the Thief Hero||Kills: 0||Deaths: 2||Age: 84||Hours: 0||Sat Jul  1 13:04:44 2017
 DELETED||[51  Mino A-P]||Palantoo the Anti-Hero||Kills: 0||Deaths: 1||Age: 21||Hours: 0||Sat Jul  1 13:12:08 2017
 DELETED||[51  Duerg A-P]||Palan the Anti-Hero||Kills: 4||Deaths: 0||Age: 63||Hours: 1||Sat Jul  1 13:24:48 2017
+DELETED||[40 Planar War]||[HORDE] Jack the Master of War||Kills: 0||Deaths: 0||Age: 124||Hours: 0||Wed Jul 19 09:15:57 2017

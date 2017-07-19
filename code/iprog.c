@@ -1277,7 +1277,7 @@ void pulse_prog_horde_jackal(OBJ_DATA *obj, bool isTick)
     af.level    = ch->level;
     af.duration = 2;
     af.location = APPLY_DAMROLL;
-    af.modifier = (short)((100-(((float) victim->hit / (float) victim->max_hit) * 100)) / 2) * (ch->level / 51);
+    af.modifier = (short)((100-(((float) victim->hit / (float) victim->max_hit) * 100)) / 2) * ((float) ch->level / 51);
     affect_to_char(ch, &af);
     af.location = APPLY_HITROLL;
     affect_to_char(ch, &af);
