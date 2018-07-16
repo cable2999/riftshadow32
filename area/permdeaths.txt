@@ -180,3 +180,5 @@ DELETED||[51  Mino A-P]||Palantoo the Anti-Hero||Kills: 0||Deaths: 1||Age: 21||H
 DELETED||[51  Duerg A-P]||Palan the Anti-Hero||Kills: 4||Deaths: 0||Age: 63||Hours: 1||Sat Jul  1 13:24:48 2017
 DELETED||[40 Planar War]||[HORDE] Jack the Master of War||Kills: 0||Deaths: 0||Age: 124||Hours: 0||Wed Jul 19 09:15:57 2017
 DELETED||[39 Halflng Thi]||Gurd the Shadow||Kills: 0||Deaths: 0||Age: 100||Hours: 0||Mon Jul 16 09:49:48 2018
+DELETED||[39 Halflng War]||Gurd the Learned of War||Kills: 0||Deaths: 0||Age: 100||Hours: 0||Mon Jul 16 10:30:12 2018
+DELETED||[31  Abyss War]||Gurd the Baron of Thunder||Kills: 0||Deaths: 0||Age: 120||Hours: 0||Mon Jul 16 10:40:48 2018

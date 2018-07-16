@@ -3358,14 +3358,15 @@ void group_gain( CHAR_DATA *ch, CHAR_DATA *victim )
             continue;
         }
     
-        if (!ispk)
+        if (!ispk) {
             xp = xp_compute(gch, victim, members, group_levels );
-            if (!gch->level < 40) {
+            if (!(gch->level < 40)) {
                     sprintf(buf, "%sYou can learn no more from victories over mindless foes.%s\n\r",
                     get_char_color(gch,"white"),END_COLOR(gch));
                     xp = 0;
                     send_to_char( buf, gch );
             }
+        }
         else
             xp = xp_compute_pk(gch, victim, members);
 
@@ -3850,8 +3851,8 @@ it's actual dt is
     
     if (duped)
         free_pstring(attack);
-    if (!IS_NPC(ch) && ch->level < 40) gain_exp( ch, prop );
-    if (!IS_NPC(victim && victim->level < 40))) gain_exp( victim, prop );
+    if (!IS_NPC(ch) && (ch->level <40)) gain_exp( ch, prop );
+    if (!IS_NPC(victim) && (victim->level < 40)) gain_exp( victim, prop );
     return;
 }
 
