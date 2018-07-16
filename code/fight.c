@@ -3850,8 +3850,8 @@ it's actual dt is
     
     if (duped)
         free_pstring(attack);
-    if (!IS_NPC(ch)) gain_exp( ch, prop );
-    if (!IS_NPC(victim)) gain_exp( victim, prop );
+    if (!IS_NPC(ch) && ch->level < 40) gain_exp( ch, prop );
+    if (!IS_NPC(victim && victim->level < 40))) gain_exp( victim, prop );
     return;
 }
 
