@@ -3361,7 +3361,7 @@ void group_gain( CHAR_DATA *ch, CHAR_DATA *victim )
         if (!ispk)
             xp = xp_compute(gch, victim, members, group_levels );
             if (!gch->level < 40) {
-                    sprintf(buf, "%sYou can leanr no more from victories over mindless foes.%s\n\r",
+                    sprintf(buf, "%sYou can learn no more from victories over mindless foes.%s\n\r",
                     get_char_color(gch,"white"),END_COLOR(gch));
                     xp = 0;
                     send_to_char( buf, gch );
@@ -3571,6 +3571,7 @@ int xp_compute( CHAR_DATA *gch, CHAR_DATA *victim, int group_amount, int glevel 
     if(group_amount == 3)
     peer_factor = 1;
     xp *= peer_factor;
+    xp *= 3;
 /*    sprintf(buf,"(WIZ_LOGGING) %s gains experience in a group of %d: peer modifier is %f%%.",  
         gch->name,group_amount,peer_factor*100);
     wiznet(buf,NULL,NULL,WIZ_LOG,0,0); */
