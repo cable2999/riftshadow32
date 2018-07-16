@@ -3411,11 +3411,11 @@ int xp_compute_pk (CHAR_DATA *ch, CHAR_DATA *victim, int members)
     else if (victim->level < 35)
         xp = victim->level * 8;
     else if (victim->level < 40)
-        xp = victim->level * 12;
+        xp = victim->level * 24;
     else if (victim->level < 45)
-        xp = victim->level * 16;
+        xp = victim->level * 32;
     else
-        xp = victim->level * 20;
+        xp = victim->level * 40;
 
     /* Level mods */
 
