@@ -3364,6 +3364,7 @@ void group_gain( CHAR_DATA *ch, CHAR_DATA *victim )
                     sprintf(buf, "%sYou can leanr no more from victories over mindless foes.%s\n\r",
                     get_char_color(gch,"white"),END_COLOR(gch));
                     xp = 0;
+                    send_to_char( buf, gch );
             }
         else
             xp = xp_compute_pk(gch, victim, members);
