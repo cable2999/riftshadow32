@@ -708,3 +708,4 @@ Hanz | a halfling ambassador | The Elven Stronghold | Before the gates of the El
 Bruno | a stronghold patrolman | The Elven Stronghold | Upon a wooden bridge | Tue Aug 10 14:55:21 2004
 Grulk | the vampire, Shadar Lunn | Mausoleum | The workroom of Shadar Lunn | Mon May 22 23:03:51 2017
 Grulk | the great Dracolich | Mausoleum | The lair of the great Dracolich | Mon May 22 23:11:30 2017
+Brume | a human ambassador | The Elven Stronghold | An Ornate Hallway | Fri Jul 13 14:12:50 2018

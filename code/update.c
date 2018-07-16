@@ -83,23 +83,22 @@ void advance_level( CHAR_DATA *ch, bool hide )
     
     wis_mod = get_curr_stat(ch,STAT_WIS) - 2;
 
-    add_move    = number_range((get_curr_stat(ch,STAT_CON)
-                  + get_curr_stat(ch,STAT_DEX))/5,(get_curr_stat(ch,STAT_CON)
-                  + get_curr_stat(ch,STAT_DEX))/3);
+    add_move    = ((get_curr_stat(ch,STAT_CON) + get_curr_stat(ch,STAT_DEX))/3);
+
     add_prac    = wis_app[get_curr_stat(ch,STAT_WIS)].practice;
 
-    tmp         = -1.3333 + .5333 * get_curr_stat(ch, STAT_CON) + 1.3333 * ch->Class()->gainconst + number_range(-1,2);
+    tmp         = -1.3333 + .5333 * get_curr_stat(ch, STAT_CON) + 1.3333 * ch->Class()->gainconst + 2;
     add_hp      = (int)tmp;
     if(get_curr_stat(ch,STAT_CON) >= 24)
         add_hp += get_curr_stat(ch,STAT_CON) - 23;
-    tmp         = 8.0278 + 0.5667 * get_curr_stat(ch, STAT_INT) - 2.0833 * ch->Class()->gainconst + number_range(-1,2);
+    tmp         = 8.0278 + 0.5667 * get_curr_stat(ch, STAT_INT) - 2.0833 * ch->Class()->gainconst + 2;
     add_mana    = (int)tmp;
     if(ch->Class()->GetIndex() == CLASS_WARRIOR && number_percent() > 75)
         add_hp += 1;
     if(ch->Class()->GetIndex() == CLASS_NECROMANCER)
-        add_mana -= number_range(2,5);
+        add_mana -= 5;
     if(ch->Class()->GetIndex() == CLASS_SORCERER)
-        add_mana -= number_range(1,2);
+        add_mana -= 2;
     add_move    = UMAX(  6, add_move );
 
     ch->max_hit     += add_hp;
