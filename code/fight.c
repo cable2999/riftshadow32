@@ -3360,6 +3360,11 @@ void group_gain( CHAR_DATA *ch, CHAR_DATA *victim )
     
         if (!ispk)
             xp = xp_compute(gch, victim, members, group_levels );
+            if (!gch->level < 40) {
+                    sprintf(buf, "%sYou can leanr no more from victories over mindless foes.%s\n\r",
+                    get_char_color(gch,"white"),END_COLOR(gch));
+                    xp = 0;
+            }
         else
             xp = xp_compute_pk(gch, victim, members);
 

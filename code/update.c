@@ -93,7 +93,7 @@ void advance_level( CHAR_DATA *ch, bool hide )
         add_hp += get_curr_stat(ch,STAT_CON) - 23;
     tmp         = 8.0278 + 0.5667 * get_curr_stat(ch, STAT_INT) - 2.0833 * ch->Class()->gainconst + 2;
     add_mana    = (int)tmp;
-    if(ch->Class()->GetIndex() == CLASS_WARRIOR && number_percent() > 75)
+    if(ch->Class()->GetIndex() == CLASS_WARRIOR)
         add_hp += 1;
     if(ch->Class()->GetIndex() == CLASS_NECROMANCER)
         add_mana -= 5;
