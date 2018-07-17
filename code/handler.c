@@ -2709,8 +2709,10 @@ bool can_see( CHAR_DATA *ch, CHAR_DATA *victim )
 
     stealth += get_curr_stat(victim,STAT_DEX) - 20;
     
-    percep += get_curr_stat(ch, STAT_WIS) - 20;
-    percep += get_curr_stat(ch, STAT_INT) - 23;
+    if (get_curr_stat(ch, STAT_WIS) > 20)
+        percep += get_curr_stat(ch, STAT_WIS) - 20;
+    if (get_curr_stat(ch, STAT_INT) > 23)
+        percep += get_curr_stat(ch, STAT_INT) - 23;
 
     // hydropection helps us in water and rain
     if ( (is_affected(ch,gsn_hydroperception)
