@@ -2658,8 +2658,32 @@ bool can_see( CHAR_DATA *ch, CHAR_DATA *victim )
     if ( IS_AFFECTED(ch, AFF_BLIND) )
     return FALSE;
 
-    if (is_affected(victim,gsn_ultradiffusion))
-        return FALSE;
+
+    // Making stealth vs. perception more interesting (hopefully)
+    int stealth = 0;
+    int percep = 0;
+
+    // Check to see if they are trying to be stealthy and apply bonuses
+    if (is_affected(victim,gsn_silent_movement))
+        stealth += 1;
+
+    if (is_affected(victim, gsn_sneak))
+        stealth += 2;
+
+    if (IS_AFFECTED(victim, AFF_INVISIBLE))
+        stealth += 4;
+
+    if (is_affected(victim, gsn_shadow_cloak) && !(victim->fighting))
+        stealth += 4;
+
+    if ( IS_AFFECTED(victim, AFF_HIDE))
+        stealth += 5;
+
+//    if ( get_skill(victim, gsn_stealth) > 50) 
+//        stealth += 5;
+
+    if (is_affected(victim,gsn_camouflage))
+        stealth += 7;
 
     if (is_affected_area(ch->in_room->area,gsn_whiteout) &&
         IS_OUTSIDE(ch)) {
@@ -2667,60 +2691,73 @@ bool can_see( CHAR_DATA *ch, CHAR_DATA *victim )
             if (paf->type == gsn_whiteout)  break;
         }
         if (paf->owner != ch)
-            return FALSE;
+            stealth += 7;
     }
 
-    if (is_affected(victim,gsn_watermeld) && !is_affected(ch,gsn_hydroperception))
-        return FALSE;
+    if (is_affected(victim,gsn_watermeld))
+        stealth += 8;
 
     if (is_affected(victim,gsn_earthfade))
-        return FALSE;
+        stealth += 8;
 
-    if ( IS_AFFECTED(victim, AFF_INVISIBLE)
-    &&   !IS_AFFECTED(ch, AFF_DETECT_INVIS)
-    && (!(is_affected(ch,gsn_hydroperception)
+    if (is_affected(victim,gsn_ultradiffusion))
+        stealth += 10;
+
+    // If we aren't trying to hide at all, be visible.
+    if (stealth == 0)
+        return TRUE;
+
+    stealth += get_curr_stat(victim,STAT_DEX) - 20;
+    
+    percep += get_curr_stat(ch, STAT_WIS) - 20;
+    percep += get_curr_stat(ch, STAT_INT) - 23;
+
+    // hydropection helps us in water and rain
+    if ( (is_affected(ch,gsn_hydroperception)
         && (ch->in_room->sector_type == SECT_WATER
         || ch->in_room->sector_type == SECT_UNDERWATER
         || (ch->in_room->sector_type != SECT_INSIDE
         && victim->in_room->area->sky >= SKY_DRIZZLE))
         && ch->in_room == victim->in_room ))
-    && (!(is_affected(ch,gsn_sense_disturbance)
+        percep += 8;
+
+    if ( IS_AFFECTED(victim, AFF_CAMOUFLAGE) && !IS_AFFECTED(ch,AFF_DETECT_CAMO))
+        percep += 7;
+
+    if ( (is_affected(ch,gsn_sense_disturbance)
         && ch->in_room->sector_type != SECT_UNDERWATER
         && victim->in_room->sector_type != SECT_UNDERWATER))
-    && (!(is_affected(ch,gsn_sensevibrations)
+        percep += 6;
+
+    if ( (is_affected(ch,gsn_sensevibrations)
         && (victim->in_room->sector_type != SECT_UNDERWATER)
         && (victim->in_room->sector_type != SECT_AIR)
         && (ch->in_room->sector_type != SECT_UNDERWATER)
         && (ch->in_room->sector_type != SECT_AIR)
         && !(IS_AFFECTED(victim, AFF_SNEAK))
-        && !(IS_AFFECTED(victim, AFF_FLYING)) ) ))
-    return FALSE;
+        && !(IS_AFFECTED(victim, AFF_FLYING)) ))
+        percep += 7;
     
-    if ( IS_AFFECTED(victim, AFF_HIDE)
-    &&   !IS_AFFECTED(ch, AFF_DETECT_HIDDEN)
-    &&   victim->fighting == NULL
-    &&  !(is_affected(ch,gsn_darksight) && (af = affect_find(ch->affected,
+    if ( IS_AFFECTED(ch, AFF_DETECT_HIDDEN))
+       percep += 5;
+
+    if ( IS_AFFECTED(ch, AFF_DETECT_INVIS))
+       percep += 4;
+
+    if ( (is_affected(ch,gsn_darksight) && (af = affect_find(ch->affected,
         gsn_darksight)) && af->aftype == AFT_SKILL
-        && room_is_dark(victim->in_room))
-    && (!(is_affected(ch,gsn_hydroperception) && (ch->in_room->sector_type == SECT_WATER || ch->in_room->sector_type == SECT_UNDERWATER || (ch->in_room->sector_type != SECT_INSIDE && victim->in_room->area->sky >= SKY_DRIZZLE)) && ch->in_room == victim->in_room ))
-    && (!(is_affected(ch,gsn_sensevibrations)
-        && (victim->in_room->sector_type != SECT_UNDERWATER)
-            && (victim->in_room->sector_type != SECT_AIR)
-        && (ch->in_room->sector_type != SECT_UNDERWATER)
-            && (ch->in_room->sector_type != SECT_AIR)
-        && !(IS_AFFECTED(victim, AFF_SNEAK))
-        && !(IS_AFFECTED(victim, AFF_FLYING))) ))
-    return FALSE;
+        && room_is_dark(victim->in_room)))
+       percep += 2;
 
-    if ( IS_AFFECTED(victim, AFF_CAMOUFLAGE) && !IS_AFFECTED(ch,AFF_DETECT_CAMO))
-    return FALSE;
-
-    if (IS_NPC(ch))
-    return TRUE;
 
     if ( room_is_dark( ch->in_room ) && !IS_AFFECTED(ch,AFF_DARK_VISION))
     return FALSE;
 
+    if ((dice(1, 20) + stealth) > (dice(1, 20) + percep))
+    return FALSE;
+
+    if (IS_NPC(ch))
+    return TRUE;
 
     return TRUE;
 }

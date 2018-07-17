@@ -3009,8 +3009,8 @@ void do_who( CHAR_DATA *ch, char *argument )
 
             wch   = ( d->original != NULL ) ? d->original : d->character;
 
-        if (!can_see(ch,wch))
-            continue;
+//        if (!can_see(ch,wch))
+//            continue;
 
         if (wch->pcdata->old && !IS_IMMORTAL(ch))
             fOChar = TRUE;
