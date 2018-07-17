@@ -130,6 +130,10 @@ char *format_obj_to_char( OBJ_DATA *obj, CHAR_DATA *ch, bool fShort )
     if ( IS_OBJ_STAT(obj, ITEM_GLOW)      )   strcat( buf, "(Glowing) "   );
     if ( IS_OBJ_STAT(obj, ITEM_DARK)      )   strcat( buf, "(Dark) "      );
     if ( IS_OBJ_STAT(obj, ITEM_HUM)       )   strcat( buf, "(Humming) "   );
+    if ( obj->pIndexData->limtotal > 0 && obj->pIndexData->limtotal < 3   )   strcat( buf, "(Legendary) "   );
+    if ( obj->pIndexData->limtotal < 1 )   strcat( buf, "(Common) "   );
+    if ( obj->pIndexData->limtotal > 2 && obj->pIndexData->limtotal < 6   )   strcat( buf, "(Epic) "   );
+    if ( obj->pIndexData->limtotal > 5   )   strcat( buf, "(Rare) "   );
     if ( is_affected_obj(obj, gsn_stash) && IS_IMMORTAL(ch))
     {
         for (oaf = obj->affected; oaf != NULL; oaf = oaf->next)
@@ -4549,7 +4553,6 @@ void do_lore( CHAR_DATA *ch, char *argument )
         ch->Profs()->CheckImprove("forgotten lore", 100);
   }
   lorebonus = UMAX(lorebonus, 0);
-
   act("You examine $p intently.",ch, obj, 0, TO_CHAR);
   if (number_percent() < get_skill(ch,gsn_lore) + lorebonus * 15)
   {

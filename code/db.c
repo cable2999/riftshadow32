@@ -1861,7 +1861,7 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
     mob->damroll        = pMobIndex->damage[DICE_BONUS];
     mob->max_hit        = dice(pMobIndex->hit[DICE_NUMBER],
                        pMobIndex->hit[DICE_TYPE])
-                  + pMobIndex->hit[DICE_BONUS];
+                  + pMobIndex->hit[DICE_BONUS] / 10;
     mob->hit        = mob->max_hit;
     mob->max_mana       = dice(pMobIndex->mana[DICE_NUMBER],
                        pMobIndex->mana[DICE_TYPE])
