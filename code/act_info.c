@@ -3004,7 +3004,7 @@ void do_who( CHAR_DATA *ch, char *argument )
          * Check for match against restrictions.
          * Don't use trust as that exposes trusted mortals.
          */
-        if ( d->connected != CON_PLAYING || !can_see( ch, d->character ) )
+        if ( d->connected != CON_PLAYING )
             continue;
 
             wch   = ( d->original != NULL ) ? d->original : d->character;
