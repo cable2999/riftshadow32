@@ -611,3 +611,8 @@ Wed Jul 19 09:12:48 2017: LOAD- Krunk is loading obj 23639.
 Wed Jul 19 09:13:35 2017: LOAD- Krunk is loading obj 23645.
 Mon Jul 16 16:00:52 2018: INDUCT- Krunk is inducting Sorcerson into Scion..
 Mon Jul 16 17:09:22 2018: INDUCT- Krunk is inducting Brume into Scion..
+Tue Jul 17 14:34:21 2018: INDUCT- Krunk is inducting Remy into Phalanx..
+Tue Jul 17 15:43:20 2018: LOAD- Krunk is loading kharzandra.
+Tue Jul 17 15:43:20 2018: LOAD- Krunk is loading .
+Tue Jul 17 15:43:25 2018: LOAD- Krunk is loading mob kharzandra.
+Tue Jul 17 15:43:38 2018: LOAD- Krunk is loading obj 6244.

@@ -182,3 +182,6 @@ DELETED||[40 Planar War]||[HORDE] Jack the Master of War||Kills: 0||Deaths: 0||A
 DELETED||[39 Halflng Thi]||Gurd the Shadow||Kills: 0||Deaths: 0||Age: 100||Hours: 0||Mon Jul 16 09:49:48 2018
 DELETED||[39 Halflng War]||Gurd the Learned of War||Kills: 0||Deaths: 0||Age: 100||Hours: 0||Mon Jul 16 10:30:12 2018
 DELETED||[31  Abyss War]||Gurd the Baron of Thunder||Kills: 0||Deaths: 0||Age: 120||Hours: 0||Mon Jul 16 10:40:48 2018
+DELETED||[51 Halflng Thi]||Remy the Thief Hero||Kills: 0||Deaths: 2||Age: 101||Hours: 0||Tue Jul 17 14:22:29 2018
+DELETED||[40  Abyss War]||Gurd the Master of War||Kills: 0||Deaths: 0||Age: 121||Hours: 0||Tue Jul 17 15:36:23 2018
+DELETED||[40  Human Asn]||Hitman the Malevolent||Kills: 0||Deaths: 0||Age: 20||Hours: 0||Tue Jul 17 16:34:10 2018
