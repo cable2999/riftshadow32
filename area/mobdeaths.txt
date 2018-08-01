@@ -709,3 +709,15 @@ Bruno | a stronghold patrolman | The Elven Stronghold | Upon a wooden bridge | T
 Grulk | the vampire, Shadar Lunn | Mausoleum | The workroom of Shadar Lunn | Mon May 22 23:03:51 2017
 Grulk | the great Dracolich | Mausoleum | The lair of the great Dracolich | Mon May 22 23:11:30 2017
 Brume | a human ambassador | The Elven Stronghold | An Ornate Hallway | Fri Jul 13 14:12:50 2018
+Zerliae | the Elven Lord | The Elven Stronghold | The Bed Chambers of the Elven Lord | Sat Jul 28 03:10:35 2018
+Bastard | a human ambassador | The Elven Stronghold | An Ornate Hallway | Sat Jul 28 11:51:43 2018
+Bastard | an elven ambassador | The Elven Stronghold | Before a vast ravine | Sat Jul 28 13:40:32 2018
+Bastard | an elven ambassador | The Elven Stronghold | Before the gates of the Elven Stronghold | Sat Jul 28 13:48:37 2018
+Goodie | a halfling ambassador | The Elven Stronghold | Before the gates of the Elven Stronghold | Sat Jul 28 15:13:54 2018
+Goodie | the Elven Lord | The Elven Stronghold | The Bed Chambers of the Elven Lord | Sat Jul 28 21:57:35 2018
+Goodie | a celestial ambassador | The Elven Stronghold | The Center of the Grand Hall | Sun Jul 29 00:59:17 2018
+Goodie | a stronghold patrolman | The Elven Stronghold | A Guard Room | Sun Jul 29 01:33:02 2018
+Goodie | a human ambassador | The Elven Stronghold | A Guest Room | Mon Jul 30 04:00:07 2018
+Notgoodie | an elven ambassador | The Elven Stronghold | A Guest Room | Tue Jul 31 02:48:03 2018
+Goodie | a human ambassador | The Elven Stronghold | Before the gates of the Elven Stronghold | Tue Jul 31 16:42:28 2018
+Notgoodie | a planar ambassador | The Elven Stronghold | An Ornate Hallway | Wed Aug  1 06:15:06 2018
