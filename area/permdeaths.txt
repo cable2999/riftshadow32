@@ -196,3 +196,5 @@ DELETED||[40 Celest Pal]||Goodie the Defender||Kills: 0||Deaths: 2||Age: 121||Ho
 DELETED||[40 Celest Pal]||Goodie the Defender||Kills: 0||Deaths: 0||Age: 122||Hours: 1||Mon Jul 30 01:37:34 2018
 DELETED||[40  Abyss War]||Notgoodie the Master of War||Kills: 0||Deaths: 1||Age: 123||Hours: 1||Tue Jul 31 03:03:56 2018
 DELETED||[37  Drow Nec]||Notgoodie the Malefic Archmage||Kills: 0||Deaths: 0||Age: 186||Hours: 2||Wed Aug  1 06:15:31 2018
+DELETED||[60  Abyss War]||[HORDE] Krunk the Implementor||Kills: 8||Deaths: 0||Age: 514||Hours: 2314||Wed Aug  1 11:29:41 2018
+DELETED||[60  Abyss War]||Krunk the Swordpupil||Kills: 0||Deaths: 0||Age: 124||Hours: 0||Wed Aug  1 11:38:03 2018

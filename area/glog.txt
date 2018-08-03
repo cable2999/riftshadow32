@@ -616,3 +616,24 @@ Tue Jul 17 15:43:20 2018: LOAD- Krunk is loading kharzandra.
 Tue Jul 17 15:43:20 2018: LOAD- Krunk is loading .
 Tue Jul 17 15:43:25 2018: LOAD- Krunk is loading mob kharzandra.
 Tue Jul 17 15:43:38 2018: LOAD- Krunk is loading obj 6244.
+Wed Aug  1 11:25:21 2018: SET- Krunk is setting .
+Wed Aug  1 11:25:24 2018: SET- Krunk is setting trust.
+Wed Aug  1 11:25:24 2018: SET- Krunk is setting .
+Wed Aug  1 11:28:01 2018: SET- Krunk is setting int 25.
+Wed Aug  1 11:28:01 2018: SET- Krunk is setting .
+Thu Aug  2 11:22:08 2018: LOAD- Krunk is loading 233.
+Thu Aug  2 11:22:08 2018: LOAD- Krunk is loading .
+Thu Aug  2 11:22:11 2018: LOAD- Krunk is loading obj 233.
+Thu Aug  2 11:22:12 2018: LOAD- Krunk is loading obj 233.
+Thu Aug  2 11:33:48 2018: LOAD- Krunk is loading 7203.
+Thu Aug  2 11:33:48 2018: LOAD- Krunk is loading .
+Thu Aug  2 11:33:52 2018: LOAD- Krunk is loading obj 7203.
+Thu Aug  2 11:33:53 2018: LOAD- Krunk is loading obj 7203.
+Thu Aug  2 11:36:19 2018: LOAD- Krunk is loading 12221.
+Thu Aug  2 11:36:19 2018: LOAD- Krunk is loading .
+Thu Aug  2 11:36:22 2018: LOAD- Krunk is loading obj12221.
+Thu Aug  2 11:36:22 2018: LOAD- Krunk is loading .
+Thu Aug  2 11:36:24 2018: LOAD- Krunk is loading obj 12221.
+Thu Aug  2 11:40:27 2018: LOAD- Krunk is loading 12308.
+Thu Aug  2 11:40:27 2018: LOAD- Krunk is loading .
+Thu Aug  2 11:40:31 2018: LOAD- Krunk is loading obj 12308.

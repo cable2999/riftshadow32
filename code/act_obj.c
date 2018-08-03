@@ -1611,13 +1611,14 @@ void do_eat( CHAR_DATA *ch, char *argument )
         send_to_char( "That's not edible.\n\r", ch );
         return;
     }
-            
+    
+/*        
     if ( !IS_NPC(ch) && ch->pcdata->condition[COND_HUNGER] < 5 )
     {
         send_to_char( "You are too full to eat more.\n\r", ch );
         return;
     }
-
+*/
     }
 
     act( "$n eats $p.",  ch, obj, NULL, TO_ROOM );
@@ -1631,11 +1632,11 @@ void do_eat( CHAR_DATA *ch, char *argument )
     {
         int condition;
 
-        condition = ch->pcdata->condition[COND_HUNGER];
-        gain_condition( ch, COND_HUNGER, -(obj->value[1]*3));
-        if (ch->pcdata->condition[COND_HUNGER] < COND_HUNGRY && condition > COND_HUNGRY)
-        send_to_char( "You are no longer hungry.\n\r", ch );
-        else if ( ch->pcdata->condition[COND_HUNGER] < 5 )
+        //condition = ch->pcdata->condition[COND_HUNGER];
+        //gain_condition( ch, COND_HUNGER, -(obj->value[1]*3));
+        //if (ch->pcdata->condition[COND_HUNGER] < COND_HUNGRY && condition > COND_HUNGRY)
+        //send_to_char( "You are no longer hungry.\n\r", ch );
+        //else if ( ch->pcdata->condition[COND_HUNGER] < 5 )
         send_to_char( "You are full.\n\r", ch );
     }
 

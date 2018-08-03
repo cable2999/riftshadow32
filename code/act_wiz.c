@@ -2435,7 +2435,7 @@ void do_mstat( CHAR_DATA *ch, char *argument )
         send_to_char(buf,ch);
     }
     
-    if(!IS_NPC(victim) && victim->trust)
+    if(!IS_NPC(victim)) // && victim->trust)
     {
     sprintf(buf,"Trust: %s%s%s\n\r",
         IS_SET(victim->pcdata->trust,TRUST_GROUP) ? "group " : "",
