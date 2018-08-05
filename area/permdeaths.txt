@@ -198,3 +198,13 @@ DELETED||[40  Abyss War]||Notgoodie the Master of War||Kills: 0||Deaths: 1||Age:
 DELETED||[37  Drow Nec]||Notgoodie the Malefic Archmage||Kills: 0||Deaths: 0||Age: 186||Hours: 2||Wed Aug  1 06:15:31 2018
 DELETED||[60  Abyss War]||[HORDE] Krunk the Implementor||Kills: 8||Deaths: 0||Age: 514||Hours: 2314||Wed Aug  1 11:29:41 2018
 DELETED||[60  Abyss War]||Krunk the Swordpupil||Kills: 0||Deaths: 0||Age: 124||Hours: 0||Wed Aug  1 11:38:03 2018
+DELETED||[40  Abyss Zea]||Olam the Cardinal of the East||Kills: 0||Deaths: 0||Age: 121||Hours: 3||Fri Aug  3 12:40:57 2018
+DELETED||[42  Duerg War]||Vhonlen the Skull Cracker||Kills: 0||Deaths: 1||Age: 63||Hours: 4||Fri Aug  3 15:51:42 2018
+DELETED||[32   Elf Sor]||Pewpew the Master of Fire||Kills: 0||Deaths: 0||Age: 201||Hours: 0||Fri Aug  3 18:37:44 2018
+DELETED||[40  Dwarf Pal]||Tolikash the Defender||Kills: 0||Deaths: 0||Age: 63||Hours: 2||Fri Aug  3 19:08:55 2018
+DELETED||[40  Drow Nec]||Akilivurn the Apprentice Occultist||Kills: 0||Deaths: 0||Age: 182||Hours: 3||Fri Aug  3 23:12:42 2018
+DELETED||[37  Mino A-P]||Malvdayn the LightSlayer||Kills: 0||Deaths: 0||Age: 20||Hours: 1||Fri Aug  3 23:13:07 2018
+DELETED||[41  Abyss A-P]||Evilthing the Evil Prince||Kills: 5||Deaths: 1||Age: 121||Hours: 5||Fri Aug  3 23:54:43 2018
+DELETED||[40 Celest War]||Goodie the Master of War||Kills: 4||Deaths: 1||Age: 127||Hours: 10||Fri Aug  3 23:55:09 2018
+DELETED||[35  Human Asn]||Evilthing the Slasher||Kills: 0||Deaths: 0||Age: 20||Hours: 1||Sun Aug  5 00:17:53 2018
+DELETED||[40  Abyss A-P]||Evilthing the Evil Lord||Kills: 0||Deaths: 0||Age: 123||Hours: 0||Sun Aug  5 01:09:33 2018

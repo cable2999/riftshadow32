@@ -1933,6 +1933,7 @@ void check_orobas_gamygyn(CHAR_DATA *ch,CHAR_DATA *victim)
     OBJ_DATA *corpse;
     bool found = FALSE;
     char buf[MSL];
+    AFFECT_DATA *af;
 
     for (corpse = ch->in_room->contents; corpse; corpse = corpse->next_content)
         if (corpse->item_type == ITEM_CORPSE_PC &&
@@ -1971,6 +1972,8 @@ void check_orobas_gamygyn(CHAR_DATA *ch,CHAR_DATA *victim)
         act("Enveloped in a black glow, the demon vanishes from sight.",ch,0,0,TO_ALL);
         ch->pcdata->greaterdata[GREATER_GAMYGYN] = FAVOR_GRANTED;
         ch->pcdata->learned[skill_lookup("bloodlust")] = 1;
+	af = affect_find(ch->affected,gsn_gamygyn_soul);
+	affect_remove(ch, af);
         return;
     }
 
