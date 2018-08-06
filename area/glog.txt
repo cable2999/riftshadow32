@@ -641,3 +641,33 @@ Mon Aug  6 09:53:56 2018: SET- Krunk is setting .
 Mon Aug  6 09:54:11 2018: SET- Krunk is setting skill 'sheath of ice'.
 Mon Aug  6 09:54:19 2018: SET- Krunk is setting skill krunk all 100.
 Mon Aug  6 09:56:44 2018: LOAD- Krunk is loading obj 11434.
+Mon Aug  6 13:48:14 2018: LOAD- Krunk is loading obj 20173.
+Mon Aug  6 14:03:26 2018: LOAD- Krunk is loading obj 233.
+Mon Aug  6 14:03:27 2018: LOAD- Krunk is loading obj 233.
+Mon Aug  6 14:03:34 2018: LOAD- Krunk is loading obj 233.
+Mon Aug  6 14:03:35 2018: LOAD- Krunk is loading obj 233.
+Mon Aug  6 14:15:26 2018: INDUCT- Krunk is inducting Dalar into Phalanx..
+Mon Aug  6 14:53:09 2018: SET- Krunk is setting krunk hp 10000.
+Mon Aug  6 14:53:09 2018: SET- Krunk is setting .
+Mon Aug  6 14:53:19 2018: SET- Krunk is setting form all.
+Mon Aug  6 14:53:19 2018: SET- Krunk is setting .
+Mon Aug  6 14:53:24 2018: SET- Krunk is setting form krunk all.
+Mon Aug  6 14:53:24 2018: SET- Krunk is setting .
+Mon Aug  6 14:53:29 2018: SET- Krunk is setting mob krunk hp 10000.
+Mon Aug  6 14:56:09 2018: INDUCT- Krunk is inducting Krunk into Bounty..
+Mon Aug  6 15:21:27 2018: INDUCT- Krunk is inducting Krunk into Scion..
+Mon Aug  6 15:38:41 2018: LOAD- Krunk is loading obj 23877.
+Mon Aug  6 15:39:48 2018: INDUCT- Krunk is inducting Krunk into Phalanx..
+Mon Aug  6 15:41:52 2018: LOAD- Krunk is loading obj 23652.
+Mon Aug  6 15:42:05 2018: LOAD- Krunk is loading obj 23625.
+Mon Aug  6 15:42:18 2018: LOAD- Krunk is loading obj 23601.
+Mon Aug  6 15:42:29 2018: LOAD- Krunk is loading obj 23712.
+Mon Aug  6 15:42:45 2018: LOAD- Krunk is loading obj 23877.
+Mon Aug  6 16:04:44 2018: TITLE- Krunk is titling Rampaging Berserker.
+Mon Aug  6 16:23:01 2018: INDUCT- Krunk is inducting Krunk into Horde..
+Mon Aug  6 16:24:50 2018: SET- Krunk is setting communion krunk 1000.
+Mon Aug  6 16:24:50 2018: SET- Krunk is setting .
+Mon Aug  6 16:24:52 2018: SET- Krunk is setting communion krunk 100.
+Mon Aug  6 16:24:52 2018: SET- Krunk is setting .
+Mon Aug  6 16:24:58 2018: SET- Krunk is setting skill krunk 100.
+Mon Aug  6 16:25:07 2018: SET- Krunk is setting skill krunk communion 100.

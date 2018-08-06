@@ -2309,3 +2309,7 @@ Mon May 29 22:09:40 2017 :: Dorf collects the 45030 gold bounty on Creds.
 Mon May 29 22:17:18 2017 :: Krunk places a bounty of 34000 gold on the life of Credtoo.
 Mon May 29 22:17:40 2017 :: Dorf advances to Master Hunter.
 Mon May 29 22:17:40 2017 :: Dorf collects the 34000 gold bounty on Credtoo.
+Mon Aug  6 15:03:03 2018 :: Krunk places a bounty of 10000 gold on the life of Hunta.
+Mon Aug  6 15:03:54 2018 :: Krunk places a bounty of 1000 gold on the life of Hunta.
+Mon Aug  6 15:54:01 2018 :: Krunk places a bounty of 1000 gold on the life of Krunk.
+Mon Aug  6 15:56:37 2018 :: (null) places a bounty of 500 gold on the life of Krunk.

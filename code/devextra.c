@@ -1550,8 +1550,8 @@ void do_bounty(CHAR_DATA *ch, char *argument)
     argument = one_argument(argument,arg1);
     argument = one_argument(argument,arg2);
 
-    if(check_horde(ch))
-        return;
+    //if(check_horde(ch))
+    //    return;
     
     if(!arg1 || !arg2 || (!is_number(arg2) && !IS_IMMORTAL(ch)))
     {
@@ -1586,10 +1586,10 @@ void do_bounty(CHAR_DATA *ch, char *argument)
         return send_to_char("Invalid amount.\n\r",ch);;
     amount = atoi(arg2);
 
-    if(amount<1000)
+    if(!IS_NPC(ch) && amount<1000)
         return send_to_char("You must place a bounty of at least 1000 gold coins.\n\r",ch);
 
-    if(amount > ch->gold)
+    if(!IS_NPC(ch) && amount > ch->gold)
         return send_to_char("You don't have enough money.\n\r",ch);
 
     if(victim == ch && !IS_IMMORTAL(ch))
@@ -1597,7 +1597,8 @@ void do_bounty(CHAR_DATA *ch, char *argument)
 
     famount = amount / (UMAX(calculate_inflation() - 1,1));
     victim->pcdata->bounty += (int)famount;
-    ch->gold -= amount;
+    if(!IS_NPC(ch))
+        ch->gold -= amount;
     act("You give the Guild a bounty of $t gold to place on $N's head.",ch,arg2,victim,TO_CHAR);
     sprintf(buf,"Someone has placed a bounty of %.0f gold on the life of %s.",famount,victim->name);
     bounty_cb(buf);
