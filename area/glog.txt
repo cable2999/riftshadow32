@@ -637,3 +637,7 @@ Thu Aug  2 11:36:24 2018: LOAD- Krunk is loading obj 12221.
 Thu Aug  2 11:40:27 2018: LOAD- Krunk is loading 12308.
 Thu Aug  2 11:40:27 2018: LOAD- Krunk is loading .
 Thu Aug  2 11:40:31 2018: LOAD- Krunk is loading obj 12308.
+Mon Aug  6 09:53:56 2018: SET- Krunk is setting .
+Mon Aug  6 09:54:11 2018: SET- Krunk is setting skill 'sheath of ice'.
+Mon Aug  6 09:54:19 2018: SET- Krunk is setting skill krunk all 100.
+Mon Aug  6 09:56:44 2018: LOAD- Krunk is loading obj 11434.

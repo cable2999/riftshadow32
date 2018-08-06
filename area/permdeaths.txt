@@ -208,3 +208,10 @@ DELETED||[41  Abyss A-P]||Evilthing the Evil Prince||Kills: 5||Deaths: 1||Age: 1
 DELETED||[40 Celest War]||Goodie the Master of War||Kills: 4||Deaths: 1||Age: 127||Hours: 10||Fri Aug  3 23:55:09 2018
 DELETED||[35  Human Asn]||Evilthing the Slasher||Kills: 0||Deaths: 0||Age: 20||Hours: 1||Sun Aug  5 00:17:53 2018
 DELETED||[40  Abyss A-P]||Evilthing the Evil Lord||Kills: 0||Deaths: 0||Age: 123||Hours: 0||Sun Aug  5 01:09:33 2018
+DELETED||[40  Abyss A-P]||Antiman the Evil Lord||Kills: 0||Deaths: 0||Age: 123||Hours: 0||Sun Aug  5 16:07:39 2018
+DELETED||[40  Sidhe Hea]||Deadman the Rejuvinator||Kills: 0||Deaths: 0||Age: 15||Hours: 0||Sun Aug  5 16:07:43 2018
+DELETED||[40  Dwarf War]||Deadman the Master of War||Kills: 0||Deaths: 2||Age: 61||Hours: 0||Sun Aug  5 22:12:18 2018
+DELETED||[40  Abyss A-P]||Antiman the Evil Lord||Kills: 2||Deaths: 0||Age: 123||Hours: 0||Sun Aug  5 22:12:24 2018
+DELETED||[40 Celest Pal]||[PHALANX] Remy the Defender||Kills: 0||Deaths: 0||Age: 141||Hours: 1||Mon Aug  6 08:29:44 2018
+DELETED||[40  Abyss War]||Gianttest the Master of War||Kills: 1||Deaths: 0||Age: 123||Hours: 0||Mon Aug  6 09:58:40 2018
+DELETED||[40 Halflng War]||Halftest the Master of War||Kills: 0||Deaths: 1||Age: 102||Hours: 0||Mon Aug  6 09:58:47 2018
