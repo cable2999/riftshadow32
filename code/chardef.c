@@ -34,77 +34,77 @@ const   struct  pc_race_type    pc_race_table   []  =
          "dwarf",        " Dwarf",        "Dwarf",  "dwarven",  3, 5,   ALIGN_GN, 250,
          { "berserk" },
      {0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0 },
-         { 23, 17, 20, 17, 25 }, SIZE_MEDIUM, 13, 1.083, RACE_OPEN
+         { 23, 17, 20, 17, 25 }, SIZE_MEDIUM, 13, 1.0417, RACE_OPEN
      },
     
      {
          "duergar",        " Duerg",        "Duerg",    "duergar",  3, 5,   ALIGN_E, 250,
          { "poison", "dirt kick" },
      {0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0 },
-          { 22, 19, 18, 20, 23 }, SIZE_MEDIUM, 13, 1.083, RACE_OPEN
+          { 22, 19, 18, 20, 23 }, SIZE_MEDIUM, 13, 1.0417, RACE_OPEN
      },
 
      {
          "elf",          "  Elf",         " Elf",   "elven",    10, 8,  ALIGN_G, 300,
          { "" },
      {0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1 },
-         { 17, 25, 21, 22, 16 }, SIZE_MEDIUM, 11, .917, RACE_OPEN
+         { 17, 25, 21, 22, 16 }, SIZE_MEDIUM, 11, .9583, RACE_OPEN
      },
 
      {
          "drow",     " Drow",              "Drow",  "drow",     9, 7,   ALIGN_E, 300,
          { "" },
      {0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1 },
-         { 17, 24, 20, 23, 17 }, SIZE_MEDIUM, 11, .917, RACE_OPEN
+         { 17, 24, 20, 23, 17 }, SIZE_MEDIUM, 11, .9583, RACE_OPEN
      },
 
      {
         "celestial",        "Celest",       "Celes",    "titan",    6, 6,   ALIGN_G, 500,
          { "enhanced damage", "bash" },
      {0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0 },
-         { 25, 18, 18, 17, 23 }, SIZE_LARGE, 16, 1.33, RACE_OPEN
+         { 25, 18, 18, 17, 23 }, SIZE_LARGE, 16, 1.167, RACE_OPEN
      },
 
      {
          "planar",        "Planar",        "Pla",   "titan",    6, 6,   ALIGN_N, 500,
          {"enhanced damage", "bash" },
      {0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0 },
-         { 25, 17, 17, 18, 22 }, SIZE_LARGE, 16, 1.33, RACE_OPEN
+         { 25, 17, 17, 18, 22 }, SIZE_LARGE, 16, 1.167, RACE_OPEN
      },
 
      {
          "abyss",        " Abyss",          "Abyss",    "titan",    6, 6,   ALIGN_E, 500,
          { "enhanced damage", "bash" },
      {0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0 },
-     { 25, 15, 16, 20, 23 }, SIZE_LARGE, 16, 1.33, RACE_OPEN
+     { 25, 15, 16, 20, 23 }, SIZE_LARGE, 16, 1.167, RACE_OPEN
      },
 
      {
          "sidhe",        " Sidhe",          "Sidhe",    "sidhe",    .75, 4, ALIGN_G, 250,
          { "" },
      {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1 },
-         { 17, 21, 25, 21, 18 }, SIZE_SMALL, 9, .75, RACE_OPEN
+         { 17, 21, 25, 21, 18 }, SIZE_SMALL, 9, .875, RACE_OPEN
      },
 
      {
          "halfling",      "Halflng",        "Half", "halfling", 5, 5,   ALIGN_N, 250,
          { "steal" },
      {0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
-         { 17, 19, 23, 25, 20 }, SIZE_SMALL, 8, .667, RACE_OPEN
+         { 17, 19, 23, 25, 20 }, SIZE_SMALL, 8, .833, RACE_OPEN
      },
 
      {
          "imp",    "  Imp",             "Imp",  "imp",      4, 3,   ALIGN_E, 250,
          { "" },
      {0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 },
-         { 17, 24, 22, 24, 16 }, SIZE_SMALL, 8, .667, RACE_OPEN
+         { 17, 24, 22, 24, 16 }, SIZE_SMALL, 8, .833, RACE_OPEN
      },
 
      {
     "minotaur",     " Mino",        "Mino", "minotaur", 1, 1,   ALIGN_ANY, 100,
      { "" },
      {0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0 },
-     {24, 17, 18, 19, 22}, SIZE_MEDIUM, 14, 1.167, RACE_OPEN
+     {24, 17, 18, 19, 22}, SIZE_MEDIUM, 14, 1.0833, RACE_OPEN
      },
 };
 
